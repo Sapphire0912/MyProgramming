@@ -1,6 +1,6 @@
 實際練習題可以等換新電腦或把資料移到另一台筆電再來實作(尤其是關於影像的部分)
-<<Machine Learning with Python Cookbook_practical solutions from preprocessing to deep learning>>
-學完Ch08後, 先回來做例題, 等熟了之後再進行下個神經網路的階段
+<<Machine Learning with Python Cookbook_practical solutions from preprocessing to deep learning>> (丟中文)
+先進行神經網路階段, 接著再來做用鉛筆圈起來的例題
 找時間重新複習 Matplotlib_Module 
 偶爾去看之前在達內學的Python筆記, 尤其從18開始, 可以得到不少資料和想法
 
