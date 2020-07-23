@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\kotori\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "C:\\Users\\iris2\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     "python.linting.enabled": true,
     "python.linting.pylintArgs": ["--generate-members"],
     "python.linting.pylintEnabled": true
