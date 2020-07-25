@@ -1,4 +1,4 @@
-# coding=uft8
+# coding=utf8
 # 運行 TensorFlow
 import tensorflow as tf
 
