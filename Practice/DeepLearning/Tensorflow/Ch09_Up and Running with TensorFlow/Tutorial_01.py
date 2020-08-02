@@ -198,7 +198,7 @@ import os
 # 假如我們要創建一個計算兩個修正線性單元(Rectified Linear Unit, ReLU)之和的圖
 # 公式: h_w,b(X) = max(X.dot(w)+b, 0); 通常的定義是 f(x) = max(0, x) <- 斜坡函數
 # (在神經網路中會再加以介紹)
-# n_features = 3
+n_features = 3
 # X = tf.placeholder(tf.float32, shape = (None, n_features), name = "X")
 
 # w1 = tf.Variable(tf.random_normal((n_features, 1)), name = "weights1")
@@ -247,8 +247,28 @@ import os
 # 有非常多種做法: 可以利用函數傳參, 或著建立字典, 創建一個class等等
 # 在 Tensorflow 所提供的是先透過 get_variable() 來創建共享變量(如果共享變量不存在, 反之覆用該共享變量)
 # 期望的行為是 透過 variable_scope() 來控制(創建或者覆用), 看以下例子
+def relu(X):
+    with tf.variable_scope("relu", reuse = tf.AUTO_REUSE):
+        threshold = tf.get_variable("threshold") # 取得變數
+        with tf.name_scope("relu"):
+            w_shape = (int(X.get_shape()[1]), 1)
+            w = tf.Variable(tf.random_normal(w_shape), name = "weights")
+            b = tf.Variable(0.0, name = "bias")
+            z = tf.add(tf.matmul(X, w), b, name = "z")
+            return tf.maximum(z, threshold, name = "max")
+X = tf.placeholder(tf.float32, shape = (None, n_features), name = "X")
 
+with tf.variable_scope("relu"):
+    threshold = tf.get_variable('threshold', shape = (), initializer = tf.constant_initializer(0.0)) # 創建變數
 
+relus = [relu(X) for relu_index in range(5)]
+output = tf.add_n(relus, name = "output")
+
+# print(os.getcwd())
+testpath = "./Tensorflow/Ch09_Up and Running with TensorFlow/test_relu"
+count = 4
+log_dir = "{}/relu{}/".format(testpath, count)
+writer = tf.summary.FileWriter(log_dir, tf.get_default_graph())
 
 
 # 這個章節學完後 看一下其他書比較然後再熟悉一下
