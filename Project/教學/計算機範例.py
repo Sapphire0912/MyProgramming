@@ -1,0 +1,30 @@
+import tkinter as tk
+win = tk.Tk()
+win.geometry("200x200+280+280")
+win.title("計算機範例")
+
+L1 = tk.Button(win, text = '1', width = 5, bg = 'yellow')
+L2 = tk.Button(win, text = '2', width = 5)
+L3 = tk.Button(win, text = '3', width = 5)
+L4 = tk.Button(win, text = '4', width = 5)
+L5 = tk.Button(win, text = '5', width = 5, bg = 'green')
+L6 = tk.Button(win, text = '6', width = 5)
+L7 = tk.Button(win, text = '7', width = 5)
+L8 = tk.Button(win, text = '8', width = 5)
+L9 = tk.Button(win, text = '9', width = 5, bg = 'yellow')
+L0 = tk.Button(win, text = '0')
+Lp = tk.Button(win, text = '.')
+
+L1.grid(row = 0, column = 0)
+L2.grid(row = 0, column = 1)
+L3.grid(row = 0, column = 2)
+L4.grid(row = 1, column = 0)
+L5.grid(row = 1, column = 1)
+L6.grid(row = 1, column = 2)
+L7.grid(row = 2, column = 0)
+L8.grid(row = 2, column = 1)
+L9.grid(row = 2, column = 2)
+L0.grid(row = 3, column = 0, columnspan = 2, sticky = "we") # 跨兩列, 左右貼緊
+Lp.grid(row = 3, column = 2, sticky = "we")
+
+win.mainloop()
