@@ -102,3 +102,4 @@ if __name__ == "__main__":
         print(hand)
         n += 1
     # input("\nPress the enter key to exit.")
+# 之後用到記得改編碼格式
