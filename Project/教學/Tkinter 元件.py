@@ -76,7 +76,6 @@ def listbox_example():
     b1.grid(row = 0, column = 1, rowspan = 2)
     b2.grid(row = 1, column = 1, rowspan = 2)
     listb2.grid(row = 0, column = 2, rowspan = 2)
-    
 
 def choosebutton_example():
     # 選項按鈕元件, 核取方塊元件 可以實現單選複選的功能
@@ -140,6 +139,49 @@ def messagebox_example():
     btn7 = Button(win, text = 'askretrycancel', command = btn7)
     btn7.pack(fill = X)
 
+def frame_example():
+    # 在分組織其他元件的過程中是非常重要的, 負責安排其他元件的位置
+    # Frame 元件在螢幕上顯示為一個矩形區域, 作為顯示其他元件的容器
+    # 建立 Frame 元件 Frame(windows 視窗物件, height, width, bg..etc)
+    # LabelFrame 元件 是有標題的 Frame 元件, 可以使用 text 屬性設定 LabelFrame 元件的標題
+    # win.title("使用 Frame 元件的實例")
+    # f1 = Frame(win) # 建立 第 1 個 Frame 元件
+    # f1.pack()
+    # f2 = Frame(win) # 建立 第 2 個 Frame 元件
+    # f2.pack()
+
+    # f3 = LabelFrame(win, text = '第 3 個 Frame')
+    # f3.pack(side = BOTTOM)
+
+    # redbutton = Button(f1, text = "Red", fg = "red")
+    # redbutton.pack(side = LEFT)
+    # brownbutton = Button(f1, text = "Brown", fg = "brown")
+    # brownbutton.pack(side = LEFT)
+    # bluebutton = Button(f1, text = "Blue", fg = "blue")
+    # bluebutton.pack(side = LEFT)
+
+    # blackbutton = Button(f2, text = "Black", fg = "black")
+    # blackbutton.pack()
+
+    # greenbutton = Button(f3, text = "Green", fg = "green")
+    # greenbutton.pack()
+
+    # 更新 Frame, 使用 after(), 每隔幾秒更新 GUI 圖形介面
+    # 例如下面的程式 實現計數器的功能, 並且文字背景顏色不斷改變
+    colors = ('red', 'orange', 'yellow', 'green', 'blue', 'purple')
+    f = Frame(win, height = 200, width = 200)
+    f.color = 0
+    f['bg'] = colors[f.color] # 設定架構背景顏色
+    lab1 = Label(f, text = '0')
+    lab1.pack()
+
+    def foo():
+        f.color = (f.color + 1) % (len(colors))
+        lab1['bg'] = colors[f.color]
+        lab1['text'] = str(int(lab1['text']) + 1)
+        f.after(1000, foo) # 隔 1s 執行 foo() 函數更新螢幕
+    f.pack()
+    f.after(1000, foo)
 
 
 # label_example()
@@ -147,6 +189,7 @@ def messagebox_example():
 # listbox_example()
 # choosebutton_example()
 # menu_example()
-messagebox_example()
+# messagebox_example()
+# frame_example()
 
 win.mainloop()
