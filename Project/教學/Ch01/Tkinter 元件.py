@@ -139,6 +139,7 @@ def messagebox_example():
     btn7 = Button(win, text = 'askretrycancel', command = btn7)
     btn7.pack(fill = X)
 
+x = 0
 def frame_example():
     # 在分組織其他元件的過程中是非常重要的, 負責安排其他元件的位置
     # Frame 元件在螢幕上顯示為一個矩形區域, 作為顯示其他元件的容器
@@ -168,21 +169,33 @@ def frame_example():
 
     # 更新 Frame, 使用 after(), 每隔幾秒更新 GUI 圖形介面
     # 例如下面的程式 實現計數器的功能, 並且文字背景顏色不斷改變
-    colors = ('red', 'orange', 'yellow', 'green', 'blue', 'purple')
+    # colors = ('red', 'orange', 'yellow', 'green', 'blue', 'purple')
+    # f = Frame(win, height = 200, width = 200)
+    # f.color = 0
+    # f['bg'] = colors[f.color] # 設定架構背景顏色
+    # lab1 = Label(f, text = '0')
+    # lab1.pack()
+
+    # def foo():
+    #     f.color = (f.color + 1) % (len(colors))
+    #     lab1['bg'] = colors[f.color]
+    #     lab1['text'] = str(int(lab1['text']) + 1)
+    #     f.after(1000, foo) # 隔 1s 執行 foo() 函數更新螢幕
+    # f.pack()
+    # f.after(1000, foo)
+
+    # 再使用一個跑馬燈的例子
     f = Frame(win, height = 200, width = 200)
-    f.color = 0
-    f['bg'] = colors[f.color] # 設定架構背景顏色
-    lab1 = Label(f, text = '0')
-    lab1.pack()
-
+    lab1 = Label(f, text = "Tkinter 跑馬燈")
     def foo():
-        f.color = (f.color + 1) % (len(colors))
-        lab1['bg'] = colors[f.color]
-        lab1['text'] = str(int(lab1['text']) + 1)
-        f.after(1000, foo) # 隔 1s 執行 foo() 函數更新螢幕
+        global x
+        x += 10
+        if x > 200:
+            x = 0
+        lab1.place(x = x, y = 0)
+        f.after(500, foo)
     f.pack()
-    f.after(1000, foo)
-
+    f.after(500, foo)
 
 # label_example()
 # entry_example()
@@ -190,6 +203,6 @@ def frame_example():
 # choosebutton_example()
 # menu_example()
 # messagebox_example()
-# frame_example()
+frame_example()
 
 win.mainloop()
