@@ -1,6 +1,6 @@
 # -*- coding = utf8 -*-
 import tkinter as tk
-import random 
+import random, time
 number = random.randint(0, 1024) # 玩家要猜的數字
 running = True
 count = 0 # 猜的次數
@@ -26,12 +26,12 @@ def BtnGuess(event):
             if val_a > nminn:
                 nminn = val_a
                 count += 1
-                labelqval("猜小了, 請輸入 ", nminn, " 到 ", nmaxn, "之間的整數")
+                labelqval("猜小了, 請輸入 " + str(nminn) + " 到 " + str(nmaxn) + "之間的整數")
         else:
             if val_a < nmaxn:
                 nmaxn = val_a
                 count += 1
-                labelqval("猜大了, 請輸入 ", nminn, "到", nmaxn, "之間的整數")
+                labelqval("猜大了, 請輸入 "+ str(nminn) + " 到 " + str(nmaxn) + "之間的整數")
     else:
         labelqval("你已經答對了")
 
@@ -39,8 +39,9 @@ def numGuess(): # 顯示猜的次數
     if count == 1:
         labelqval("一次答對")
     elif count < 10 and ~running:
-        labelqval("十次以內答對, 看來你很熟悉 log 呢")
-    labelqval('嘗試次數: ', str(count))
+        labelqval("恭喜十次以內答對, 看來你很熟悉 log 呢")
+    time.sleep(2)
+    labelqval('嘗試次數: ' + str(count))
 
 def labelqval(vText):
     label_val_q.config(label_val_q, text = vText) # 修改提示標籤文字
