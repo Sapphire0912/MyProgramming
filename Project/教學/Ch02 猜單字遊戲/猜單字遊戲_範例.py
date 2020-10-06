@@ -26,4 +26,4 @@ while iscontinue == "y" or iscontinue == "Y":
             print("真棒, 猜對了")
             break
     iscontinue = input("是否繼續(Y/N): ")
-    
+# Q. 做成 GUI 而且可以連結資料庫的情況或者讀取檔案

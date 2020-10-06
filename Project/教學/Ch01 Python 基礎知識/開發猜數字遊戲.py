@@ -66,5 +66,5 @@ entry_a.focus_set()
 print(number)
 root.mainloop()
 
-
+# Q. GUI 寫成 nAnB 的猜數字 先由玩家猜電腦
 

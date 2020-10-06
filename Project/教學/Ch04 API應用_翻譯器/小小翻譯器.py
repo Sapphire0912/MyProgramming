@@ -1,0 +1,1 @@
+# Link: https://clay-atlas.com/blog/2020/05/05/python-cn-note-package-googletrans-google-translate/
