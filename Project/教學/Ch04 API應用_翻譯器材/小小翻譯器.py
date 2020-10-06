@@ -8,8 +8,20 @@ win.title("MyTranslator")
 win.geometry("250x130")
 
 def translate_word(en_str):
+    # 補一下 data 格式
     url = 'https://translate.google.com.tw/'
-    re
+    response = request.urlopen(url)
+    html = response.read().decode("utf-8")
+    result = json.loads(html)
+    print(result)
+    result = result['trans_result'][0]['dst']
+
+    print("翻譯的結果是: %s" % result)
+    return result
+
+text = translate_word('apple')
+print(text)
+
 
 
 def trans_click(event):
