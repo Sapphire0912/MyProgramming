@@ -1,5 +1,4 @@
 # coding = utf8
-# 把 Google 翻譯 寫成 API
 
 # urllib 介紹
 # urllib.request: 用來讀取和開啟 URL
