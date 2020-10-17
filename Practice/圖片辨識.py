@@ -29,6 +29,19 @@ bodies = body_classifier.detectMultiScale(
     minSize = (150, 30)
 )
 
+coord = np.array([
+    [297, 78],
+    [297, 494],
+    [400, 661],
+    [681, 661],
+    [727, 573],
+    [951, 573],
+    [951, 125],
+    [764, 189]
+], np.int32)
+
+coord = coord.reshape((-1, 1, 2))
+cv2.polylines(img, [coord], True, (255, 255, 255), 4)
 # print(bodies)
 # [[596 189 168 337]
 #  [297  78 208 416]
@@ -41,21 +54,23 @@ for (x, y, w, h) in bodies:
     cv2.rectangle(img, (x, y), (x + w, y + h), colors[i], 2)
     i += 1
 
-# matplot_show(result)s
+# matplot_show(result)
 
 # def test(body):
 #     x, y = body[:, 0], body[:, 1]
 #     w, h = body[:, 2], body[:, 3]
 #     x_w, y_h = x + w, y + h
-#     plt.scatter(x, y, color = 'blue')
-#     plt.scatter(x_w, y_h, color = 'red')
+#     co = [0, 1, 2, 3]
+#     plt.scatter(x, y, c = co)
+#     plt.scatter(x_w, y_h, c = co)
 #     plt.show()
 
 # test(bodies)
 
+
 cv2.namedWindow('MyImg', cv2.WINDOW_NORMAL) # 讓視窗可以任意縮放大小
 cv2.imshow("MyImg", img) # 顯示圖片
-# cv2.imwrite('result2.jpg', img)
+cv2.imwrite('result4.jpg', img)
 # matplot_show(gray)
 
 # 按下任意建可關閉視窗
