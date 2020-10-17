@@ -70,7 +70,7 @@ for (x, y, w, h) in bodies:
 
 cv2.namedWindow('MyImg', cv2.WINDOW_NORMAL) # 讓視窗可以任意縮放大小
 cv2.imshow("MyImg", img) # 顯示圖片
-cv2.imwrite('result4.jpg', img)
+# cv2.imwrite('result4.jpg', img)
 # matplot_show(gray)
 
 # 按下任意建可關閉視窗
