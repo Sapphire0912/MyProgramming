@@ -13,11 +13,8 @@ def matplot_show(img):
 
 # 偵測全身
 path_fullbody = 'C:\\Users\\iris2\\AppData\\Local\\Programs\\Python\\Python37\\Lib\site-packages\\cv2\\data\\haarcascade_fullbody.xml'
-
 body_classifier = cv2.CascadeClassifier(path_fullbody)
-
 img = cv2.imread('target.jpg') # 載入圖片
-result = cv2.imread('result2.jpg')
 
 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) # 用灰階開啟圖片
 # print(gray.shape) # (667, 1000)
@@ -29,49 +26,33 @@ bodies = body_classifier.detectMultiScale(
     minSize = (150, 30)
 )
 
-coord = np.array([
-    [297, 78],
-    [297, 494],
-    [400, 661],
-    [681, 661],
-    [727, 573],
-    [951, 573],
-    [951, 125],
-    [764, 189]
-], np.int32)
-
-coord = coord.reshape((-1, 1, 2))
-cv2.polylines(img, [coord], True, (255, 255, 255), 4)
 # print(bodies)
 # [[596 189 168 337]
 #  [297  78 208 416]
 #  [400  90 281 561]
 #  [727 125 224 448]]
 
-colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 0, 255)]
+# colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 0, 255)]
+crop = []
 i = 0
 for (x, y, w, h) in bodies:
-    cv2.rectangle(img, (x, y), (x + w, y + h), colors[i], 2)
-    i += 1
+    # cv2.rectangle(img, (x, y), (x + w, y + h), colors[i], 2)
+    # i += 1
 
-# matplot_show(result)
+    # 裁剪辨識到的圖像
+   crop.append(img[y:y + h, x:x + w])
+cv2.imshow("crop0", crop[0])
+cv2.imshow("crop1", crop[1])
+cv2.imshow("crop2", crop[2])
+cv2.imshow("crop3", crop[3])
+cv2.imwrite("crop0.jpg", crop[0])
+cv2.imwrite("crop1.jpg", crop[1])
+cv2.imwrite("crop2.jpg", crop[2])
+cv2.imwrite("crop3.jpg", crop[3])
 
-# def test(body):
-#     x, y = body[:, 0], body[:, 1]
-#     w, h = body[:, 2], body[:, 3]
-#     x_w, y_h = x + w, y + h
-#     co = [0, 1, 2, 3]
-#     plt.scatter(x, y, c = co)
-#     plt.scatter(x_w, y_h, c = co)
-#     plt.show()
-
-# test(bodies)
-
-
-cv2.namedWindow('MyImg', cv2.WINDOW_NORMAL) # 讓視窗可以任意縮放大小
-cv2.imshow("MyImg", img) # 顯示圖片
+# cv2.namedWindow('MyImg', cv2.WINDOW_NORMAL) # 讓視窗可以任意縮放大小
+# cv2.imshow("MyImg", img) # 顯示圖片
 # cv2.imwrite('result4.jpg', img)
-# matplot_show(gray)
 
 # 按下任意建可關閉視窗
 cv2.waitKey(0)
