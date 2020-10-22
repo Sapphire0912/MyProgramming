@@ -6,10 +6,10 @@ import cv2
 # print(img.shape) # (667, 1000, 3)
 
 # 偵測全身
-# path_fullbody = 'C:\\Users\\iris2\\AppData\\Local\\Programs\\Python\\Python37\\Lib\site-packages\\cv2\\data\\haarcascade_fullbody.xml'
-path_fullbody = 'C:\\Users\\kotori\\AppData\\Local\\Programs\\Python\\Python37\\Lib\\site-packages\\cv2\\data\\haarcascade_fullbody.xml'
+path_fullbody = 'C:\\Users\\iris2\\AppData\\Local\\Programs\\Python\\Python37\\Lib\site-packages\\cv2\\data\\haarcascade_fullbody.xml'
+# path_fullbody = 'C:\\Users\\kotori\\AppData\\Local\\Programs\\Python\\Python37\\Lib\\site-packages\\cv2\\data\\haarcascade_fullbody.xml'
 body_classifier = cv2.CascadeClassifier(path_fullbody)
-img = cv2.imread('target.jpg') 
+img = cv2.imread('target.jpg')
 
 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) 
 # print(gray.shape) # (667, 1000)

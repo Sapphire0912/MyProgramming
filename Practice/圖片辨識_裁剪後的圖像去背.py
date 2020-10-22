@@ -6,8 +6,9 @@ crop1 = cv2.imread("crop2.jpg") # 保全
 crop2 = cv2.imread("crop3.jpg") # 男
 
 # 輸出圖像
-def show(img, text = 'test'):
-    cv2.imshow(text, img)
+def show(img, text = 'test.jpg'):
+    # cv2.imshow(text, img)
+    cv2.imwrite(text, img)
 
 # Pre. 轉成灰階
 def cov_gray(img):
@@ -62,9 +63,9 @@ def draw_contour(img, ori_crop):
 gray0 = cov_gray(crop0)
 gray1 = cov_gray(crop1)
 gray2 = cov_gray(crop2)
-# show(gray0, "gray0")
-# show(gray1, "gray1")
-# show(gray2, "gray2")
+show(gray0, "gray0.jpg")
+show(gray1, "gray1.jpg")
+show(gray2, "gray2.jpg")
 
 blur0 = blur_st(gray0)
 blur1 = blur_st(gray1)
