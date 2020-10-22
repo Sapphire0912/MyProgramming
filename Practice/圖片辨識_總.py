@@ -58,20 +58,20 @@ def edge_detection(img, thres_min = 20, thres_max = 50):
     return canny_
 
 # 2.2 轉成二值圖
-def threshold(img, thres_min = 90, thres_max = 255, method = cv2.THRESH_BINARY):
+def threshold(img, thres_min = 127, thres_max = 255, method = cv2.THRESH_BINARY):
     _, thresh = cv2.threshold(img, thres_min, thres_max, method)
     return thresh
 
 # 3.2 圖像形態學
-def kernel_closed(thresh):
+def kernel_closed(thresh, mor_method = cv2.MORPH_CLOSE):
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (25, 25))
-    closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+    closed = cv2.morphologyEx(thresh, mor_method, kernel)
     return closed
 
 # 3.3 細節刻畫
-def detail(closed, iterations):
-    closed = cv2.erode(closed, None, iterations = iterations)
-    closed = cv2.dilate(closed, None, iterations = iterations)
+def detail(closed, iter_erode = 2, iter_dilate = 2):
+    closed = cv2.erode(closed, None, iterations = iter_erode)
+    closed = cv2.dilate(closed, None, iterations = iter_dilate)
     return closed
 
 # 4. 描繪輪廓
@@ -104,7 +104,6 @@ blur2 = blur_st(gray2)
 # write(blur1, "blur1.jpg")
 # write(blur2, "blur2.jpg")
 
-
 # 銳化圖像
 contrast0 = contrast(blur0)
 contrast1 = contrast(blur1)
@@ -120,17 +119,44 @@ contrast2 = contrast(blur2)
 thres0 = threshold(contrast0)
 thres1 = threshold(contrast1)
 thres2 = threshold(contrast2)
-show(thres0, "thres0")
-show(thres1, "thres1")
-show(thres2, "thres2")
-write(thres0, "thres0.jpg")
-write(thres1, "thres1.jpg")
-write(thres2, "thres2.jpg")
+# show(thres0, "thres0")
+# show(thres1, "thres1")
+# show(thres2, "thres2")
+# write(thres0, "thres0.jpg")
+# write(thres1, "thres1.jpg")
+# write(thres2, "thres2.jpg")
 
+# 圖像膨脹 & 收縮
+kernel0 = threshold(thres0, cv2.MORPH_TOPHAT)
+kernel1 = threshold(thres1, cv2.MORPH_OPEN)
+kernel2 = threshold(thres2, cv2.MORPH_GRADIENT)
+# show(kernel0, "kernel0")
+# show(kernel1, "kernel1")
+# show(kernel2, "kernel2")
+# write(kernel0, "kernel0.jpg")
+# write(kernel1, "kernel1.jpg")
+# write(kernel2, "kernel2.jpg")
 
-# draw0 = draw_contour(edge0, crop0)
-# draw1 = draw_contour(edge1, crop1)
-# draw2 = draw_contour(edge2, crop2)
+detail0 = detail(kernel0, iter_dilate = 1)
+detail1 = detail(kernel1, 3)
+detail2 = detail(kernel2)
+# show(detail0, "detail0")
+# show(detail1, "detail1")
+# show(detail2, "detail2")
+# write(detail0, "detail0.jpg")
+# write(detail1, "detail1.jpg")
+# write(detail2, "detail2.jpg")
+
+edge0 = edge_detection(detail0)
+edge1 = edge_detection(detail1)
+edge2 = edge_detection(detail2)
+show(edge0, "edge0")
+show(edge1, "edge1")
+show(edge2, "edge2")
+# write(edge0, "edge0.jpg")
+# write(edge1, "edge1.jpg")
+# write(edge2, "edge2.jpg")
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
