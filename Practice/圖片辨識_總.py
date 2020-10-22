@@ -81,34 +81,52 @@ def draw_contour(img, ori_crop):
     # print(cnts)
     # return result
 
-# 轉成灰階
-gray0 = cov_gray(crop[0])
-gray1 = cov_gray(crop[1])
-gray2 = cov_gray(crop[2])
-# show(gray0, "gray0.jpg")
-# show(gray1, "gray1.jpg")
-# show(gray2, "gray2.jpg")
+crop0 = cv2.imread("crop0.jpg") # 女
+crop1 = cv2.imread("crop2.jpg") # 保全
+crop2 = cv2.imread("crop3.jpg") # 男
 
-# blur0 = blur_st(gray0)
-# blur1 = blur_st(gray1)
-# blur2 = blur_st(gray2)
+# 轉成灰階
+gray0 = cov_gray(crop0)
+gray1 = cov_gray(crop1)
+gray2 = cov_gray(crop2)
+# show(gray0, "gray0")
+# show(gray1, "gray1")
+# show(gray2, "gray2")
+
+# 高斯濾波
+blur0 = blur_st(gray0)
+blur1 = blur_st(gray1)
+blur2 = blur_st(gray2)
 # show(blur0, "blur0")
 # show(blur1, "blur1")
 # show(blur2, "blur2")
+# write(blur0, "blur0.jpg")
+# write(blur1, "blur1.jpg")
+# write(blur2, "blur2.jpg")
 
-# contrast0 = contrast(blur0)
-# contrast1 = contrast(blur1)
-# contrast2 = contrast(blur2)
+
+# 銳化圖像
+contrast0 = contrast(blur0)
+contrast1 = contrast(blur1)
+contrast2 = contrast(blur2)
 # show(contrast0, "contrast0")
 # show(contrast1, "contrast1")
 # show(contrast2, "contrast2")
+# write(contrast0, "contrast0.jpg")
+# write(contrast1, "contrast1.jpg")
+# write(contrast2, "contrast2.jpg")
 
-# thres0 = threshold(blur0)
-# thres1 = threshold(blur1)
-# thres2 = threshold(blur2)
-# show(thres0, "thres0")
-# show(thres1, "thres1")
-# show(thres2, "thres2")
+# 轉二值圖
+thres0 = threshold(contrast0)
+thres1 = threshold(contrast1)
+thres2 = threshold(contrast2)
+show(thres0, "thres0")
+show(thres1, "thres1")
+show(thres2, "thres2")
+write(thres0, "thres0.jpg")
+write(thres1, "thres1.jpg")
+write(thres2, "thres2.jpg")
+
 
 # draw0 = draw_contour(edge0, crop0)
 # draw1 = draw_contour(edge1, crop1)
