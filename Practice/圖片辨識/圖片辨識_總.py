@@ -58,13 +58,13 @@ def edge_detection(img, thres_min = 20, thres_max = 50):
     return canny_
 
 # 2.2 轉成二值圖
-def threshold(img, thres_min = 127, thres_max = 255, method = cv2.THRESH_BINARY):
+def threshold(img, thres_min = 90, thres_max = 255, method = cv2.THRESH_BINARY):
     _, thresh = cv2.threshold(img, thres_min, thres_max, method)
     return thresh
 
 # 3.2 圖像形態學
 def kernel_closed(thresh, mor_method = cv2.MORPH_CLOSE):
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (25, 25))
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
     closed = cv2.morphologyEx(thresh, mor_method, kernel)
     return closed
 
@@ -126,10 +126,10 @@ thres2 = threshold(contrast2)
 # write(thres1, "thres1.jpg")
 # write(thres2, "thres2.jpg")
 
-# 圖像膨脹 & 收縮
-kernel0 = threshold(thres0, cv2.MORPH_TOPHAT)
-kernel1 = threshold(thres1, cv2.MORPH_OPEN)
-kernel2 = threshold(thres2, cv2.MORPH_GRADIENT)
+# 圖像形態學
+kernel0 = kernel_closed(thres0)
+kernel1 = kernel_closed(thres1)
+kernel2 = kernel_closed(thres2)
 # show(kernel0, "kernel0")
 # show(kernel1, "kernel1")
 # show(kernel2, "kernel2")
@@ -137,9 +137,10 @@ kernel2 = threshold(thres2, cv2.MORPH_GRADIENT)
 # write(kernel1, "kernel1.jpg")
 # write(kernel2, "kernel2.jpg")
 
-detail0 = detail(kernel0, iter_dilate = 1)
-detail1 = detail(kernel1, 3)
-detail2 = detail(kernel2)
+# 圖像膨脹 & 腐蝕
+detail0 = detail(kernel0, 5)
+detail1 = detail(kernel1, 6, 3)
+detail2 = detail(kernel2, 4)
 # show(detail0, "detail0")
 # show(detail1, "detail1")
 # show(detail2, "detail2")
