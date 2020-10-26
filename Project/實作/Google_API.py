@@ -56,7 +56,7 @@ radio.grid(row = 4, column = 1)
 # 歷史紀錄
 his_label = tk.Label(win, text = "歷史紀錄: ", font = ft)
 his_label.grid(row = 6, column = 0, sticky = "ne", pady = 20)
-history_text = tk.Text(win, height = 20, width = 60, font = ("標楷體", 9))
+history_text = tk.Text(win, height = 20, width = 60, state = 'disable', font = ("標楷體", 9))
 history_text.grid(row = 6, column = 1, sticky = 'we', pady = 20)
 
 # 翻譯, 清除 按鈕
@@ -68,9 +68,11 @@ def trans_click():
     result = result.text
     _output.set(result)
     
+    history_text.config(state = 'normal')
     history_text.insert("insert", target_text)
     history_text.insert("insert", " -> " + result)
-    history_text.insert("insert", "\n")
+    history_text.insert("insert", '\n')
+    history_text.config(state = 'disable')
 
 def clr_click():
     _input.set("")
