@@ -1,8 +1,0 @@
-Q1. OK
-Q2. OK
-Q3. 1.OK 2.OK
-Q4. 1.NO 2.NO
-Q5. PASS
-Q6. NO (difficulty)
-Q7. 1.OK 2.NO
-Q8 ~ Q10 pass

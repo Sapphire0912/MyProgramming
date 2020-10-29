@@ -1,2 +1,0 @@
-# Kmeans
-# process:

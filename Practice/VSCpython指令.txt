@@ -1,8 +1,0 @@
-安裝模組
-python -m pip install (target module)
-
-安裝指定版本模組
-python -m pip install (target==version)
-
-打包執行檔
-pyinstaller -F (檔案名稱)

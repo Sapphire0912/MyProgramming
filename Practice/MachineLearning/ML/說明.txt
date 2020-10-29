@@ -1,2 +1,0 @@
-<<機器學習實戰 基於Scikit-Learn和TensorFlow>> Ch09之前的學習資料
-<<精通機器學習 使用Scikit-Learn, Keras與TensorFlow>> Ch09的資料
