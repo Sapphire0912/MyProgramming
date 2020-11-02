@@ -1,8 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
--- use IEEE.STD_LOGIC_unsigned.all;
--- use ieee.std_logic_arith.all;
-use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_unsigned.all;
+use ieee.std_logic_arith.all;
 
 entity Video_IN is
 Port ( 
@@ -19,13 +18,13 @@ architecture Behavioral of Video_IN is
     constant HF: integer := 56; -- horizontal front porch
     constant HB: integer := 64; -- horizontal back porch
     constant HS: integer := 120; -- horizontal sync pulse
-    constant HT: integer := HD + HF + HS + HB; -- horizontal total time
+    constant HT: integer := HD + HF + HS + HB -- horizontal total time
 
     constant VD: integer := 600; -- vertical display
     constant VF: integer := 37; -- vertical front porch
     constant VB: integer := 23; -- vertical back porch
     constant VS: integer := 6; -- vertical sync pulse
-    constant VT: integer := VD + VF + VS + VB; -- vertical total time
+    constant VT: integer := VD + VF + VS + VB -- vertical total time
 
     -- ck divider
     signal clk_div_reg, clk_div_next: unsigned(1 downto 0);
