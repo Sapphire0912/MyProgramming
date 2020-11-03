@@ -74,6 +74,7 @@ set rc [catch {
   set_property ip_output_repo C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/video_out_test/video_out_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/video_out_test/video_out_test.runs/synth_1/video_out_test.dcp
+  read_xdc C:/Users/iris2/Desktop/MyProgramming/Laboratory/Master.xdc
   link_design -top video_out_test -part xc7z020clg484-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -162,6 +163,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force video_out_test.mmi }
+  write_bitstream -force video_out_test.bit 
+  catch {write_debug_probes -quiet -force video_out_test}
+  catch {file copy -force video_out_test.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

@@ -6,9 +6,9 @@ use ieee.std_logic_arith.all;
 entity video_out_test is
 Port ( 
     clk_ori, reset: in std_logic;
-    hsync, vsync, comp_sync: out std_logic;
-    video_on, p_tick: out std_logic;
-    Rout, Gout, Bout: out std_logic_vector(0 to 7)
+    hsync, vsync: out std_logic
+--    video_on, p_tick: out std_logic;
+--    Rout, Gout, Bout: out std_logic_vector(0 to 7)
 );
 end video_out_test;
 
