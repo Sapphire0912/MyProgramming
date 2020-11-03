@@ -1,5 +1,5 @@
 ## Clock Source
-set_property PACKAGE_PIN Y9 IOSTANDARD LVCMOS33 [get_ports {ck}];  # "GCLK"
+set_property PACKAGE_PIN Y9 IOSTANDARD LVCMOS33 [get_ports {clk}];  # "GCLK"
 
 ## HDMI Output
 #set_property PACKAGE_PIN Y13 [get_ports {hdmi_data[0]}]
@@ -58,7 +58,7 @@ set_property PACKAGE_PIN Y9 IOSTANDARD LVCMOS33 [get_ports {ck}];  # "GCLK"
 #set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS25} [get_ports {leds_8bits_tri_o[3]}]
 #set_property -dict {PACKAGE_PIN U22 IOSTANDARD LVCMOS25} [get_ports {leds_8bits_tri_o[2]}]
 #set_property -dict {PACKAGE_PIN T21 IOSTANDARD LVCMOS25} [get_ports {leds_8bits_tri_o[1]}]
-set_property -dict {PACKAGE_PIN T22 IOSTANDARD LVCMOS33} [get_ports {ledreg}]
+#set_property -dict {PACKAGE_PIN T22 IOSTANDARD LVCMOS33} [get_ports {ledreg}]
 
 ## User DIP Switches
 #set_property -dict {PACKAGE_PIN F22 IOSTANDARD LVCMOS25} [get_ports {sws_8bits_tri_i[0]}]
@@ -74,7 +74,7 @@ set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {sw}]
 #set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS25} [get_ports {btns_5bits_tri_i[0]}]
 #set_property -dict {PACKAGE_PIN R16 IOSTANDARD LVCMOS25} [get_ports {btns_5bits_tri_i[1]}]
 #set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS25} [get_ports {btns_5bits_tri_i[2]}]
-set_property -dict {PACKAGE_PIN R18 IOSTANDARD LVCMOS25} [get_ports {reset}]
+#set_property -dict {PACKAGE_PIN R18 IOSTANDARD LVCMOS25} [get_ports {reset}]
 #set_property -dict {PACKAGE_PIN T18 IOSTANDARD LVCMOS25} [get_ports {btns_5bits_tri_i[4]}]
 
 ## FMC
@@ -152,31 +152,31 @@ set_property -dict {PACKAGE_PIN R18 IOSTANDARD LVCMOS25} [get_ports {reset}]
 #set_property PACKAGE_PIN B21 [get_ports {la_in_p[16]}]
 
 ## JA2 Pi-CON
-#set_property PACKAGE_PIN Y6   [get_ports {GPIO_4_GCLK}] 
-#set_property PACKAGE_PIN AB10 [get_ports {GPIO_17}]  
-#set_property PACKAGE_PIN AB9  [get_ports {GPIO_27}] 
-#set_property PACKAGE_PIN AA6  [get_ports {GPIO_22}] 
-#set_property PACKAGE_PIN Y10  [get_ports {GPIO_9}]  
-#set_property PACKAGE_PIN Y11  [get_ports {GPIO_10}]
-#set_property PACKAGE_PIN AB6  [get_ports {GPIO_11}] 
-#set_property PACKAGE_PIN Y4   [get_ports {GPIO_5}] 
-#set_property PACKAGE_PIN AA4  [get_ports {GPIO_6}] 
-#set_property PACKAGE_PIN R6   [get_ports {GPIO_13}] 
-#set_property PACKAGE_PIN T6   [get_ports {GPIO_19}]
-#set_property PACKAGE_PIN U4   [get_ports {GPIO_26}]  
+set_property PACKAGE_PIN Y6   [get_ports {GPIO_4_GCLK}] 
+set_property PACKAGE_PIN AB10 [get_ports {GPIO_17}]  
+set_property PACKAGE_PIN AB9  [get_ports {GPIO_27}] 
+set_property PACKAGE_PIN AA6  [get_ports {GPIO_22}] 
+set_property PACKAGE_PIN Y10  [get_ports {GPIO_9}]  
+set_property PACKAGE_PIN Y11  [get_ports {GPIO_10}]
+set_property PACKAGE_PIN AB6  [get_ports {GPIO_11}] 
+set_property PACKAGE_PIN Y4   [get_ports {GPIO_5}] 
+set_property PACKAGE_PIN AA4  [get_ports {GPIO_6}] 
+set_property PACKAGE_PIN R6   [get_ports {GPIO_13}] 
+set_property PACKAGE_PIN T6   [get_ports {GPIO_19}]
+set_property PACKAGE_PIN U4   [get_ports {GPIO_26}]  
 
-#set_property PACKAGE_PIN AA11 [get_ports {GPIO_14}]  
-#set_property PACKAGE_PIN AB11 [get_ports {GPIO_15}]  
-#set_property PACKAGE_PIN AA7  [get_ports {GPIO_18}] 
-#set_property PACKAGE_PIN AB2  [get_ports {GPIO_23}] 
-#set_property PACKAGE_PIN AB1  [get_ports {GPIO_24}] 
-#set_property PACKAGE_PIN AB5  [get_ports {GPIO_25}] 
-#set_property PACKAGE_PIN AB4  [get_ports {GPIO_8}] 
-#set_property PACKAGE_PIN AB7  [get_ports {GPIO_7}]  
-#set_property PACKAGE_PIN T4   [get_ports {GPIO_12}]  
-#set_property PACKAGE_PIN V5   [get_ports {GPIO_16}]
-#set_property PACKAGE_PIN V4   [get_ports {GPIO_20}] 
-#set_property PACKAGE_PIN U6   [get_ports {GPIO_21}]
+set_property PACKAGE_PIN AA11 [get_ports {GPIO_14}]  
+set_property PACKAGE_PIN AB11 [get_ports {GPIO_15}]  
+set_property PACKAGE_PIN AA7  [get_ports {GPIO_18}] 
+set_property PACKAGE_PIN AB2  [get_ports {GPIO_23}] 
+set_property PACKAGE_PIN AB1  [get_ports {GPIO_24}] 
+set_property PACKAGE_PIN AB5  [get_ports {GPIO_25}] 
+set_property PACKAGE_PIN AB4  [get_ports {GPIO_8}] 
+set_property PACKAGE_PIN AB7  [get_ports {GPIO_7}]  
+set_property PACKAGE_PIN T4   [get_ports {GPIO_12}]  
+set_property PACKAGE_PIN V5   [get_ports {GPIO_16}]
+set_property PACKAGE_PIN V4   [get_ports {GPIO_20}] 
+set_property PACKAGE_PIN U6   [get_ports {GPIO_21}]
 
 ## DS1
 #set_property PACKAGE_PIN U10  [get_ports {DSI_CLK_N}]  
