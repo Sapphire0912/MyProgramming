@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1604061576">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1604545994">
   <File Type="PA-TCL" Name="pre_test.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="pre_test_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="pre_test_reports.tcl"/>
@@ -25,7 +25,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../實驗室資料/FPGA_Code/Example/Master.xdc">
+    <File Path="$PPRDIR/../../../Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -42,9 +42,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

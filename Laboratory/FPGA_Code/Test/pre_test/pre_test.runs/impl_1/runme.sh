@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/iris2/Desktop/MyProgramming/FPGA_Code/Test/pre_test/pre_test.runs/impl_1'
+HD_PWD='C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/pre_test/pre_test.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log pre_test.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source pre_test.tcl -notrace
 
 

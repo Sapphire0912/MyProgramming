@@ -32,6 +32,7 @@ architecture Behavioral of video_out_test is
     --
     signal h_pol: std_logic := '0';
     signal v_pol: std_logic := '0';
+    
 begin
     -- clk divider
     process (clk_ori, reset)
@@ -80,5 +81,5 @@ begin
                 vsync <= v_pol;
             end if;
         end if;
-    end process;         
+    end process;
 end Behavioral;

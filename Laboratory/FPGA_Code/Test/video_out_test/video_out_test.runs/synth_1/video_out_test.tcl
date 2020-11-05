@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,8 +39,8 @@ read_vhdl -library xil_defaultlib C:/Users/iris2/Desktop/MyProgramming/Laborator
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/iris2/Desktop/MyProgramming/Laboratory/Master.xdc
-set_property used_in_implementation false [get_files C:/Users/iris2/Desktop/MyProgramming/Laboratory/Master.xdc]
+read_xdc C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/video_out_test/video_out_test.xdc
+set_property used_in_implementation false [get_files C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/video_out_test/video_out_test.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

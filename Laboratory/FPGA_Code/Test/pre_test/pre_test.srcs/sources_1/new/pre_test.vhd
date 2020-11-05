@@ -18,8 +18,10 @@ begin
     begin
         if reset = '1' then
             ledreg <= '0';
-        elsif sw = '0' and rising_edge(ck) then
-            ledreg <= '1';
+        elsif rising_edge(ck) then
+            if sw = '0' then
+                ledreg <= '1';
+            end if;  
         end if;
     end process;
 end Behavioral;

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Nov  5 11:17:51 2020
+# Process ID: 4392
+# Current directory: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/pre_test/pre_test.runs/impl_2
+# Command line: vivado.exe -log pre_test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source pre_test.tcl -notrace
+# Log file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/pre_test/pre_test.runs/impl_2/pre_test.vdi
+# Journal file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/pre_test/pre_test.runs/impl_2\vivado.jou
+#-----------------------------------------------------------
+source pre_test.tcl -notrace
