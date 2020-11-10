@@ -8,7 +8,6 @@ entity vga_rgb_test is
         clk_ori, reset: in std_logic;
         hsync, vsync: out std_logic;
 
-        red, green, blue: in std_logic;
         horizontal, vertical: out std_logic_vector(9 downto 0);
         Rout, Gout, Bout, H, V: out std_logic
     );
@@ -85,9 +84,9 @@ architecture rgb of vga_rgb_test is
                 vsync <= v_pol;
             end if;
         end if;
-    end process;
 
-    process(rgb)
+
+        
     end process;
 
 end architecture;

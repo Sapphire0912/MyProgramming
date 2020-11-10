@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Nov  5 18:33:57 2020
+| Date             : Sat Nov  7 11:57:56 2020
 | Host             : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command          : report_power -file video_out_test_power_routed.rpt -pb video_out_test_power_summary_routed.pb -rpx video_out_test_power_routed.rpx
 | Design           : video_out_test
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.573        |
-| Design Power Budget (W)  | Unspecified* |
-| Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.460        |
-| Device Static (W)        | 0.113        |
-| Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 78.4         |
-| Junction Temperature (C) | 31.6         |
-| Confidence Level         | Low          |
-| Setting File             | ---          |
-| Simulation Activity File | ---          |
-| Design Nets Matched      | NA           |
-+--------------------------+--------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 11.544 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 10.504                           |
+| Device Static (W)        | 1.040                            |
+| Effective TJA (C/W)      | 11.5                             |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,15 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.179 |       85 |       --- |             --- |
-|   LUT as Logic |     0.167 |       48 |     53200 |            0.09 |
-|   Register     |     0.007 |       24 |    106400 |            0.02 |
+| Slice Logic    |     1.106 |      263 |       --- |             --- |
+|   LUT as Logic |     0.960 |      188 |     53200 |            0.35 |
+|   CARRY4       |     0.131 |       20 |     13300 |            0.15 |
+|   Register     |     0.010 |       27 |    106400 |            0.03 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |        1 |       --- |             --- |
-| Signals        |     0.176 |       64 |       --- |             --- |
-| I/O            |     0.105 |        4 |       200 |            2.00 |
-| Static Power   |     0.113 |          |           |                 |
-| Total          |     0.573 |          |           |                 |
+|   Others       |     0.000 |        4 |       --- |             --- |
+| Signals        |     1.380 |      412 |       --- |             --- |
+| DSPs           |     4.556 |        6 |       220 |            2.73 |
+| I/O            |     3.462 |        7 |       200 |            3.50 |
+| Static Power   |     1.040 |          |           |                 |
+| Total          |    11.544 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,20 +72,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.368 |       0.359 |      0.009 |
-| Vccaux    |       1.800 |     0.015 |       0.004 |      0.011 |
-| Vcco33    |       3.300 |     0.030 |       0.029 |      0.001 |
-| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vccint    |       1.000 |     7.345 |       7.046 |      0.299 |
+| Vccaux    |       1.800 |     0.243 |       0.144 |      0.100 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     1.281 |       1.280 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.026 |       0.000 |      0.026 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.020 |       0.000 |      0.020 |
+| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,7 +146,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| video_out_test |     0.460 |
+| video_out_test |    10.504 |
 +----------------+-----------+
 
 

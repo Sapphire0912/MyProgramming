@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Nov  5 18:33:56 2020
+| Date         : Sat Nov  7 11:57:55 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file video_out_test_methodology_drc_routed.rpt -pb video_out_test_methodology_drc_routed.pb -rpx video_out_test_methodology_drc_routed.rpx
 | Design       : video_out_test
@@ -23,133 +23,179 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 24
+             Violations found: 33
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 24         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 27         |
+| SYNTH-10  | Warning          | Wide multiplier             | 6          |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin clk_div_reg/C is not reached by a timing clock
+The clock pin Bout_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[0]/C is not reached by a timing clock
+The clock pin Gout_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[10]/C is not reached by a timing clock
+The clock pin Rout_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[1]/C is not reached by a timing clock
+The clock pin clk_div_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[2]/C is not reached by a timing clock
+The clock pin h_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[3]/C is not reached by a timing clock
+The clock pin h_count_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[4]/C is not reached by a timing clock
+The clock pin h_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[5]/C is not reached by a timing clock
+The clock pin h_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[6]/C is not reached by a timing clock
+The clock pin h_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[7]/C is not reached by a timing clock
+The clock pin h_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[8]/C is not reached by a timing clock
+The clock pin h_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin h_count_reg[9]/C is not reached by a timing clock
+The clock pin h_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin hsync_reg/C is not reached by a timing clock
+The clock pin h_count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[0]/C is not reached by a timing clock
+The clock pin h_count_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[1]/C is not reached by a timing clock
+The clock pin h_count_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[2]/C is not reached by a timing clock
+The clock pin hsync_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[3]/C is not reached by a timing clock
+The clock pin v_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[4]/C is not reached by a timing clock
+The clock pin v_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[5]/C is not reached by a timing clock
+The clock pin v_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[6]/C is not reached by a timing clock
+The clock pin v_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[7]/C is not reached by a timing clock
+The clock pin v_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[8]/C is not reached by a timing clock
+The clock pin v_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin v_count_reg[9]/C is not reached by a timing clock
+The clock pin v_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
+The clock pin v_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Critical Warning
+Non-clocked sequential cell  
+The clock pin v_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Critical Warning
+Non-clocked sequential cell  
+The clock pin v_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Critical Warning
+Non-clocked sequential cell  
 The clock pin vsync_reg/C is not reached by a timing clock
+Related violations: <none>
+
+SYNTH-10#1 Warning
+Wide multiplier  
+Detected multiplier at Rout2 of size 15x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#2 Warning
+Wide multiplier  
+Detected multiplier at Rout2__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#3 Warning
+Wide multiplier  
+Detected multiplier at Rout2__1 of size 18x15, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#4 Warning
+Wide multiplier  
+Detected multiplier at Rout2__2 of size 15x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#5 Warning
+Wide multiplier  
+Detected multiplier at Rout2__3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#6 Warning
+Wide multiplier  
+Detected multiplier at Rout2__4 of size 18x15, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 

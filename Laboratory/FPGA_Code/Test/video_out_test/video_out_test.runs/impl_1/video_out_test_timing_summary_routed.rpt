@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Nov  5 18:33:57 2020
+| Date         : Sat Nov  7 11:57:56 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file video_out_test_timing_summary_routed.rpt -pb video_out_test_timing_summary_routed.pb -rpx video_out_test_timing_summary_routed.rpx -warn_on_violation
 | Design       : video_out_test
@@ -56,7 +56,7 @@ Table of Contents
 --------------------
  There is 1 register/latch pin with no clock driven by root clock pin: clk_ori (HIGH)
 
- There are 23 register/latch pins with no clock driven by root clock pin: clk_div_reg/Q (HIGH)
+ There are 26 register/latch pins with no clock driven by root clock pin: clk_div_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -71,7 +71,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 48 pins that are not constrained for maximum delay. (HIGH)
+ There are 54 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -85,7 +85,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 2 ports with no output delay specified. (HIGH)
+ There are 5 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
