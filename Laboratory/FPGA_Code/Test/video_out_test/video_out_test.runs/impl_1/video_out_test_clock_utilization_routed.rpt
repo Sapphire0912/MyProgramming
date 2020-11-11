@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Nov  7 11:57:56 2020
+| Date         : Wed Nov 11 15:06:14 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file video_out_test_clock_utilization_routed.rpt
 | Design       : video_out_test
@@ -69,7 +69,7 @@ Table of Contents
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+---------------+---------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin    | Net     |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+---------------+---------||
-| 0        | FDCE/Q          | None       | SLICE_X11Y24/AFF | X0Y0         |          26 |               1 |              |       | clk_div_reg/Q | clk_div - Static -
+| 0        | FDCE/Q          | None       | SLICE_X18Y18/AFF | X0Y0         |          26 |               1 |              |       | clk_div_reg/Q | clk_div - Static -
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+---------------+---------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)

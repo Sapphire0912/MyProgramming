@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1604721340">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1605078216">
   <File Type="BITSTR-BMM" Name="video_out_test_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="video_out_test_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="video_out_test_timing_summary_init.rpt"/>

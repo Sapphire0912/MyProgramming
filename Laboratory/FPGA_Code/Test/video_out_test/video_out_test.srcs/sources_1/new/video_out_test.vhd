@@ -28,9 +28,9 @@ architecture Behavioral of video_out_test is
     
     -- Draw Rectangle(4 point)
     constant h_rect_left: integer := 100;
-    constant h_rect_right: integer := 200;
+    constant h_rect_right: integer := 180;
     constant v_rect_upper: integer := 100;
-    constant v_rect_lower: integer := 200;
+    constant v_rect_lower: integer := 180;
     
     -- Draw Circle(Center Coordinate)
     constant ox: integer := 100;
@@ -40,13 +40,14 @@ architecture Behavioral of video_out_test is
     -- Draw Right Triangle(3 point)
     constant bottom_x1: integer := 300;
     constant bottom_x2: integer := 400;
-    constant high_y1: integer := 225;
+    constant high_y1: integer := 200;
     constant high_y2: integer := 300;
 
     constant dx: integer := bottom_x2 - bottom_x1;
     constant dy: integer := high_y2 - high_y1;
 
-    constant A: integer := dx * dy;
+    -- Assume Slope = 1
+    constant slope: integer := 1;
     
     -- clk
     signal clk_div: std_logic;
@@ -72,9 +73,6 @@ begin
         
         -- Draw Circle(point to center distance)
         variable rx, ry: integer;
-
-        -- Draw Triangle
-        variable area, a, b, c: integer;
         
     begin
         if (reset = '1') then
@@ -129,10 +127,11 @@ begin
                 Bout <= '0';
             -- Triangle
             elsif (h_count > bottom_x1 and h_count <= bottom_x2 and v_count > high_y1 and v_count <= high_y2) then
+                if (h_count + high_y1 - v_count - bottom_x1 = 0) then
                     Rout <= '0';
-                    Gout <= '1';
+                    Gout <= '0';
                     Bout <= '1';
-               
+                end if;
             else
                 Rout <= '0';
                 Gout <= '0';

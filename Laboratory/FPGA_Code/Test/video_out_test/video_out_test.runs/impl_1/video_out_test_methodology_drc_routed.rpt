@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sat Nov  7 11:57:55 2020
+| Date         : Wed Nov 11 15:06:13 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file video_out_test_methodology_drc_routed.rpt -pb video_out_test_methodology_drc_routed.pb -rpx video_out_test_methodology_drc_routed.rpx
 | Design       : video_out_test
@@ -40,12 +40,12 @@ Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin Gout_reg/C is not reached by a timing clock
+The clock pin Rout_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin Rout_reg/C is not reached by a timing clock
+The clock pin Rout_reg_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning

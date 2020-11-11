@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sat Nov  7 11:57:56 2020
+| Date             : Wed Nov 11 15:06:14 2020
 | Host             : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command          : report_power -file video_out_test_power_routed.rpt -pb video_out_test_power_summary_routed.pb -rpx video_out_test_power_routed.rpx
 | Design           : video_out_test
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 11.544 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 13.646 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 10.504                           |
+| Dynamic (W)              | 12.605                           |
 | Device Static (W)        | 1.040                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.106 |      263 |       --- |             --- |
-|   LUT as Logic |     0.960 |      188 |     53200 |            0.35 |
-|   CARRY4       |     0.131 |       20 |     13300 |            0.15 |
-|   Register     |     0.010 |       27 |    106400 |            0.03 |
+| Slice Logic    |     1.549 |      272 |       --- |             --- |
+|   LUT as Logic |     1.373 |      193 |     53200 |            0.36 |
+|   CARRY4       |     0.156 |       24 |     13300 |            0.18 |
+|   Register     |     0.014 |       27 |    106400 |            0.03 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     1.380 |      412 |       --- |             --- |
-| DSPs           |     4.556 |        6 |       220 |            2.73 |
-| I/O            |     3.462 |        7 |       200 |            3.50 |
+| Signals        |     1.911 |      425 |       --- |             --- |
+| DSPs           |     5.768 |        6 |       220 |            2.73 |
+| I/O            |     3.378 |        7 |       200 |            3.50 |
 | Static Power   |     1.040 |          |           |                 |
-| Total          |    11.544 |          |           |                 |
+| Total          |    13.646 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,10 +72,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     7.345 |       7.046 |      0.299 |
-| Vccaux    |       1.800 |     0.243 |       0.144 |      0.100 |
+| Vccint    |       1.000 |     9.530 |       9.231 |      0.299 |
+| Vccaux    |       1.800 |     0.240 |       0.140 |      0.100 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     1.281 |       1.280 |      0.001 |
+| Vcco25    |       2.500 |     1.250 |       1.249 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -146,7 +146,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| video_out_test |    10.504 |
+| video_out_test |    12.605 |
 +----------------+-----------+
 
 
