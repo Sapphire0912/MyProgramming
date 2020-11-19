@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Nov 17 19:43:54 2020
+| Date         : Thu Nov 19 18:05:06 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file video_out_test_timing_summary_routed.rpt -pb video_out_test_timing_summary_routed.pb -rpx video_out_test_timing_summary_routed.rpx -warn_on_violation
 | Design       : video_out_test
@@ -54,11 +54,113 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 24 register/latch pins with no clock driven by root clock pin: ck_ori (HIGH)
+ There are 23 register/latch pins with no clock driven by root clock pin: ck_ori (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[4]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[5]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[6]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[7]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[8]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: circle_o_reg[9]/Q (HIGH)
 
  There are 23 register/latch pins with no clock driven by root clock pin: clk_div_reg/Q (HIGH)
 
- There are 195 register/latch pins with no clock driven by root clock pin: clk_freq_reg/Q (HIGH)
+ There are 96 register/latch pins with no clock driven by root clock pin: freq_reg[21]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[10]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[4]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[5]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[6]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[7]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[8]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: h_count_reg[9]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[4]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[5]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[6]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[7]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[8]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: rect_left_reg[9]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[4]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[5]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[6]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[7]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[8]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: triangle_x1_reg[9]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[0]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[1]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[2]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[3]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[4]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[5]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[6]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[7]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[8]/Q (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: v_count_reg[9]/Q (HIGH)
 
 
 2. checking constant_clock
@@ -73,7 +175,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 486 pins that are not constrained for maximum delay. (HIGH)
+ There are 286 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

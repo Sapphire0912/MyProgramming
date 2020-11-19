@@ -2,7 +2,7 @@ set_property SRC_FILE_INFO {cfile:C:/Users/iris2/Desktop/MyProgramming/Laborator
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y9 [get_ports {ck_ori}]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets reset_IBUF]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_IBUF]
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS25} [get_ports {rst}]
 set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]

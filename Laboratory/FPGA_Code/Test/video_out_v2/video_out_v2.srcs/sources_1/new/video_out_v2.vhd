@@ -26,22 +26,7 @@ architecture Behavioral of video_out_test is
     constant VS: integer := 6;
     constant VT: integer := VD + VF + VB + VS;
     
-    -- Draw Rectangle(4 point)
-    -- constant h_rect_left: integer := 100;
-    -- constant h_rect_right: integer := 180;
-    -- constant v_rect_upper: integer := 100;
-    -- constant v_rect_lower: integer := 180;
-    
-    -- Draw Circle(Center Coordinate)
-    -- constant ox: integer := 100;
-    -- constant oy: integer := 400;
     constant radius: integer := 50;
-
-    -- Draw Right Triangle(3 point)
-    -- constant bottom_x1: integer := 300;
-    -- constant bottom_x2: integer := 400;
-    -- constant high_y1: integer := 200;
-    -- constant high_y2: integer := 300;
 
     -- Assume Slope = 1
     constant slope: integer := 1;
@@ -55,6 +40,11 @@ architecture Behavioral of video_out_test is
     -- clk divider
     signal freq: std_logic_vector(21 downto 0);
     signal clk_freq: std_logic;
+
+    -- send value
+    signal h_left: std_logic_vector(9 downto 0);
+    signal cir_o: std_logic_vector(9 downto 0);
+    signal tri_x1: std_logic_vector(9 downto 0);
     
 begin
     -- clk divider
@@ -72,15 +62,34 @@ begin
         if (rst = '1') then
             freq <= (others => '0');
         elsif (ck_ori 'event and ck_ori = '1') then
-            freq <= freq + 1;
-            clk_freq <= freq(21);
+                freq <= freq + 1;
         end if;
+        clk_freq <= freq(21);
     end process;
-
+    
     process (clk_div, rst)
         -- horizontal/vertical counter
         variable h_count: integer range 0 to HT - 1 := 0;
         variable v_count: integer range 0 to VT - 1 := 0;
+
+        -- Dynamic Rectangle
+        variable h_rect_left: integer  := 0;
+        variable v_rect_upper: integer := 0;
+        variable v_rect_lower: integer := 80;
+                        
+         -- Dynamic Circle
+        variable ox: integer := 50;
+        variable oy: integer := 200;
+        -- Draw Circle(point to center distance)
+        variable rx, ry: integer;
+                        
+        -- Dynamic Triangle
+        variable bottom_x1: integer := 0;
+        variable bottom_x2: integer := 100;
+        variable high_y1: integer := 400;
+        variable high_y2: integer := 500;
+
+
     begin
         if (rst = '1') then
             h_count := 0;
@@ -113,87 +122,99 @@ begin
                 v_sync <= not v_pol;
             else
                 v_sync <= v_pol;
-            end if;     
+            end if;
+        end if;
+    
+        h_rect_left := conv_integer(h_left);
+        ox := conv_integer(cir_o);
+        rx := h_count - ox;
+        ry := v_count - oy;
+        bottom_x1 := conv_integer(tri_x1);
+
+        -- -- Rectangle
+        if (h_count > h_rect_left and h_count <= h_rect_left + 80 and v_count > v_rect_upper and v_count <= v_rect_lower) then
+            r <= '1';
+            g <= '1';
+            b <= '1';
+
+        -- -- Circle
+        elsif (rx * rx + ry * ry <= radius * radius) then
+            r <= '1';
+            g <= '1';
+            b <= '0';
+
+        -- -- Triangle
+        elsif (h_count > bottom_x1 and h_count <= bottom_x1 + 100 and v_count > high_y1 and v_count <= high_y2) then
+            if (h_count + high_y1 - v_count - bottom_x1 >= 0) then
+                r <= '0';
+                g <= '0';
+                b <= '1';
+            end if;
+        else
+            r <= '0';
+            g <= '0';
+            b <= '0';
         end if;
     end process;
 
     process (clk_freq, rst)
-        -- Count
-        variable h_display: integer range 0 to HD - 1 := 0;
-        variable v_display: integer range 0 to VD - 1 := 0;
-        -- Dynamic Rectangle
-        variable h_rect_left: integer;
-        variable h_rect_right: integer;
-        variable v_rect_upper: integer;
-        variable v_rect_lower: integer;
-                
-        -- Dynamic Circle
-        variable ox: integer;
-        variable oy: integer;
-        -- Draw Circle(point to center distance)
-        variable rx, ry: integer;
-                
-        -- Dynamic Triangle
-        variable bottom_x1: integer;
-        variable bottom_x2: integer;
-        variable high_y1: integer;
-        variable high_y2: integer;
-    
+        -- state 0 positive, 1 negative
+        variable rect_left: integer := 0;
+        variable rect_state: integer := 0;
+        variable circle_o: integer := 50;
+        variable circle_state: integer := 0;
+        variable triangle_x1: integer := 0;
+        variable triangle_state: integer := 0;
     begin
-        if(rst = '1') then
-            r <= '0';
-            g <= '0';
-            b <= '0';
-
-            -- initial coordinate
-            h_rect_left := 0;
-            h_rect_right := 80;
-            v_rect_upper := 0;
-            v_rect_lower := 80;
-            ox := 0;
-            oy := 200;
-            bottom_x1 := 0;
-            bottom_x2 := 100;
-            high_y1 := 400;
-            high_y2 := 500;
+        if (rst = '1') then
+            rect_left := 0;
+            circle_o := 50;
+            triangle_x1 := 0;
+            rect_state := 0;
+            circle_state := 0;
+            triangle_state := 0;
 
         elsif (clk_freq 'event and clk_freq = '1') then
-            rx := h_display - ox;
-            ry := v_display - oy;
-        
-            -- Rectangle
-            if (h_display > h_rect_left and h_display <= h_rect_right and v_display > v_rect_upper and v_display <= v_rect_lower) then
-                r <= '1';
-                g <= '1';
-                b <= '1';
-            -- Circle
-            elsif (rx * rx + ry * ry <= radius * radius) then
-                r <= '1';
-                g <= '1';
-                b <= '0';
-            -- Triangle
-            elsif (h_display > bottom_x1 and h_display <= bottom_x2 and v_display > high_y1 and v_display <= high_y2) then
-                if (h_display + high_y1 - v_display - bottom_x1 = 0) then
-                    r <= '0';
-                    g <= '0';
-                    b <= '1';
-                end if;
-            else
-                r <= '0';
-                g <= '0';
-                b <= '0';
+            if (rect_left + 80 > 799) then
+                rect_state := 1;
+            elsif (rect_left <= 0) then
+                rect_state := 0;
             end if;
-            h_rect_left := h_rect_left + 1;
-            h_rect_right := h_rect_right + 1;
-            v_rect_upper := v_rect_upper + 1;
-            v_rect_lower := v_rect_lower + 1;
-            ox := ox + 1;
-            oy := oy + 1;
-            bottom_x1 := bottom_x1 + 1;
-            bottom_x2 := bottom_x2 + 1;
-            high_y1 := high_y1 + 1;
-            high_y2 := high_y2 +1;
+
+            if (circle_o + 50 > 799) then
+                circle_state := 1;
+            elsif (circle_o <= 50) then
+                circle_state := 0;
+            end if;
+
+            if (triangle_x1 + 100 > 799) then
+                triangle_state := 1;
+            elsif (triangle_x1 <= 0) then
+                triangle_state := 0;
+            end if;
+
+            if (rect_state = 0) then
+                rect_left := rect_left + 1;
+            else
+                rect_left := rect_left - 1;
+            end if;
+            
+            if (circle_state = 0) then
+                circle_o := circle_o + 1;
+            else
+                circle_o := circle_o - 1;
+            end if;
+
+            if (triangle_state = 0) then
+                triangle_x1 := triangle_x1 + 1;
+            else
+                triangle_x1 := triangle_x1 - 1;
+            end if;
+
         end if;
+        h_left <= conv_std_logic_vector(rect_left, 10);
+        cir_o <= conv_std_logic_vector(circle_o, 10);
+        tri_x1 <= conv_std_logic_vector(triangle_x1, 10);
     end process;
 
 end Behavioral;
