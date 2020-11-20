@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1605780165">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1605865419">
   <File Type="PA-TCL" Name="video_out_test.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="video_out_test_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="video_out_test_reports.tcl"/>

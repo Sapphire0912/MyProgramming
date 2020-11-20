@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Nov 19 18:04:28 2020
+| Date         : Fri Nov 20 17:45:35 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file video_out_test_control_sets_placed.rpt
 | Design       : video_out_test
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     5 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    16 |
+| Unused register locations in slices containing registers |    22 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -59,7 +59,7 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               2 |            2 |
-| No           | No                    | Yes                    |             142 |           41 |
+| No           | No                    | Yes                    |             144 |           45 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
@@ -75,9 +75,9 @@ Table of Contents
 +-------------------+---------------+------------------+------------------+----------------+
 |  b_reg/G0         |               |                  |                1 |              1 |
 |  r_reg/G0         |               |                  |                1 |              1 |
-|  clk_div          |               | rst_IBUF         |               10 |             23 |
-|  ck_ori_IBUF_BUFG |               | rst_IBUF         |                7 |             23 |
-|  clk_BUFG         |               | rst_IBUF         |               24 |             96 |
+|  ck_ori_IBUF_BUFG |               | rst_IBUF         |                7 |             22 |
+|  clk_div          |               | rst_IBUF         |               11 |             23 |
+|  clk_BUFG         |               | rst_IBUF         |               27 |             99 |
 +-------------------+---------------+------------------+------------------+----------------+
 
 

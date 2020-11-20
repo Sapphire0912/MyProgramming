@@ -1,0 +1,429 @@
+Release 14.7 - par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sat Dec 01 14:20:46 2018
+
+  SmartGuide Results
+  ------------------
+  This section describes the guide results after invoking the Router. This
+  report accurately reflects the differences between the input design
+  and the guide design.
+
+  Number of Components in the input design    |    393
+    Number of guided Components               |    354 out of    393  90.1%
+    Number of re-implemented Components       |     19 out of    393   4.8%
+    Number of new/changed Components          |     20 out of    393   5.1%
+  Number of Nets in the input design          |   1241
+    Number of guided Nets                     |    891 out of   1241  71.8%
+    Number of partially guided Nets           |    107 out of   1241   8.6%
+    Number of re-routed Nets                  |    206 out of   1241  16.6%
+    Number of new/changed Nets                |     37 out of   1241   3.0%
+
+
+The following Components were re-implemented.
+---------------------------------------------
+ N106 : SLICE_X16Y39.
+ video_in_process_RGB_0/inst_LPM_MUX20_5_f7 : SLICE_X23Y40.
+ video_in_process_RGB_0/Mram_buf_vga_G13_RAMD_O : SLICE_X22Y40.
+ video_in_process_RGB_0/YCR<18> : SLICE_X29Y39.
+ video_in_process_RGB_0/Mram_buf_vga_R18_RAMD_O : SLICE_X30Y36.
+ video_in_process_RGB_0/video_in_1/video_start_en_s : SLICE_X33Y39.
+ video_in_process_RGB_0/video_error : SLICE_X36Y40.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<4> : SLICE_X41Y38.
+ video_in_process_RGB_0/video_r_out<7> : SLICE_X43Y45.
+ video_in_process_RGB_0/video_gray_out<7> : SLICE_X46Y54.
+ video_in_process_RGB_0/video_b_out<7> : SLICE_X51Y42.
+ video_in_process_RGB_0/video_gray_out<5> : SLICE_X51Y54.
+ video_in_process_RGB_0/VGA_1/hsync : SLICE_X50Y44.
+ video_in_process_RGB_0/N185 : SLICE_X54Y42.
+ video_in_process_RGB_0/video_b_out<5> : SLICE_X55Y39.
+ video_in_process_RGB_0/video_g_out<5> : SLICE_X55Y40.
+ g<7> : SLICE_X56Y46.
+ video_in_process_RGB_0/video_r_out<5> : SLICE_X59Y43.
+ video_in_process_RGB_0/VGA_1/vsync : SLICE_X61Y41.
+
+
+The following Components are new/changed.
+-----------------------------------------
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o_cy<4> : SLICE_X57Y42.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_hs_cnt_s[31]_LessThan_78_o_cy<3> : SLICE_X49Y44.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o_cy<3> : SLICE_X57Y41.
+ video_in_process_RGB_0/video_in_1/video_sav_state_FSM_FFd2-In2 : SLICE_X20Y39.
+ video_in_process_RGB_0/_n0284<4> : SLICE_X20Y40.
+ video_in_process_RGB_0/Mmux__n0279119 : SLICE_X23Y36.
+ video_in_process_RGB_0/_n0284<5> : SLICE_X23Y37.
+ video_in_process_RGB_0/Mmux__n0279114 : SLICE_X23Y38.
+ video_in_process_RGB_0/_n0284<1> : SLICE_X23Y39.
+ video_in_process_RGB_0/Mmux__n02791111 : SLICE_X26Y35.
+ video_in_process_RGB_0/Mmux__n0279118 : SLICE_X27Y33.
+ video_in_process_RGB_0/_n0288<5> : SLICE_X27Y36.
+ video_in_process_RGB_0/Mmux__n0279111 : SLICE_X28Y37.
+ video_in_process_RGB_0/Mmux__n02791110 : SLICE_X30Y35.
+ video_in_process_RGB_0/_n0288<2> : SLICE_X31Y36.
+ video_in_process_RGB_0/Mmux__n0279116 : SLICE_X32Y36.
+ video_in_process_RGB_0/_n0280<5> : SLICE_X33Y38.
+ video_in_process_RGB_0/_n0276_inv : SLICE_X35Y39.
+ video_in_process_RGB_0/Mmux__n027911 : SLICE_X42Y39.
+ Mcompar_GND_6_o_vga_hs_cnt[31]_LessThan_4_o_cy<5> : SLICE_X49Y45.
+
+
+The following Nets were re-routed.
+----------------------------------
+ video_in_process_RGB_0/VGA_1/Mcompar_vga_hs_cnt_s[31]_GND_17_o_LessThan_13_o_cy<4>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<11>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<13>.
+ video_in_process_RGB_0/GND_7_o_GND_7_o_mux_53_OUT<17>.
+ video_in_process_RGB_0/cnt_video_hsync[10]_video_start_en_AND_15_o_inv_inv.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<1>.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<3>.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT6.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<4>.
+ video_in_process_RGB_0/VGA_1/Mcompar_vga_vs_cnt_s[31]_GND_17_o_LessThan_15_o_cy<5>.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>3.
+ video_in_process_RGB_0/N213.
+ video_in_process_RGB_0/video_error.
+ video_in_process_RGB_0/N12.
+ video_in_process_RGB_0/N208.
+ video_in_process_RGB_0/N211.
+ video_in_process_RGB_0/inst_LPM_MUX30_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX31_5_f7.
+ video_in_process_RGB_0/video_in_1/video_start_en_s.
+ Mcompar_GND_6_o_vga_hs_cnt[31]_LessThan_4_o_cy<5>.
+ Mcompar_GND_6_o_vga_hs_cnt[31]_LessThan_4_o_cy<4>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_18_OUT<16>.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_18_OUT<12>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_18_OUT<14>.
+ N107.
+ video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_13_OUT<16>.
+ N76.
+ video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_11_OUT<15>.
+ video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_11_OUT<16>.
+ video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_11_OUT<17>.
+ video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_11_OUT<18>.
+ video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_16_OUT_Madd_141.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_16_OUT<15>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_16_OUT<16>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_16_OUT<17>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_16_OUT<18>.
+ video_in_process_RGB_0/GND_7_o_GND_7_o_sub_31_OUT<15>.
+ video_in_process_RGB_0/GND_7_o_GND_7_o_sub_31_OUT<16>.
+ video_in_process_RGB_0/GND_7_o_GND_7_o_sub_31_OUT<17>.
+ video_in_process_RGB_0/GND_7_o_GND_7_o_sub_31_OUT<18>.
+ video_in_process_RGB_0/PWR_7_o_INV_65_o1.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<5>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<7>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<9>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_12_OUT<10>.
+ video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_18_OUT<3>.
+ video_in_process_RGB_0/YCR<15>.
+ video_in_process_RGB_0/YCR<16>.
+ video_in_process_RGB_0/YCR<17>.
+ video_in_process_RGB_0/YCR<18>.
+ video_in_process_RGB_0/YCB[19]_GND_7_o_add_41_OUT<19>.
+ video_in_process_RGB_0/VGA_1/vsync.
+ video_in_process_RGB_0/VGA_1/hsync.
+ g<7>.
+ video_in_process_RGB_0/N85.
+ video_in_process_RGB_0/N91.
+ video_in_process_RGB_0/N97.
+ video_in_process_RGB_0/N103.
+ video_in_process_RGB_0/N109.
+ video_in_process_RGB_0/N121.
+ video_in_process_RGB_0/write_ctrl18.
+ video_in_process_RGB_0/N132.
+ video_in_process_RGB_0/N133.
+ video_in_process_RGB_0/N138.
+ video_in_process_RGB_0/N139.
+ video_in_process_RGB_0/N144.
+ video_in_process_RGB_0/N145.
+ video_in_process_RGB_0/write_ctrl10.
+ video_in_process_RGB_0/N492.
+ video_in_process_RGB_0/N493.
+ video_in_process_RGB_0/N498.
+ video_in_process_RGB_0/N499.
+ video_in_process_RGB_0/N504.
+ video_in_process_RGB_0/N505.
+ video_in_process_RGB_0/N510.
+ video_in_process_RGB_0/N511.
+ video_in_process_RGB_0/N516.
+ video_in_process_RGB_0/N517.
+ video_in_process_RGB_0/N522.
+ video_in_process_RGB_0/N523.
+ video_in_process_RGB_0/N528.
+ video_in_process_RGB_0/N529.
+ video_in_process_RGB_0/N534.
+ video_in_process_RGB_0/N535.
+ video_in_process_RGB_0/N540.
+ video_in_process_RGB_0/N541.
+ video_in_process_RGB_0/N546.
+ video_in_process_RGB_0/N547.
+ video_in_process_RGB_0/N552.
+ video_in_process_RGB_0/N553.
+ video_in_process_RGB_0/N295.
+ video_in_process_RGB_0/N324.
+ video_in_process_RGB_0/N325.
+ video_in_process_RGB_0/N336.
+ video_in_process_RGB_0/N337.
+ video_in_process_RGB_0/N342.
+ video_in_process_RGB_0/N343.
+ video_in_process_RGB_0/N348.
+ video_in_process_RGB_0/N349.
+ video_in_process_RGB_0/N744.
+ video_in_process_RGB_0/N745.
+ video_in_process_RGB_0/N750.
+ video_in_process_RGB_0/N751.
+ video_in_process_RGB_0/N756.
+ video_in_process_RGB_0/N757.
+ video_in_process_RGB_0/N204.
+ video_in_process_RGB_0/N205.
+ video_in_process_RGB_0/N200.
+ video_in_process_RGB_0/N201.
+ video_in_process_RGB_0/N612.
+ video_in_process_RGB_0/N613.
+ video_in_process_RGB_0/N608.
+ video_in_process_RGB_0/N609.
+ video_in_process_RGB_0/N408.
+ video_in_process_RGB_0/N409.
+ video_in_process_RGB_0/N404.
+ video_in_process_RGB_0/N405.
+ video_in_process_RGB_0/N816.
+ video_in_process_RGB_0/N817.
+ video_in_process_RGB_0/N812.
+ video_in_process_RGB_0/N813.
+ video_in_process_RGB_0/N800.
+ video_in_process_RGB_0/N801.
+ video_in_process_RGB_0/N796.
+ video_in_process_RGB_0/N797.
+ video_in_process_RGB_0/N792.
+ video_in_process_RGB_0/N793.
+ video_in_process_RGB_0/N597.
+ video_in_process_RGB_0/N593.
+ video_in_process_RGB_0/N588.
+ video_in_process_RGB_0/N589.
+ video_in_process_RGB_0/N392.
+ video_in_process_RGB_0/N393.
+ video_in_process_RGB_0/N388.
+ video_in_process_RGB_0/N389.
+ video_in_process_RGB_0/N384.
+ video_in_process_RGB_0/N385.
+ video_in_process_RGB_0/N188.
+ video_in_process_RGB_0/N189.
+ video_in_process_RGB_0/N184.
+ video_in_process_RGB_0/N185.
+ video_in_process_RGB_0/N180.
+ video_in_process_RGB_0/N181.
+ video_in_process_RGB_0/inst_LPM_MUX14_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX21_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX4_5_f7.
+ video_in_process_RGB_0/PWR_7_o_INV_65_o2.
+ video_in_process_RGB_0/inst_LPM_MUX7_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX13_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX12_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX29_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX20_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX6_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX15_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX28_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX22_5_f7.
+ video_in_process_RGB_0/inst_LPM_MUX5_5_f7.
+ video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_59_OUT1032.
+ video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_59_OUT1031.
+ video_in_process_RGB_0/video_in_1/_n0068_inv.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>1.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>2.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>.
+ video_in_process_RGB_0/video_g_out<4>.
+ video_in_process_RGB_0/video_gray_out<4>.
+ video_in_process_RGB_0/video_g_out<5>.
+ video_in_process_RGB_0/video_gray_out<5>.
+ video_in_process_RGB_0/video_gray_out<6>.
+ video_in_process_RGB_0/video_b_out<4>.
+ video_in_process_RGB_0/video_b_out<5>.
+ video_in_process_RGB_0/video_b_out<6>.
+ video_in_process_RGB_0/video_b_out<7>.
+ video_in_process_RGB_0/video_gray_out<7>.
+ video_in_process_RGB_0/video_r_out<4>.
+ video_in_process_RGB_0/video_r_out<5>.
+ video_in_process_RGB_0/video_r_out<6>.
+ video_in_process_RGB_0/video_r_out<7>.
+ video_in_process_RGB_0/video_g_out<7>.
+ video_in_process_RGB_0/PWR_7_o_INV_65_o3.
+ video_in_process_RGB_0/PWR_7_o_INV_65_o5.
+ video_in_process_RGB_0/cnt_video_hsync[10]_video_start_en_AND_15_o.
+ video_in_process_RGB_0/cnt_video_hsync[10]_video_start_en_AND_15_o1.
+ video_in_process_RGB_0/VGA_1/Mcompar_GND_17_o_vga_hs_cnt_s[31]_LessThan_14_o_cy<6>.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>4.
+ video_in_process_RGB_0/VGA_1/Mcompar_GND_17_o_vga_vs_cnt_s[31]_LessThan_16_o_cy<5>.
+ N108.
+ N106.
+ video_in_process_RGB_0/PWR_7_o_INV_65_o4.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT61.
+ N14.
+ N16.
+ N6.
+ N8.
+ N30.
+ N32.
+ N2.
+ N4.
+ video_in_process_RGB_0/VGA_1/GND_17_o_vga_hs_cnt_s[31]_equal_7_o<31>5.
+ N24.
+ N26.
+ N28.
+ N18.
+ N20.
+ N10.
+ N12.
+
+
+The following Nets are new/changed.
+-----------------------------------
+ video_in_process_RGB_0/VGA_1/video_start_en_rst_OR_126_o.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_hs_cnt_s[31]_LessThan_78_o_cy<5>.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_hs_cnt_s[31]_LessThan_78_o_cy<3>.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o_cy<4>.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o_cy<3>.
+ video_in_process_RGB_0/_n0276_inv.
+ video_in_process_RGB_0/video_in_1/video_sav_state_FSM_FFd2-In2.
+ video_in_process_RGB_0/_n0288<5>.
+ video_in_process_RGB_0/_n0288<4>.
+ video_in_process_RGB_0/_n0288<3>.
+ video_in_process_RGB_0/_n0284<5>.
+ video_in_process_RGB_0/_n0284<4>.
+ video_in_process_RGB_0/_n0284<3>.
+ video_in_process_RGB_0/_n0280<5>.
+ video_in_process_RGB_0/_n0280<4>.
+ video_in_process_RGB_0/_n0280<3>.
+ video_in_process_RGB_0/_n0288<1>.
+ video_in_process_RGB_0/_n0288<2>.
+ video_in_process_RGB_0/_n0284<1>.
+ video_in_process_RGB_0/_n0284<2>.
+ video_in_process_RGB_0/_n0280<1>.
+ video_in_process_RGB_0/_n0280<2>.
+ video_in_process_RGB_0/Mmux__n027911.
+ video_in_process_RGB_0/Mmux__n02791112.
+ video_in_process_RGB_0/Mmux__n0279117.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o_cy<5>.
+ video_in_process_RGB_0/Mmux__n0279111.
+ video_in_process_RGB_0/Mmux__n0279112.
+ video_in_process_RGB_0/Mmux__n0279113.
+ video_in_process_RGB_0/Mmux__n0279115.
+ video_in_process_RGB_0/Mmux__n0279116.
+ video_in_process_RGB_0/Mmux__n0279118.
+ video_in_process_RGB_0/Mmux__n02791111.
+ video_in_process_RGB_0/Mmux__n02791110.
+ video_in_process_RGB_0/Mmux__n0279119.
+ video_in_process_RGB_0/Mmux__n0279114.
+ video_in_process_RGB_0/Mcompar_GND_7_o_vga_hs_cnt_s[31]_LessThan_78_o_cy<4>.
+
+
+The following Nets were partially guided.
+-----------------------------------------
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<29>.
+ video_in_process_RGB_0/buf_vga_state<0>.
+ video_in_process_RGB_0/buf_vga_state<1>.
+ video_in_process_RGB_0/Mcompar_GND_7_o_YCG[19]_LessThan_35_o_cy<6>.
+ video_data_I2C_2_IBUF.
+ video_data_I2C_1_IBUF.
+ video_data_I2C_0_IBUF.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<30>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<31>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<6>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<9>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<8>.
+ video_clk_BUFGP.
+ video_in_process_RGB_0/YCG<17>.
+ video_in_process_RGB_0/YCG<0>.
+ video_in_process_RGB_0/YCG<1>.
+ video_in_process_RGB_0/VGA_1/rst_inv.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<0>.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<2>.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT61111.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<5>.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<7>.
+ video_in_process_RGB_0/YCG<11>.
+ video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_15_OUT_Madd_lut<13>.
+ video_data_I2C_5_IBUF.
+ video_data_I2C_4_IBUF.
+ video_data_I2C_3_IBUF.
+ video_data_I2C_7_IBUF.
+ video_data_I2C_6_IBUF.
+ video_in_process_RGB_0/i2c_1/divcount<4>.
+ video_in_process_RGB_0/i2c_1/divcount<10>.
+ video_in_process_RGB_0/i2c_1/divcount<3>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<6>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<7>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<8>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<9>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<7>.
+ video_in_process_RGB_0/YCG<2>.
+ video_in_process_RGB_0/YCG<10>.
+ video_in_process_RGB_0/YCG<12>.
+ video_in_process_RGB_0/YCG<13>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<1>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<4>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<0>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<3>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<2>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<5>.
+ video_in_process_RGB_0/VGA_1/vga_hs_cnt_s<17>.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT1111.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<6>.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<8>.
+ video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_12_OUT_Madd1_cy<15>.
+ video_in_process_RGB_0/VGA_1/vga_vs_cnt_s<31>.
+ video_in_process_RGB_0/VGA_1/vga_vs_cnt_s<30>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<5>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<4>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<3>.
+ video_in_process_RGB_0/Mmux_GND_7_o_buf_vga_Y_in_cnt[9]_mux_63_OUT411.
+ video_in_process_RGB_0/video_in_1/video_sav_state_FSM_FFd1.
+ video_in_process_RGB_0/video_in_1/video_sav_state_FSM_FFd2.
+ video_in_process_RGB_0/video_in_1/video_V_en.
+ video_in_process_RGB_0/video_in_1/sav_temp<4>.
+ video_in_process_RGB_0/video_in_1/video_F_en.
+ video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_59_OUT101.
+ video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_59_OUT102.
+ video_in_process_RGB_0/YCG<14>.
+ video_in_process_RGB_0/YCG<15>.
+ video_in_process_RGB_0/YCG<16>.
+ video_in_process_RGB_0/YCG<18>.
+ video_in_process_RGB_0/i2c_1/divcount<9>.
+ video_in_process_RGB_0/Cb_register<4>.
+ video_in_process_RGB_0/YCR<1>.
+ video_in_process_RGB_0/YCR<2>.
+ video_in_process_RGB_0/YCR<3>.
+ video_in_process_RGB_0/YCR<4>.
+ video_in_process_RGB_0/YCR<5>.
+ video_in_process_RGB_0/YCR<6>.
+ video_in_process_RGB_0/YCR<7>.
+ video_in_process_RGB_0/YCR<8>.
+ video_in_process_RGB_0/YCR<9>.
+ video_in_process_RGB_0/YCR[19]_GND_7_o_add_29_OUT<11>.
+ video_in_process_RGB_0/YCR[19]_GND_7_o_add_29_OUT<13>.
+ video_in_process_RGB_0/YCR[19]_GND_7_o_add_29_OUT<14>.
+ video_in_process_RGB_0/YCR[19]_GND_7_o_add_29_OUT<16>.
+ video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_16_OUT_Madd_lut<14>.
+ video_in_process_RGB_0/YCB<2>.
+ video_in_process_RGB_0/YCB[19]_GND_7_o_add_41_OUT<18>.
+ video_in_process_RGB_0/YCR<13>.
+ video_in_process_RGB_0/YCR<14>.
+ video_in_process_RGB_0/YCB<13>.
+ video_in_process_RGB_0/YCB<14>.
+ video_in_process_RGB_0/YCB<15>.
+ video_in_process_RGB_0/YCB<16>.
+ video_in_process_RGB_0/YCB<17>.
+ video_in_process_RGB_0/YCB<18>.
+ mode_SW_IBUF.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<1>.
+ video_in_process_RGB_0/buf_vga_Y_in_cnt<2>.
+ video_in_process_RGB_0/write_ctrl1.
+ video_in_process_RGB_0/write_ctrl21.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<9>.
+ video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_59_OUT103.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT22.
+ video_in_process_RGB_0/video_in_1/Mmux_GND_12_o_cnt_video_hsync_s[10]_mux_17_OUT23.
+ Mcompar_GND_6_o_vga_vs_cnt[31]_LessThan_5_o_cy<5>.
+ rst_inv.
+ video_in_process_RGB_0/video_in_1/cnt_video_hsync_s<10>.

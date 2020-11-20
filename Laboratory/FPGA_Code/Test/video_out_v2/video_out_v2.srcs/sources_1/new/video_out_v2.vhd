@@ -64,7 +64,7 @@ begin
         elsif (ck_ori 'event and ck_ori = '1') then
                 freq <= freq + 1;
         end if;
-        clk_freq <= freq(21);
+        clk_freq <= freq(20);
     end process;
     
     process (clk_div, rst)
@@ -145,7 +145,8 @@ begin
 
         -- -- Triangle
         elsif (h_count > bottom_x1 and h_count <= bottom_x1 + 100 and v_count > high_y1 and v_count <= high_y2) then
-            if (h_count + high_y1 - v_count - bottom_x1 >= 0) then
+            -- assume m = i/j then i(x-x1) + j(y1-y) = 0;
+            if (h_count + high_y1 - v_count - bottom_x1 > 0) then
                 r <= '0';
                 g <= '0';
                 b <= '1';

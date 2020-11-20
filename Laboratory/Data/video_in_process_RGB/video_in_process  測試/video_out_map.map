@@ -1,0 +1,439 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Map Application Log File for Design 'video_out'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-smartguide C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd
+-power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Sat Dec 01 14:20:01 2018
+
+   "video_out" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+Mapping design into LUTs...
+Running directed packing...
+Constraining slice packing based on guide NCD.
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+WARNING:Pack:2609 - SmartGuide is more efficient (better guiding and runtime)
+   when used with explicit timing constraints. If you want the full benefit of
+   the SmartGuide flow, please add timing constraints to your design, then
+   re-create your guide file.
+Total REAL time at the beginning of Placer: 19 secs 
+Total CPU  time at the beginning of Placer: 19 secs 
+
+
+Phase 1.7  Design Feasibility Check
+Phase 1.7  Design Feasibility Check (Checksum:886bbc36) REAL time: 19 secs 
+
+Phase 2.31  Local Placement Optimization
+Phase 2.31  Local Placement Optimization (Checksum:886bbc36) REAL time: 19 secs 
+
+Phase 3.2  Initial Placement for Architecture Specific Features
+Phase 3.2  Initial Placement for Architecture Specific Features
+(Checksum:886bbc36) REAL time: 22 secs 
+
+Phase 4.30  Global Clock Region Assignment
+Phase 4.30  Global Clock Region Assignment (Checksum:886bbc36) REAL time: 22 secs 
+
+Phase 5.3  Local Placement Optimization
+Phase 5.3  Local Placement Optimization (Checksum:886bbc36) REAL time: 22 secs 
+
+Phase 6.5  Local Placement Optimization
+Phase 6.5  Local Placement Optimization (Checksum:886bbc36) REAL time: 22 secs 
+
+Phase 7.8  Global Placement
+..
+................
+................
+Phase 7.8  Global Placement (Checksum:9733e157) REAL time: 23 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:9733e157) REAL time: 23 secs 
+
+Phase 9.18  Placement Optimization
+Phase 9.18  Placement Optimization (Checksum:f602e3a9) REAL time: 24 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:f602e3a9) REAL time: 24 secs 
+
+Phase 11.34  Placement Validation
+Phase 11.34  Placement Validation (Checksum:f602e3a9) REAL time: 24 secs 
+
+Total REAL time to Placer completion: 24 secs 
+Total CPU  time to Placer completion: 23 secs 
+Running post-placement packing...
+Updating route info ...
+Writing output files...
+WARNING:PhysDesignRules:2500 - This design does not have a PS7 block.
+   Instantiate the PS7 block in order to ensure proper fabric tie-offs and
+   correct operation of the processing_system7.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B13_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B13_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B14_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B14_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B15_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B15_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B16_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B16_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G16_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G16_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G14_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G14_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B17_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B17_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B12_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B12_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B18_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B18_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G15_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G15_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G12_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G12_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G18_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G18_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B19_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B19_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G19_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G19_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G17_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G17_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G13_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G13_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R12_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R12_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R15_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R15_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R19_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R19_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R14_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R14_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R13_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R13_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data18_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data18_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data19_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data19_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data17_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data17_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data16_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data16_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data15_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data15_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data13_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data13_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data14_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data14_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R18_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R18_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R17_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R17_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R16_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R16_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data12_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data12_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data22_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data22_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data20_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data20_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G22_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G22_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data21_RAMA_DPO> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_video_data21_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B22_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B22_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R22_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R22_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R21_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R21_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G20_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G20_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B21_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B21_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G21_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_G21_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R20_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_R20_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B20_RAMA_DPO> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <video_in_process_RGB_0/Mram_buf_vga_B20_RAMD_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   ProtoComp100.PULL is set but the tri state is not configured. 
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   91
+Slice Logic Utilization:
+  Number of Slice Registers:                   242 out of 106,400    1%
+    Number used as Flip Flops:                 240
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                2
+  Number of Slice LUTs:                      1,176 out of  53,200    2%
+    Number used as logic:                      805 out of  53,200    1%
+      Number using O6 output only:             516
+      Number using O5 output only:             108
+      Number using O5 and O6:                  181
+      Number used as ROM:                        0
+    Number used as Memory:                     368 out of  17,400    2%
+      Number used as Dual Port RAM:            368
+        Number using O6 output only:           352
+        Number using O5 output only:             0
+        Number using O5 and O6:                 16
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             0
+    Number used exclusively as route-thrus:      3
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         3
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   364 out of  13,300    2%
+  Number of LUT Flip Flop pairs used:        1,200
+    Number with an unused Flip Flop:         1,002 out of   1,200   83%
+    Number with an unused LUT:                  24 out of   1,200    2%
+    Number of fully used LUT-FF pairs:         174 out of   1,200   14%
+    Number of unique control sets:              40
+    Number of slice register sites lost
+      to control set restrictions:              72 out of 106,400    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        27 out of     200   13%
+    Number of LOCed IOBs:                       27 out of      27  100%
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                  0 out of     140    0%
+  Number of RAMB18E1/FIFO18E1s:                  0 out of     280    0%
+  Number of BUFG/BUFGCTRLs:                      1 out of      32    3%
+    Number used as BUFGs:                        1
+    Number used as BUFGCTRLs:                    0
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     200    0%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     200    0%
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:        1 out of     200    1%
+    Number used as OLOGICE2s:                    1
+    Number used as OLOGICE3s:                    0
+    Number used as OSERDESE2s:                   0
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      16    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of      72    0%
+  Number of BUFRs:                               0 out of      16    0%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            0 out of     220    0%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of ICAPs:                               0 out of       2    0%
+  Number of IDELAYCTRLs:                         0 out of       4    0%
+  Number of IN_FIFOs:                            0 out of      16    0%
+  Number of MMCME2_ADVs:                         0 out of       4    0%
+  Number of OUT_FIFOs:                           0 out of      16    0%
+  Number of PHASER_REFs:                         0 out of       4    0%
+  Number of PHY_CONTROLs:                        0 out of       4    0%
+  Number of PLLE2_ADVs:                          0 out of       4    0%
+  Number of PS7s:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                5.14
+
+Peak Memory Usage:  864 MB
+Total REAL time to MAP completion:  25 secs 
+Total CPU time to MAP completion:   25 secs 
+
+Mapping completed.
+See MAP report file "video_out_map.mrp" for details.

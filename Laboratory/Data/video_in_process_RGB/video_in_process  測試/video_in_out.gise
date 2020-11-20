@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="video_in_out.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="Gesture_RL_Cell.vhi"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LOGO_128_128.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LOGO_128_128.stx"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="LOGO_128_128.vhi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="LOGO_128_128.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Strip_Detection.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Strip_Detection.stx"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="Strip_Detection.vhi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Strip_Detection.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Strip_hand_Detection.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Strip_hand_Detection.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Strip_hand_Detection.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="median33.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="median33.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="median33.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="median33_160x120.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="median33_160x120.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="median33_160x120.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="video_in_process_RGB.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="video_in_process_RGB.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="video_in_process_RGB.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="video_out.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="video_out.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="video_out.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="video_out.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="video_out.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GUIDERESULTS_REPORT" xil_pn:name="video_out.grf" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="video_out.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="video_out.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="video_out.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="video_out.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="video_out.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="video_out.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="video_out.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="video_out.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="video_out.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="video_out.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="video_out.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="video_out.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="video_out.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="video_out.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="video_out.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="video_out.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="video_out.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="video_out.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="video_out_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="video_out_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="video_out_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="video_out_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="video_out_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="video_out_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="video_out_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="video_out_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="video_out_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="video_out_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="video_out_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="video_out_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="video_out_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="video_out_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="video_out_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="4710729580330935519" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3647643253088916504" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="3280287069438876251" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="8962985228163542118" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643006" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-566820968249257630" xil_pn:start_ts="1543643006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645193" xil_pn:in_ck="-8161371401327146148" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-1614588419010745272" xil_pn:start_ts="1543645177">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="video_out.lso"/>
+      <outfile xil_pn:name="video_out.ngc"/>
+      <outfile xil_pn:name="video_out.ngr"/>
+      <outfile xil_pn:name="video_out.prj"/>
+      <outfile xil_pn:name="video_out.stx"/>
+      <outfile xil_pn:name="video_out.syr"/>
+      <outfile xil_pn:name="video_out.xst"/>
+      <outfile xil_pn:name="video_out_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1543643013" xil_pn:in_ck="-375155977866151530" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-3196796700148104058" xil_pn:start_ts="1543643013">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645200" xil_pn:in_ck="-3795920104854549910" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="8260475814790639132" xil_pn:start_ts="1543645193">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="video_out.bld"/>
+      <outfile xil_pn:name="video_out.ngd"/>
+      <outfile xil_pn:name="video_out_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645228" xil_pn:in_ck="3518074628276769355" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="8468160774139157423" xil_pn:start_ts="1543645200">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="video_out.pcf"/>
+      <outfile xil_pn:name="video_out_map.map"/>
+      <outfile xil_pn:name="video_out_map.mrp"/>
+      <outfile xil_pn:name="video_out_map.ncd"/>
+      <outfile xil_pn:name="video_out_map.ngm"/>
+      <outfile xil_pn:name="video_out_map.xrpt"/>
+      <outfile xil_pn:name="video_out_summary.xml"/>
+      <outfile xil_pn:name="video_out_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645261" xil_pn:in_ck="-8806551545258960700" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-5706447261836801429" xil_pn:start_ts="1543645228">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="video_out.grf"/>
+      <outfile xil_pn:name="video_out.ncd"/>
+      <outfile xil_pn:name="video_out.pad"/>
+      <outfile xil_pn:name="video_out.par"/>
+      <outfile xil_pn:name="video_out.ptwx"/>
+      <outfile xil_pn:name="video_out.unroutes"/>
+      <outfile xil_pn:name="video_out.xpi"/>
+      <outfile xil_pn:name="video_out_pad.csv"/>
+      <outfile xil_pn:name="video_out_pad.txt"/>
+      <outfile xil_pn:name="video_out_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645290" xil_pn:in_ck="-638295095780648239" xil_pn:name="TRANEXT_bitFile_zynq" xil_pn:prop_ck="-8808622799194500101" xil_pn:start_ts="1543645261">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="video_out.bgn"/>
+      <outfile xil_pn:name="video_out.bit"/>
+      <outfile xil_pn:name="video_out.drc"/>
+      <outfile xil_pn:name="video_out.ut"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1543642386" xil_pn:in_ck="-638295095780661093" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="5618806644095342913" xil_pn:start_ts="1543642386">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1543645261" xil_pn:in_ck="-2698538312160689593" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416183" xil_pn:start_ts="1543645249">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="video_out.twr"/>
+      <outfile xil_pn:name="video_out.twx"/>
+    </transform>
+  </transforms>
+
+</generated_project>

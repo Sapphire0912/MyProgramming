@@ -1,0 +1,36 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Dec 01 14:20:26 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "video_data_I2C<7>" LOCATE = SITE "V8" LEVEL 1;
+COMP "video_data_I2C<6>" LOCATE = SITE "W8" LEVEL 1;
+COMP "video_data_I2C<5>" LOCATE = SITE "V9" LEVEL 1;
+COMP "video_data_I2C<0>" LOCATE = SITE "W12" LEVEL 1;
+COMP "video_data_I2C<4>" LOCATE = SITE "V10" LEVEL 1;
+COMP "video_data_I2C<3>" LOCATE = SITE "W10" LEVEL 1;
+COMP "video_data_I2C<2>" LOCATE = SITE "W11" LEVEL 1;
+COMP "video_data_I2C<1>" LOCATE = SITE "V12" LEVEL 1;
+COMP "rst" LOCATE = SITE "M15" LEVEL 1;
+COMP "vsync" LOCATE = SITE "Y19" LEVEL 1;
+COMP "video_sda" LOCATE = SITE "Y11" LEVEL 1;
+COMP "video_scl" LOCATE = SITE "AA11" LEVEL 1;
+COMP "mode_SW" LOCATE = SITE "H17" LEVEL 1;
+COMP "hsync" LOCATE = SITE "AA19" LEVEL 1;
+COMP "video_clk" LOCATE = SITE "AA9" LEVEL 1;
+PIN video_clk_pin<0> = BEL "video_clk" PINNAME PAD;
+PIN "video_clk_pin<0>" CLOCK_DEDICATED_ROUTE;
+COMP "r_out<0>" LOCATE = SITE "V20" LEVEL 1;
+COMP "r_out<1>" LOCATE = SITE "U20" LEVEL 1;
+COMP "r_out<2>" LOCATE = SITE "V19" LEVEL 1;
+COMP "r_out<3>" LOCATE = SITE "V18" LEVEL 1;
+COMP "g_out<2>" LOCATE = SITE "AB21" LEVEL 1;
+COMP "g_out<1>" LOCATE = SITE "AA22" LEVEL 1;
+COMP "b_out<0>" LOCATE = SITE "Y21" LEVEL 1;
+COMP "g_out<3>" LOCATE = SITE "AA21" LEVEL 1;
+COMP "b_out<1>" LOCATE = SITE "Y20" LEVEL 1;
+COMP "b_out<2>" LOCATE = SITE "AB20" LEVEL 1;
+COMP "b_out<3>" LOCATE = SITE "AB19" LEVEL 1;
+COMP "g_out<0>" LOCATE = SITE "AB22" LEVEL 1;
+SCHEMATIC END;
+

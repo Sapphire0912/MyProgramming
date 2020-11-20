@@ -1,0 +1,259 @@
+Release 14.7 par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+DREAMCAT-PC::  Sat Dec 01 14:20:29 2018
+
+par -w -intstyle ise -ol high -smartguide
+C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd -mt 4
+video_out_map.ncd video_out.ncd video_out.pcf 
+
+
+Constraints file: video_out.pcf.
+Loading device for application Rf_Device from file '7z020.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+   "video_out" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+
+Loading database for application par from file: "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd"
+   "video_out" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.08 2013-10-13".
+
+
+
+INFO:Par:402 - SmartGuide was run during Map. Since all guiding (mapping, packing, placement and routing) is completed in MAP, PAR does not
+   require the use of the guide switches. The -smartguide switch only generates a post place and route guide report in the SmartGuide Report
+   File(.GRF). Runtime can be reduced, if this detailed report is not generated. PAR will automatically generate the SmartGuide summary
+   report based on the guide file used during MAP. This summary information is always in the PAR report file and the GRF.
+Device Utilization Summary:
+
+   Number of BUFGs                           1 out of 32      3%
+   Number of External IOBs                   2 out of 200     1%
+      Number of LOCed IOBs                   2 out of 2     100%
+
+   Number of External IOB33s                25 out of 200    12%
+      Number of LOCed IOB33s                25 out of 25    100%
+
+   Number of OLOGICE2s                       1 out of 200     1%
+   Number of Slices                        364 out of 13300   2%
+   Number of Slice Registers               242 out of 106400  1%
+      Number used as Flip Flops            242
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                   1176 out of 53200   2%
+   Number of Slice LUT-Flip Flop pairs    1198 out of 53200   2%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 10 secs 
+Finished initial Timing Analysis.  REAL time: 10 secs 
+
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B13_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B14_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B15_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B16_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G16_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G14_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B17_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B12_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B18_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G15_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G12_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G18_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B19_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G19_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G17_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G13_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R12_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R15_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R19_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R14_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R13_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data18_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data19_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data19_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data17_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data16_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data15_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data15_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data13_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data13_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data14_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data14_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R18_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R17_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R17_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R16_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R16_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data12_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data12_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data22_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data22_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data20_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data20_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G22_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G22_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data21_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_video_data21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B22_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B22_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R22_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R22_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R21_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G20_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G20_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B21_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G21_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_G21_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R20_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_R20_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B20_RAMA_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal video_in_process_RGB_0/Mram_buf_vga_B20_RAMD_O has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 1703 unrouted;      REAL time: 11 secs 
+
+Phase  2  : 1314 unrouted;      REAL time: 12 secs 
+
+Phase  3  : 576 unrouted;      REAL time: 12 secs 
+
+Phase  4  : 576 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
+Total REAL time to Router completion: 16 secs 
+Total CPU time to Router completion: 16 secs 
+
+  SmartGuide Results
+  ------------------
+  This section describes the guide results after invoking the Router. This
+  report accurately reflects the differences between the input design
+  and the guide design.
+
+  Number of Components in the input design    |    393
+    Number of guided Components               |    354 out of    393  90.1%
+    Number of re-implemented Components       |     19 out of    393   4.8%
+    Number of new/changed Components          |     20 out of    393   5.1%
+  Number of Nets in the input design          |   1241
+    Number of guided Nets                     |    891 out of   1241  71.8%
+    Number of partially guided Nets           |    107 out of   1241   8.6%
+    Number of re-routed Nets                  |    206 out of   1241  16.6%
+    Number of new/changed Nets                |     37 out of   1241   3.0%
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|     video_clk_BUFGP | BUFGCTRL_X0Y0| No   |  165 |  0.188     |  1.830      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net vid | SETUP       |         N/A|     8.985ns|     N/A|           0
+  eo_clk_BUFGP                              | HOLD        |     0.174ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 88 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 17 secs 
+Total CPU time to PAR completion: 17 secs 
+
+Peak Memory Usage:  698 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 91
+Number of info messages: 2
+
+Writing design to file video_out.ncd
+
+
+
+PAR done!

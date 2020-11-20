@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Nov 19 18:05:06 2020
+| Date             : Fri Nov 20 17:46:14 2020
 | Host             : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command          : report_power -file video_out_test_power_routed.rpt -pb video_out_test_power_summary_routed.pb -rpx video_out_test_power_routed.rpx
 | Design           : video_out_test
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+---------------------------------+
-| Total On-Chip Power (W)  | 7.409 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                    |
-| Power Budget Margin (W)  | NA                              |
-| Dynamic (W)              | 6.742                           |
-| Device Static (W)        | 0.667                           |
-| Effective TJA (C/W)      | 11.5                            |
-| Max Ambient (C)          | 0.0                             |
-| Junction Temperature (C) | 110.4                           |
-| Confidence Level         | Low                             |
-| Setting File             | ---                             |
-| Simulation Activity File | ---                             |
-| Design Nets Matched      | NA                              |
-+--------------------------+---------------------------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 10.794 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 9.754                            |
+| Device Static (W)        | 1.040                            |
+| Effective TJA (C/W)      | 11.5                             |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     3.067 |      649 |       --- |             --- |
-|   LUT as Logic |     2.628 |      367 |     53200 |            0.69 |
-|   CARRY4       |     0.303 |       73 |     13300 |            0.55 |
-|   Register     |     0.124 |      144 |    106400 |            0.14 |
+| Slice Logic    |     4.805 |      861 |       --- |             --- |
+|   LUT as Logic |     4.194 |      408 |     53200 |            0.77 |
+|   CARRY4       |     0.478 |      113 |     13300 |            0.85 |
+|   Register     |     0.122 |      146 |    106400 |            0.14 |
 |   BUFG         |     0.012 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     2.128 |      520 |       --- |             --- |
-| DSPs           |     1.070 |        4 |       220 |            1.82 |
-| I/O            |     0.477 |        7 |       200 |            3.50 |
-| Static Power   |     0.667 |          |           |                 |
-| Total          |     7.409 |          |           |                 |
+| Signals        |     2.836 |      608 |       --- |             --- |
+| DSPs           |     1.569 |        4 |       220 |            1.82 |
+| I/O            |     0.544 |        7 |       200 |            3.50 |
+| Static Power   |     1.040 |          |           |                 |
+| Total          |    10.794 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,20 +72,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     6.454 |       6.269 |      0.185 |
-| Vccaux    |       1.800 |     0.089 |       0.020 |      0.070 |
+| Vccint    |       1.000 |     9.513 |       9.214 |      0.299 |
+| Vccaux    |       1.800 |     0.122 |       0.022 |      0.100 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.176 |       0.175 |      0.001 |
+| Vcco25    |       2.500 |     0.201 |       0.200 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.014 |       0.000 |      0.014 |
+| Vccbram   |       1.000 |     0.026 |       0.000 |      0.026 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.280 |       0.000 |      0.280 |
+| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,9 +146,9 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| video_out_test |     6.742 |
-|   b_reg        |     0.002 |
-|   r_reg        |     0.026 |
+| video_out_test |     9.754 |
+|   b_reg        |     0.003 |
+|   r_reg        |     0.025 |
 +----------------+-----------+
 
 

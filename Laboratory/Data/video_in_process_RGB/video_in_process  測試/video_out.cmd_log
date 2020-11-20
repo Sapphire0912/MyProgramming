@@ -1,0 +1,80 @@
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc auto -timing -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process_RGB/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+xst -intstyle ise -ifn "C:/Users/DreamCat/Desktop/video_in_process/video_out.xst" -ofn "C:/Users/DreamCat/Desktop/video_in_process/video_out.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc zedboard_master_UCF_RevC_v3.ucf -p xc7z020-clg484-1 video_out.ngc video_out.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -power off -o video_out_map.ncd video_out.ngd video_out.pcf 
+par -w -intstyle ise -ol high -smartguide "C:/Users/DreamCat/Desktop/video_in_process/video_out_guide.ncd" -mt 4 video_out_map.ncd video_out.ncd video_out.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml video_out.twx video_out.ncd -o video_out.twr video_out.pcf -ucf zedboard_master_UCF_RevC_v3.ucf 
+bitgen -intstyle ise -f video_out.ut video_out.ncd 

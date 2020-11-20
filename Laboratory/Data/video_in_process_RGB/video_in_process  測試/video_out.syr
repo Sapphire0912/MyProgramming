@@ -1,0 +1,883 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: video_out.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "video_out.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "video_out"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg484
+
+---- Source Options
+Top Module Name                    : video_out
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in.vhd" into library work
+Parsing entity <video_in>.
+Parsing architecture <Behavioral> of entity <video_in>.
+Parsing VHDL file "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\vga.vhd" into library work
+Parsing entity <vga>.
+Parsing architecture <Behavioral> of entity <vga>.
+Parsing VHDL file "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\i2c.vhd" into library work
+Parsing entity <i2c>.
+Parsing architecture <Behavioral> of entity <i2c>.
+Parsing VHDL file "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in_process_RGB.vhd" into library work
+Parsing entity <video_in_process_RGB>.
+Parsing architecture <Behavioral> of entity <video_in_process_rgb>.
+Parsing VHDL file "C:\Users\DreamCat\Desktop\video_in_process\video_out.vhd" into library work
+Parsing entity <video_out>.
+Parsing architecture <Behavioral> of entity <video_out>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <video_out> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <video_in_process_RGB> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i2c> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\i2c.vhd" Line 85. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\i2c.vhd" Line 149. Case statement is complete. others clause is never selected
+
+Elaborating entity <video_in> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in.vhd" Line 95. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in_process_RGB.vhd" Line 201. Case statement is complete. others clause is never selected
+
+Elaborating entity <vga> (architecture <Behavioral>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <video_out>.
+    Related source file is "C:\Users\DreamCat\Desktop\video_in_process\video_out.vhd".
+INFO:Xst:3210 - "C:\Users\DreamCat\Desktop\video_in_process\video_out.vhd" line 65: Output port <Frame_ID> of the instance <video_in_process_RGB_0> is unconnected or connected to loadless signal.
+    Found 4-bit register for signal <g<7:4>>.
+    Found 4-bit register for signal <b<7:4>>.
+    Found 4-bit register for signal <r<7:4>>.
+    Found 32-bit comparator greater for signal <GND_6_o_vga_hs_cnt[31]_LessThan_4_o> created at line 93
+    Found 32-bit comparator greater for signal <GND_6_o_vga_vs_cnt[31]_LessThan_5_o> created at line 93
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <video_out> synthesized.
+
+Synthesizing Unit <video_in_process_RGB>.
+    Related source file is "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in_process_RGB.vhd".
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <buf_video_data>, simulation mismatch.
+    Found 720x8-bit dual-port RAM <Mram_buf_video_data> for signal <buf_video_data>.
+    Found 8-bit register for signal <Cb_register>.
+    Found 8-bit register for signal <Cr_register>.
+    Found 8-bit register for signal <video_gray_out>.
+    Found 8-bit register for signal <video_r_out>.
+    Found 8-bit register for signal <video_g_out>.
+    Found 8-bit register for signal <video_b_out>.
+    Found 20-bit register for signal <YCR>.
+    Found 20-bit register for signal <YCG>.
+    Found 20-bit register for signal <YCB>.
+    Found 10-bit register for signal <buf_vga_Y_in_cnt>.
+    Found 2-bit register for signal <buf_vga_state>.
+    Found 1-bit register for signal <video_error>.
+    Found 1-bit register for signal <Frame_ID_s>.
+    Found 20-bit adder for signal <GND_7_o_GND_7_o_add_14_OUT> created at line 158.
+    Found 20-bit adder for signal <GND_7_o_GND_7_o_add_19_OUT> created at line 164.
+    Found 2-bit adder for signal <buf_vga_state[1]_GND_7_o_add_26_OUT> created at line 167.
+    Found 20-bit adder for signal <YCR[19]_GND_7_o_add_29_OUT> created at line 180.
+    Found 20-bit adder for signal <YCB[19]_GND_7_o_add_41_OUT> created at line 192.
+    Found 10-bit adder for signal <buf_vga_Y_in_cnt[9]_GND_7_o_add_45_OUT> created at line 198.
+    Found 20-bit subtractor for signal <GND_7_o_GND_7_o_sub_31_OUT<19:0>> created at line 180.
+    Found 20-bit subtractor for signal <GND_7_o_GND_7_o_sub_38_OUT<19:0>> created at line 186.
+    Found 20-bit subtractor for signal <GND_7_o_GND_7_o_sub_43_OUT<19:0>> created at line 192.
+    Found 20-bit adder for signal <GND_7_o_GND_7_o_add_36_OUT> created at line 186.
+    Found 8x11-bit multiplier for signal <Cr_register[7]_PWR_7_o_MuLt_11_OUT> created at line 157.
+    Found 8x9-bit multiplier for signal <video_data_I2C[7]_PWR_7_o_MuLt_12_OUT> created at line 158.
+    Found 8x10-bit multiplier for signal <Cr_register[7]_PWR_7_o_MuLt_13_OUT> created at line 158.
+    Found 8x11-bit multiplier for signal <video_data_I2C[7]_PWR_7_o_MuLt_15_OUT> created at line 159.
+    Found 8x11-bit multiplier for signal <video_data_I2C[7]_PWR_7_o_MuLt_16_OUT> created at line 163.
+    Found 8x9-bit multiplier for signal <Cb_register[7]_PWR_7_o_MuLt_17_OUT> created at line 164.
+    Found 8x10-bit multiplier for signal <video_data_I2C[7]_PWR_7_o_MuLt_18_OUT> created at line 164.
+    Found 8x11-bit multiplier for signal <Cb_register[7]_PWR_7_o_MuLt_20_OUT> created at line 165.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <buf_vga_R>, simulation mismatch.
+    Found 720x8-bit dual-port RAM <Mram_buf_vga_R> for signal <buf_vga_R>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <buf_vga_G>, simulation mismatch.
+    Found 720x8-bit dual-port RAM <Mram_buf_vga_G> for signal <buf_vga_G>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <buf_vga_B>, simulation mismatch.
+    Found 720x8-bit dual-port RAM <Mram_buf_vga_B> for signal <buf_vga_B>.
+    Found 11-bit comparator greater for signal <cnt_video_hsync[10]_PWR_7_o_LessThan_1_o> created at line 132
+    Found 20-bit comparator greater for signal <GND_7_o_YCR[19]_LessThan_3_o> created at line 135
+    Found 20-bit comparator greater for signal <GND_7_o_YCG[19]_LessThan_4_o> created at line 135
+    Found 20-bit comparator greater for signal <GND_7_o_YCB[19]_LessThan_5_o> created at line 135
+    Found 20-bit comparator greater for signal <YCR[19]_GND_7_o_LessThan_29_o> created at line 177
+    Found 20-bit comparator greater for signal <GND_7_o_YCG[19]_LessThan_35_o> created at line 183
+    Found 20-bit comparator greater for signal <YCB[19]_GND_7_o_LessThan_41_o> created at line 189
+    Found 32-bit comparator greater for signal <GND_7_o_vga_hs_cnt_s[31]_LessThan_78_o> created at line 301
+    Found 32-bit comparator greater for signal <GND_7_o_vga_vs_cnt_s[31]_LessThan_79_o> created at line 301
+    Summary:
+	inferred   4 RAM(s).
+	inferred   8 Multiplier(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred 122 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  45 Multiplexer(s).
+Unit <video_in_process_RGB> synthesized.
+
+Synthesizing Unit <i2c>.
+    Related source file is "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\i2c.vhd".
+    Found 1-bit register for signal <I2C_state[1]_clk_DFF_5_q>.
+    Found 1-bit register for signal <I2C_state[1]_clk_DFF_6>.
+    Found 1-bit register for signal <scl>.
+    Found 2-bit register for signal <I2C_data_state>.
+    Found 2-bit register for signal <I2C_state>.
+    Found 4-bit register for signal <I2C_bit_cnt>.
+    Found 19-bit register for signal <divcount>.
+    Found 1-bit register for signal <data_number>.
+    Found finite state machine <FSM_0> for signal <I2C_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | start                                          |
+    | Power Up State     | start                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <I2C_data_state[1]_GND_8_o_add_41_OUT> created at line 162.
+    Found 4-bit adder for signal <I2C_bit_cnt[3]_GND_8_o_add_47_OUT> created at line 180.
+    Found 19-bit adder for signal <divcount[18]_GND_8_o_add_55_OUT> created at line 201.
+    Found 3-bit subtractor for signal <GND_8_o_GND_8_o_sub_32_OUT<2:0>> created at line 135.
+    Found 1-bit 4-to-1 multiplexer for signal <I2C_state[1]_scl_Mux_14_o> created at line 95.
+    Found 1-bit 4-to-1 multiplexer for signal <I2C_state[1]_scl_Mux_36_o> created at line 115.
+    Found 1-bit 3-to-1 multiplexer for signal <I2C_state[1]_GND_8_o_Mux_37_o> created at line 115.
+    Found 1-bit tristate buffer for signal <sda> created at line 110
+    Found 2-bit comparator greater for signal <I2C_data_state[1]_PWR_8_o_LessThan_7_o> created at line 74
+    Found 4-bit comparator greater for signal <I2C_bit_cnt[3]_PWR_8_o_LessThan_47_o> created at line 179
+    Found 4-bit comparator greater for signal <I2C_bit_cnt[3]_GND_8_o_LessThan_50_o> created at line 185
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred  12 Multiplexer(s).
+	inferred   1 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <i2c> synthesized.
+
+Synthesizing Unit <video_in>.
+    Related source file is "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\video_in.vhd".
+    Found 11-bit register for signal <cnt_video_hsync_s>.
+    Found 2-bit register for signal <video_sav_state>.
+    Found 1-bit register for signal <video_start_en_s>.
+    Found 1-bit register for signal <video_F_en>.
+    Found 1-bit register for signal <video_V_en>.
+    Found 8-bit register for signal <sav_temp>.
+    Found finite state machine <FSM_1> for signal <video_sav_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit adder for signal <cnt_video_hsync_s[10]_GND_12_o_add_15_OUT> created at line 133.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <video_in> synthesized.
+
+Synthesizing Unit <vga>.
+    Related source file is "C:\Users\DreamCat\Desktop\video_in_process\video_in_process_RGB\vga.vhd".
+        horizontal_resolution = 720
+        horizontal_Front_porch = 16
+        horizontal_Sync_pulse = 62
+        horizontal_Back_porch = 59
+        h_sync_Polarity = '1'
+        vertical_resolution = 480
+        vertical_Front_porch = 9
+        vertical_Sync_pulse = 6
+        vertical_Back_porch = 29
+        v_sync_Polarity = '1'
+    Found 1-bit register for signal <vsync>.
+    Found 1-bit register for signal <hsync>.
+    Found 32-bit register for signal <vga_vs_cnt_s>.
+    Found 32-bit register for signal <vga_hs_cnt_s>.
+    Found 32-bit adder for signal <vga_hs_cnt_s[31]_GND_17_o_add_3_OUT> created at line 58.
+    Found 32-bit adder for signal <vga_vs_cnt_s[31]_GND_17_o_add_8_OUT> created at line 76.
+    Found 32-bit comparator greater for signal <GND_17_o_vga_hs_cnt_s[31]_LessThan_3_o> created at line 57
+    Found 32-bit comparator greater for signal <GND_17_o_vga_vs_cnt_s[31]_LessThan_8_o> created at line 75
+    Found 32-bit comparator lessequal for signal <n0014> created at line 95
+    Found 32-bit comparator greater for signal <GND_17_o_vga_hs_cnt_s[31]_LessThan_14_o> created at line 95
+    Found 32-bit comparator lessequal for signal <n0020> created at line 113
+    Found 32-bit comparator greater for signal <GND_17_o_vga_vs_cnt_s[31]_LessThan_16_o> created at line 113
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  66 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <vga> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 720x8-bit dual-port RAM                               : 4
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 4
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 19-bit adder                                          : 1
+ 2-bit adder                                           : 2
+ 20-bit adder                                          : 3
+ 20-bit addsub                                         : 1
+ 20-bit subtractor                                     : 2
+ 3-bit subtractor                                      : 1
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 1
+# Registers                                            : 32
+ 1-bit register                                        : 11
+ 10-bit register                                       : 1
+ 11-bit register                                       : 1
+ 19-bit register                                       : 1
+ 2-bit register                                        : 2
+ 20-bit register                                       : 3
+ 32-bit register                                       : 2
+ 4-bit register                                        : 4
+ 8-bit register                                        : 7
+# Comparators                                          : 20
+ 11-bit comparator greater                             : 1
+ 2-bit comparator greater                              : 1
+ 20-bit comparator greater                             : 6
+ 32-bit comparator greater                             : 8
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 67
+ 1-bit 2-to-1 multiplexer                              : 25
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 2
+ 11-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 2
+ 20-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 13
+# Tristates                                            : 1
+ 1-bit tristate buffer                                 : 1
+# FSMs                                                 : 2
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <sav_temp_0> of sequential type is unconnected in block <video_in_1>.
+WARNING:Xst:2677 - Node <sav_temp_1> of sequential type is unconnected in block <video_in_1>.
+WARNING:Xst:2677 - Node <sav_temp_2> of sequential type is unconnected in block <video_in_1>.
+WARNING:Xst:2677 - Node <sav_temp_3> of sequential type is unconnected in block <video_in_1>.
+WARNING:Xst:2677 - Node <sav_temp_7> of sequential type is unconnected in block <video_in_1>.
+
+Synthesizing (advanced) Unit <i2c>.
+The following registers are absorbed into counter <divcount>: 1 register on signal <divcount>.
+The following registers are absorbed into counter <I2C_data_state>: 1 register on signal <I2C_data_state>.
+Unit <i2c> synthesized (advanced).
+
+Synthesizing (advanced) Unit <video_in_process_RGB>.
+The following registers are absorbed into counter <buf_vga_state>: 1 register on signal <buf_vga_state>.
+INFO:Xst:3217 - HDL ADVISOR - Register <video_gray_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_video_data> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     clkA           | connected to signal <video_clk>     | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <buf_vga_Y_in_cnt> |          |
+    |     diA            | connected to signal <video_data_I2C> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     addrB          | connected to signal <vga_hs_cnt_s<9:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <video_r_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_vga_R> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     clkA           | connected to signal <video_clk>     | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <buf_vga_Y_in_cnt> |          |
+    |     diA            | connected to signal <_n0280>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     addrB          | connected to signal <vga_hs_cnt_s<9:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <video_b_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_vga_B> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     clkA           | connected to signal <video_clk>     | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <buf_vga_Y_in_cnt> |          |
+    |     diA            | connected to signal <_n0288>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     addrB          | connected to signal <vga_hs_cnt_s<9:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <video_g_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_vga_G> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     clkA           | connected to signal <video_clk>     | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <buf_vga_Y_in_cnt> |          |
+    |     diA            | connected to signal <_n0284>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 720-word x 8-bit                    |          |
+    |     addrB          | connected to signal <vga_hs_cnt_s<9:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_buf_video_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_buf_vga_R> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_buf_vga_G> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_buf_vga_B> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+Unit <video_in_process_RGB> synthesized (advanced).
+WARNING:Xst:2677 - Node <sav_temp_0> of sequential type is unconnected in block <video_in>.
+WARNING:Xst:2677 - Node <sav_temp_1> of sequential type is unconnected in block <video_in>.
+WARNING:Xst:2677 - Node <sav_temp_2> of sequential type is unconnected in block <video_in>.
+WARNING:Xst:2677 - Node <sav_temp_3> of sequential type is unconnected in block <video_in>.
+WARNING:Xst:2677 - Node <sav_temp_7> of sequential type is unconnected in block <video_in>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 720x8-bit dual-port distributed RAM                   : 4
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 4
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 12
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 20-bit adder                                          : 3
+ 20-bit addsub                                         : 1
+ 20-bit subtractor                                     : 2
+ 3-bit subtractor                                      : 1
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 1
+# Counters                                             : 3
+ 19-bit up counter                                     : 1
+ 2-bit up counter                                      : 2
+# Registers                                            : 223
+ Flip-Flops                                            : 223
+# Comparators                                          : 20
+ 11-bit comparator greater                             : 1
+ 2-bit comparator greater                              : 1
+ 20-bit comparator greater                             : 6
+ 32-bit comparator greater                             : 8
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 65
+ 1-bit 2-to-1 multiplexer                              : 25
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 2
+ 11-bit 2-to-1 multiplexer                             : 2
+ 20-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 13
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <video_in_process_RGB_0/video_in_1/FSM_1> on signal <video_sav_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <video_in_process_RGB_0/i2c_1/FSM_0> on signal <I2C_state[1:2]> with sequential encoding.
+---------------------
+ State   | Encoding
+---------------------
+ start   | 00
+ slv_ack | 11
+ wr      | 01
+ stop    | 10
+---------------------
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data351> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data343> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data342> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data341> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G351> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G343> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G342> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G341> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R342> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R341> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R343> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R351> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B351> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B343> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B342> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B341> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data11> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data10> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data9> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data8> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data7> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data6> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data5> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data4> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_video_data1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G11> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G10> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G9> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G8> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G6> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G5> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G7> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G4> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_G1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R11> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R10> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R9> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R8> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R7> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R6> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R5> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R4> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_R1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B11> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B10> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B9> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B8> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B7> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B6> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B5> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B4> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Mram_buf_vga_B1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_b_out_3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_b_out_2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_b_out_1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_b_out_0> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_g_out_3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_g_out_2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_g_out_1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_g_out_0> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_r_out_3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_r_out_2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_r_out_1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_r_out_0> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_gray_out_3> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_gray_out_2> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_gray_out_1> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/video_gray_out_0> of sequential type is unconnected in block <video_out>.
+WARNING:Xst:2677 - Node <video_in_process_RGB_0/Frame_ID_s> of sequential type is unconnected in block <video_out>.
+
+Optimizing unit <video_out> ...
+
+Optimizing unit <video_in> ...
+
+Optimizing unit <vga> ...
+WARNING:Xst:1710 - FF/Latch <video_in_process_RGB_0/YCG_19> (without init value) has a constant value of 0 in block <video_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <video_in_process_RGB_0/YCB_19> (without init value) has a constant value of 0 in block <video_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <video_in_process_RGB_0/YCR_19> (without init value) has a constant value of 0 in block <video_out>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <video_in_process_RGB_0/buf_vga_state_1> in Unit <video_out> is equivalent to the following FF/Latch, which will be removed : <video_in_process_RGB_0/buf_vga_Y_in_cnt_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block video_out, actual ratio is 3.
+FlipFlop video_in_process_RGB_0/Cr_register_0 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_0 connected to a primary input has been replicated
+FlipFlop video_in_process_RGB_0/Cr_register_1 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_1 connected to a primary input has been replicated
+FlipFlop video_in_process_RGB_0/Cr_register_3 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_3 connected to a primary input has been replicated
+FlipFlop video_in_process_RGB_0/Cr_register_4 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_4 connected to a primary input has been replicated
+FlipFlop video_in_process_RGB_0/Cr_register_5 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_5 connected to a primary input has been replicated
+FlipFlop video_in_process_RGB_0/Cr_register_6 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop video_in_process_RGB_0/Cr_register_6 connected to a primary input has been replicated
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 240
+ Flip-Flops                                            : 240
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : video_out.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1681
+#      GND                         : 1
+#      INV                         : 27
+#      LUT1                        : 109
+#      LUT2                        : 166
+#      LUT3                        : 54
+#      LUT4                        : 142
+#      LUT5                        : 192
+#      LUT6                        : 271
+#      MUXCY                       : 375
+#      MUXF7                       : 17
+#      VCC                         : 1
+#      XORCY                       : 326
+# FlipFlops/Latches                : 240
+#      FDC                         : 154
+#      FDCE                        : 74
+#      FDCE_1                      : 4
+#      FDE                         : 3
+#      FDP                         : 2
+#      FDPE                        : 3
+# RAMS                             : 148
+#      RAM32X1D                    : 16
+#      RAM64M                      : 44
+#      RAM64X1D                    : 88
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 10
+#      IOBUF                       : 1
+#      OBUF                        : 15
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             240  out of  106400     0%  
+ Number of Slice LUTs:                 1345  out of  53200     2%  
+    Number used as Logic:               961  out of  53200     1%  
+    Number used as Memory:              384  out of  17400     2%  
+       Number used as RAM:              384
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1366
+   Number with an unused Flip Flop:    1126  out of   1366    82%  
+   Number with an unused LUT:            21  out of   1366     1%  
+   Number of fully used LUT-FF pairs:   219  out of   1366    16%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    200    13%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+video_clk                          | BUFGP                  | 388   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 4.693ns (Maximum Frequency: 213.083MHz)
+   Minimum input arrival time before clock: 5.849ns
+   Maximum output required time after clock: 1.147ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'video_clk'
+  Clock period: 4.693ns (frequency: 213.083MHz)
+  Total number of paths / destination ports: 101252 / 2287
+-------------------------------------------------------------------------
+Delay:               4.693ns (Levels of Logic = 12)
+  Source:            video_in_process_RGB_0/Cr_register_1_1 (FF)
+  Destination:       video_in_process_RGB_0/YCG_18 (FF)
+  Source Clock:      video_clk rising
+  Destination Clock: video_clk rising
+
+  Data Path: video_in_process_RGB_0/Cr_register_1_1 to video_in_process_RGB_0/YCG_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.282   0.635  video_in_process_RGB_0/Cr_register_1_1 (video_in_process_RGB_0/Cr_register_1_1)
+     LUT4:I0->O            1   0.053   0.413  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd1_cy<11>11 (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd1_cy<11>)
+     LUT5:I4->O            1   0.053   0.000  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd3_lut<14> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd3_lut<14>)
+     MUXCY:S->O            1   0.291   0.000  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd3_cy<14> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd3_cy<14>)
+     XORCY:CI->O           1   0.320   0.413  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd3_xor<15> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd_153)
+     LUT4:I3->O            1   0.053   0.000  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_lut<15> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_lut<15>)
+     MUXCY:S->O            1   0.291   0.000  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_cy<15> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_cy<15>)
+     MUXCY:CI->O           0   0.015   0.000  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_cy<16> (video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_cy<16>)
+     XORCY:CI->O           1   0.320   0.413  video_in_process_RGB_0/Mmult_Cr_register[7]_PWR_7_o_MuLt_13_OUT_Madd4_xor<17> (video_in_process_RGB_0/Cr_register[7]_PWR_7_o_MuLt_13_OUT<17>)
+     LUT6:I5->O            1   0.053   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_lut<17> (video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_lut<17>)
+     MUXCY:S->O            0   0.291   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_cy<17> (video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_cy<17>)
+     XORCY:CI->O           1   0.320   0.413  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_xor<18> (video_in_process_RGB_0/GND_7_o_GND_7_o_mux_53_OUT<18>)
+     LUT2:I1->O            1   0.053   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_60_OUT101 (video_in_process_RGB_0/GND_7_o_GND_7_o_mux_60_OUT<18>)
+     FDC:D                     0.011          video_in_process_RGB_0/YCG_18
+    ----------------------------------------
+    Total                      4.693ns (2.406ns logic, 2.287ns route)
+                                       (51.3% logic, 48.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'video_clk'
+  Total number of paths / destination ports: 90419 / 179
+-------------------------------------------------------------------------
+Offset:              5.849ns (Levels of Logic = 14)
+  Source:            video_data_I2C<5> (PAD)
+  Destination:       video_in_process_RGB_0/YCG_18 (FF)
+  Destination Clock: video_clk rising
+
+  Data Path: video_data_I2C<5> to video_in_process_RGB_0/YCG_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            88   0.000   0.800  video_data_I2C_5_IBUF (video_data_I2C_5_IBUF)
+     LUT4:I0->O            2   0.053   0.641  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd1_cy<11>11 (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd1_cy<11>)
+     LUT5:I1->O            1   0.053   0.000  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd3_lut<14> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd3_lut<14>)
+     MUXCY:S->O            1   0.291   0.000  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd3_cy<14> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd3_cy<14>)
+     XORCY:CI->O           1   0.320   0.485  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd3_xor<15> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd_153)
+     LUT4:I2->O            1   0.053   0.000  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_lut<15> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_lut<15>)
+     MUXCY:S->O            1   0.291   0.000  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_cy<15> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_cy<15>)
+     MUXCY:CI->O           0   0.015   0.000  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_cy<16> (video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_cy<16>)
+     XORCY:CI->O           2   0.320   0.731  video_in_process_RGB_0/Mmult_video_data_I2C[7]_PWR_7_o_MuLt_18_OUT_Madd4_xor<17> (video_in_process_RGB_0/video_data_I2C[7]_PWR_7_o_MuLt_18_OUT<17>)
+     LUT5:I0->O            1   0.053   0.602  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_B91_SW0 (N75)
+     LUT6:I3->O            1   0.053   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_lut<17> (video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_lut<17>)
+     MUXCY:S->O            0   0.291   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_cy<17> (video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_cy<17>)
+     XORCY:CI->O           1   0.320   0.413  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_53_OUT_rs_xor<18> (video_in_process_RGB_0/GND_7_o_GND_7_o_mux_53_OUT<18>)
+     LUT2:I1->O            1   0.053   0.000  video_in_process_RGB_0/Mmux_GND_7_o_GND_7_o_mux_60_OUT101 (video_in_process_RGB_0/GND_7_o_GND_7_o_mux_60_OUT<18>)
+     FDC:D                     0.011          video_in_process_RGB_0/YCG_18
+    ----------------------------------------
+    Total                      5.849ns (2.177ns logic, 3.672ns route)
+                                       (37.2% logic, 62.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'video_clk'
+  Total number of paths / destination ports: 17 / 16
+-------------------------------------------------------------------------
+Offset:              1.147ns (Levels of Logic = 2)
+  Source:            video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6 (FF)
+  Destination:       video_sda (PAD)
+  Source Clock:      video_clk rising
+
+  Data Path: video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6 to video_sda
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             1   0.282   0.399  video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6 (video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6)
+     INV:I->O              1   0.067   0.399  video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6_inv1_INV_0 (video_in_process_RGB_0/i2c_1/I2C_state[1]_clk_DFF_6_inv)
+     IOBUF:T->IO               0.000          video_sda_IOBUF (video_sda)
+    ----------------------------------------
+    Total                      1.147ns (0.349ns logic, 0.798ns route)
+                                       (30.4% logic, 69.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock video_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+video_clk      |    4.693|    2.069|    2.057|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.94 secs
+ 
+--> 
+
+Total memory usage is 451144 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   94 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
+
