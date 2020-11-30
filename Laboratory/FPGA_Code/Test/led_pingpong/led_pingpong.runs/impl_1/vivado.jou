@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Nov 27 18:05:38 2020
+# Process ID: 11124
+# Current directory: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/led_pingpong/led_pingpong.runs/impl_1
+# Command line: vivado.exe -log led_move.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source led_move.tcl -notrace
+# Log file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/led_pingpong/led_pingpong.runs/impl_1/led_move.vdi
+# Journal file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/led_pingpong/led_pingpong.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source led_move.tcl -notrace
