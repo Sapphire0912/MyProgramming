@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font
 import googletrans
+# 網頁更新時，需等此套件更新才能正常運作
 from PIL import Image, ImageTk
 
 # 視窗大小
@@ -26,12 +27,12 @@ entry_output.grid(row = 1, column = 1)
 # 使用核取方塊來做
 rad_l = tk.StringVar()
 rad_l.set(2)
-radio = tk.Radiobutton(win, variable = rad_l, value = "zh-tw", text = "中文", font = ft)
-radio.grid(row = 2, column = 0, sticky = 'e')
-radio = tk.Radiobutton(win, variable = rad_l, value = "en", text = "英文", font = ft)
-radio.grid(row = 3, column = 0, sticky = 'e')
-radio = tk.Radiobutton(win, variable = rad_l, value = "ja", text = "日文", font = ft)
-radio.grid(row = 4, column = 0, sticky = 'e')
+radio_tw = tk.Radiobutton(win, variable = rad_l, value = 'zh-tw', text = "中文", font = ft)
+radio_tw.grid(row = 2, column = 0, sticky = 'e')
+radio_en = tk.Radiobutton(win, variable = rad_l, value = 'en', text = "英文", font = ft)
+radio_en.grid(row = 3, column = 0, sticky = 'e')
+radio_jp = tk.Radiobutton(win, variable = rad_l, value = 'ja', text = "日文", font = ft)
+radio_jp.grid(row = 4, column = 0, sticky = 'e')
 
 # 暫時不用圖片
 # path = "C:\\Users\\iris2\\OneDrive\\桌面\\MyProgramming\\Project\\實作\\arrow.jpg"
@@ -46,12 +47,12 @@ text_cov.grid(row = 3, column = 1, sticky = 'w', padx = 42)
 
 rad_r = tk.StringVar()
 rad_r.set(2)
-radio = tk.Radiobutton(win, variable = rad_r, value = "zh-tw", text = "中文", font = ft)
-radio.grid(row = 2, column = 1)
-radio = tk.Radiobutton(win, variable = rad_r, value = "en", text = "英文", font = ft)
-radio.grid(row = 3, column = 1)
-radio = tk.Radiobutton(win, variable = rad_r, value = "ja", text = "日文", font = ft)
-radio.grid(row = 4, column = 1)
+radio_TW = tk.Radiobutton(win, variable = rad_r, value = 'zh-tw', text = "中文", font = ft)
+radio_TW.grid(row = 2, column = 1)
+radio_EN = tk.Radiobutton(win, variable = rad_r, value = 'en', text = "英文", font = ft)
+radio_EN.grid(row = 3, column = 1)
+radio_JP = tk.Radiobutton(win, variable = rad_r, value = 'ja', text = "日文", font = ft)
+radio_JP.grid(row = 4, column = 1)
 
 # 歷史紀錄
 his_label = tk.Label(win, text = "歷史紀錄: ", font = ft)
@@ -63,7 +64,9 @@ history_text.grid(row = 6, column = 1, sticky = 'we', pady = 20)
 def trans_click():
     translator = googletrans.Translator()
     target_text = _input.get()
+    print(target_text)
     language = rad_r.get()
+    print(language)
     result = translator.translate(target_text, dest = language)
     result = result.text
     _output.set(result)
