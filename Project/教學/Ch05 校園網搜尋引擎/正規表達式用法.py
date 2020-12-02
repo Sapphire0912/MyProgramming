@@ -138,3 +138,38 @@ import jieba.analyse
 
 # 其中 sentence 為待分析的文字, topK 為傳回幾個 TF/IDF 加權最大的關鍵字(default = 20), withWeight 為是否一併傳回關鍵字加權值(default = False)
 # allowPOS 只僅包含指定詞性的詞(default = () <- 不進行篩選)
+# example 8
+string2 = "今天我搭公車去了學校, 學校教了程式語言, 那門課讓我很有興趣, 因此今天在學校的收穫很大" 
+seg_list_str = jieba.cut(string2, cut_all = False) # 精確模式
+# print('/'.join(seg_list_str)) # 分詞結果
+# 今天/我/搭/公車/去/了/學校/,/ /學校/教/了/程式/語言/,/ /那門/課/讓/我/很/有/興趣/,/ /因此/今天/在/學校/的/收/穫/很大
+
+tags = jieba.analyse.extract_tags(string2, topK = 5, withWeight = True)
+# print(tags)  # [('學校', 2.988691875725), ('公車', 0.9962306252416666), ('語言', 0.9962306252416666), ('那門', 0.9962306252416666), ('興趣', 0.9962306252416666)]
+
+# 關鍵字分析所使用的逆向檔案頻率(IDF) 
+# jieba.analyse.TFIDF(idf_path = None) # 新增 TF/IDF 實例, idf_path 為 IDF 頻率檔案(放路徑)
+# 關鍵字分析所使用的停止詞
+# jieba.analyse.set_idf_path(file_name) # file_name 為自訂語料庫的路徑
+
+
+
+# deque(double-ended queue) 雙向佇列 位於 Python 標準函式庫 collections 中
+# 提供了兩端都可以操作的序列, 表示在序列的前後皆可以執行增加或刪除操作
+from collections import deque
+# example 9
+d = deque() # 建立雙向序列
+d.append(3) # 新增元素
+d.append(4.5)
+d.append(1) 
+# print(d) # deque([3, 4.5, 1])
+
+# deque 支援從任意一端增加元素, append() 加在最右邊, appendleft() 則加在最左邊
+# pop(), popleft() 同理
+
+# 限制 deque 長度
+d = deque(maxlen = 20)
+for i in range(30):
+    d.append(i)
+# print(d) # 若超出範圍則會從另一邊的先刪除
+# Q. 用 高科大校務系統 爬蟲
