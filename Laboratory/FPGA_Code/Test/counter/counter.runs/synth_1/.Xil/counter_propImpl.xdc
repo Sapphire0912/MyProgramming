@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/counter/count.xdc rfile:../../../count.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y9 [get_ports {clk}]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets reset_IBUF]
+set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS25} [get_ports {reset}]
