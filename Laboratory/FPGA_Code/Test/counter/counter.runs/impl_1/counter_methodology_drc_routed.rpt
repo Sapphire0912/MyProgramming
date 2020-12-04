@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Dec  3 20:06:23 2020
+| Date         : Fri Dec  4 14:32:56 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file counter_methodology_drc_routed.rpt -pb counter_methodology_drc_routed.pb -rpx counter_methodology_drc_routed.rpx
 | Design       : counter
@@ -23,39 +23,33 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 4
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell | 4          |
-| TIMING-20 | Warning          | Non-clocked latch           | 1          |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin count_reg[0]/C is not reached by a timing clock
+The clock pin temp_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin count_reg[1]/C is not reached by a timing clock
+The clock pin temp_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin count_reg[2]/C is not reached by a timing clock
+The clock pin temp_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin count_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch ctrl_reg/L7 (in ctrl_reg macro) cannot be properly analyzed as its control pin ctrl_reg/L7/G is not reached by a timing clock
+The clock pin temp_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 

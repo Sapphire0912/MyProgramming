@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Dec  3 20:06:28 2020
+| Date         : Fri Dec  4 14:32:58 2020
 | Host         : DESKTOP-RTSRNN6 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file counter_timing_summary_routed.rpt -pb counter_timing_summary_routed.pb -rpx counter_timing_summary_routed.rpx -warn_on_violation
 | Design       : counter
@@ -56,16 +56,6 @@ Table of Contents
 --------------------
  There are 4 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: reset (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: count_reg[0]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: count_reg[1]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: count_reg[2]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: count_reg[3]/Q (HIGH)
-
 
 2. checking constant_clock
 --------------------------
@@ -79,7 +69,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 9 pins that are not constrained for maximum delay. (HIGH)
+ There are 8 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -127,7 +117,7 @@ Table of Contents
 
 12. checking latch_loops
 ------------------------
- There is 1 combinational latch loop in the design through latch input (HIGH)
+ There are 0 combinational latch loops in the design through latch input
 
 
 

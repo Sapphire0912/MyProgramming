@@ -1,6 +1,6 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto a9eb8179e4d54841bcd62faf7ea67bdb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot counter_behav xil_defaultlib.counter -log elaborate.log 
+Running: D:/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto a9eb8179e4d54841bcd62faf7ea67bdb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot counter_test_behav xil_defaultlib.counter_test -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,5 +12,6 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavior of entity xil_defaultlib.counter
-Built simulation snapshot counter_behav
+Compiling architecture behavior of entity xil_defaultlib.counter [counter_default]
+Compiling architecture behavioral of entity xil_defaultlib.counter_test
+Built simulation snapshot counter_test_behav

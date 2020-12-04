@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Dec  4 17:31:53 2020
+# Process ID: 20264
+# Current directory: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/counter_led/counter_led.runs/synth_1
+# Command line: vivado.exe -log counter_led.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_led.tcl
+# Log file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/counter_led/counter_led.runs/synth_1/counter_led.vds
+# Journal file: C:/Users/iris2/Desktop/MyProgramming/Laboratory/FPGA_Code/Test/counter_led/counter_led.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source counter_led.tcl -notrace
