@@ -82,8 +82,9 @@ begin
     begin
         if (reset = '1') then
             pwmout <= '1';
+        elsif (clk 'event and clk = '1') then
+            pwmout <= not state;
         end if;
-        pwmout <= not state;
     end process;
 
 end Behavioral;
