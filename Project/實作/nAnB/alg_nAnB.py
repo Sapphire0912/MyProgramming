@@ -1,7 +1,7 @@
 import random
 import time
 
-__all__ = ['gen_func', 'guess']
+# __all__ = ['gen_func', 'guess']
 
 def gen_func():
     '''隨機產生四位0~9數字, 結果為字串'''
