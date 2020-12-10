@@ -3,87 +3,175 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
+-- sw: I/P signal; up_ssd, low_ssd: upper/lower seven-segement display
 entity PWM is
     port(
         clk, reset: in std_logic;
+        sw: in std_logic_vector(7 downto 0);
         pwmout: out std_logic;
-        count1, count2: out std_logic_vector(3 downto 0)
+        up_ssd, low_ssd: out std_logic_vector(6 downto 0)
     );
 end entity;
 
 architecture Behavioral of PWM is
-    -- ctrl state
-    signal state: std_logic := '0';
+    -- clock divider
+    signal freq: std_logic_vector(25 downto 0);
+    signal clk_div: std_logic;
 
-    -- count(4 bit)
-    signal cnt1: std_logic_vector(3 downto 0);
-    signal cnt2: std_logic_vector(3 downto 0);
+    -- receive sw values
+    signal bound: std_logic_vector(7 downto 0);
+
+    -- state: 0, upper; 1, lower
+    signal state: std_logic;
+
+    -- count 
+    signal count1: std_logic_vector(7 downto 0);
+    signal count2: std_logic_vector(7 downto 0);
+
+    -- pwm value(state, pwm_value; 0, 1; 1, 0)
+    signal pwm_value: std_logic;
 
 begin
-    FSM: process (clk, reset, state, cnt1, cnt2)
+    clk_div <= freq(25);
+    pwmout <= pwm_value;
+
+    freq_div: process (clk, reset, freq)
+    begin
+        if (reset = '1') then
+            freq <= (others => '0');
+        elsif (clk 'event and clk = '1') then
+            freq <= freq + '1';
+        end if;
+    end process;
+
+    set_bound: process (clk_div, reset, sw, bound)
+    begin
+        if (reset = '1') then
+            bound <= (others => '0');
+        elsif (clk_div 'event and clk_div = '1') then
+            bound <= sw;
+        end if;
+    end process;
+
+    FSM: process (clk_div, reset, state, bound, count1, count2)
     begin
         if (reset = '1') then
             state <= '0';
-        elsif (clk 'event and clk = '1') then
+        elsif (clk_div 'event and clk_div = '1') then
             case state is
                 when '0' =>
-                    if (cnt1 = "1001") then
+                    if (count1 >= bound - '1') then
                         state <= '1';
                     end if;
-                
                 when '1' =>
-                    if (cnt2 = "0000") then
+                    if (count2 <= bound + '1') then
                         state <= '0';
                     end if;
-                
                 when others =>
                     null;
             end case;
         end if;
     end process;
 
-    counter1: process (clk, reset, state, cnt1)
+    counter1: process (clk_div, reset, state, count1)
     begin
         if (reset = '1') then
-            cnt1 <= "0000";
-        elsif (clk 'event and clk = '1') then
+            count1 <= (others => '0');
+        elsif (clk_div 'event and clk_div = '1') then
             if (state = '0') then
-                if (cnt1 = "1001") then
-                    cnt1 <= "0000";
-                else
-                    cnt1 <= cnt1 + 1;
-                end if;
+                count1 <= count1 + '1';
             else
-                cnt1 <= "0000";
+                count1 <= (others => '0');  
             end if;
         end if;
-        count1 <= cnt1;
     end process;
 
-    counter2: process (clk, reset, state, cnt2)
+    counter2: process (clk_div, reset, state, count2)
     begin
         if (reset = '1') then
-            cnt2 <= "1001";
-        elsif (clk 'event and clk = '1') then
+            count2 <= "00001001";
+        elsif (clk_div 'event and clk_div = '1') then
             if (state = '1') then
-                if (cnt2 = "0000") then
-                    cnt2 <= "1001";
-                else
-                    cnt2 <= cnt2 - 1;
-                end if;
-            else
-                cnt2 <= "1001";
+                count2 <= count2 - '1';
+            else        
+                count2 <= "00001001";
             end if;
         end if;
-        count2 <= cnt2;
     end process;
 
-    pwm: process (clk, reset, state)
+    pwm: process (clk_div, reset, state, pwm_value)
     begin
         if (reset = '1') then
-            pwmout <= '1';
-        elsif (clk 'event and clk = '1') then
-            pwmout <= not state;
+            pwm_value <= '1';
+        elsif (clk_div 'event and clk_div = '1') then
+            pwm_value <= not state;
+        end if;
+    end process;
+
+-------- actual circuit --------
+    -- up_ssd(common: positive)
+    upper_ssd: process (clk_div, reset, count1) 
+    begin
+        if (reset = '1') then
+            up_ssd <= "0000001";
+        elsif (clk_div 'event and clk_div = '1') then
+            case count1 is
+                when "00000000" =>
+                    up_ssd <= "0000001";
+                when "00000001" =>
+                    up_ssd <= "1001111";
+                when "00000010" =>
+                    up_ssd <= "0010010";
+                when "00000011" =>
+                    up_ssd <= "0000110";
+                when "00000100" =>
+                    up_ssd <= "1001100";
+                when "00000101" => 
+                    up_ssd <= "0100100";
+                when "00000110" =>
+                    up_ssd <= "0100000";
+                when "00000111" =>
+                    up_ssd <= "0001111";
+                when "00001000" =>
+                    up_ssd <= "0000000";
+                when "00001001" =>
+                    up_ssd <= "0000100";
+                when others => 
+                    null;
+            end case;
+        end if;
+    end process;
+
+    -- low_ssd(common: positive)
+    lower_ssd: process (clk_div, reset, count2) 
+    begin
+        if (reset = '1') then
+            low_ssd <= "0000100";
+        elsif (clk_div 'event and clk_div = '1') then
+            case count2 is
+                when "00000000" =>
+                    low_ssd <= "0000001";
+                when "00000001" =>
+                    low_ssd <= "1001111";
+                when "00000010" =>
+                    low_ssd <= "0010010";
+                when "00000011" =>
+                    low_ssd <= "0000110";
+                when "00000100" =>
+                    low_ssd <= "1001100";
+                when "00000101" => 
+                    low_ssd <= "0100100";
+                when "00000110" =>
+                    low_ssd <= "0100000";
+                when "00000111" =>
+                    low_ssd <= "0001111";
+                when "00001000" =>
+                    low_ssd <= "0000000";
+                when "00001001" =>
+                    low_ssd <= "0000100";
+                when others => 
+                    null;
+            end case;
         end if;
     end process;
 
