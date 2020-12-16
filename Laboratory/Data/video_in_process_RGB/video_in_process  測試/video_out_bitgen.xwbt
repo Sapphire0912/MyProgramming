@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\DreamCat\Desktop\video_in_process\video_out.ncd
-OUTFILE=C:\Users\DreamCat\Desktop\video_in_process\video_out.bit
-FAMILY=Zynq
-PART=xc7z020-1clg484
-WORKINGDIR=C:\Users\DreamCat\Desktop\video_in_process
-LICENSE=WebPack
-USER_INFO=__0_0_0

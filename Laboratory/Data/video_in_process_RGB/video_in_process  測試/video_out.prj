@@ -1,5 +1,0 @@
-vhdl work "video_in_process_RGB/video_in.vhd"
-vhdl work "video_in_process_RGB/vga.vhd"
-vhdl work "video_in_process_RGB/i2c.vhd"
-vhdl work "video_in_process_RGB/video_in_process_RGB.vhd"
-vhdl work "video_out.vhd"
