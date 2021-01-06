@@ -52,12 +52,12 @@ class handle:
         if A == 4:
             self.stop = False
 
-# num = gen_func()
-# test = handle(num) # call class
-# print(test.com_num)
+num = gen_func()
+test = handle(num) # call class
+print(test.com_num)
 
-# while test.stop:
-#     ip = input("input numbers: ")
-#     test.guess(ip)
-#     print(test.result)
-# print("end.")
+while test.stop:
+    ip = input("input numbers: ")
+    test.guess(ip)
+    print(test.result)
+print("end.")
