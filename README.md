@@ -3,9 +3,10 @@
 
 <details>
   <summary> Coding Style </summary>
+  
   * Python
   
-  
+</details>  
 
 <details>
   <summary> C language </summary>
