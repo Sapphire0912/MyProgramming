@@ -25,7 +25,8 @@
 <details>
   <summary> Python </summary>
   
-  Target dir:  [Python_Practice](https://github.com/Sapphire0912/MyProgramming/tree/master/Python/Practice)  
-               [Python_Project](https://github.com/Sapphire0912/MyProgramming/tree/master/Python/Project)  
+  Target dir:  
+  [Python_Practice](https://github.com/Sapphire0912/MyProgramming/tree/master/Python/Practice)  
+  [Python_Project](https://github.com/Sapphire0912/MyProgramming/tree/master/Python/Project)  
   
 </details>
