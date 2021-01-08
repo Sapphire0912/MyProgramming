@@ -29,7 +29,7 @@ def entry_example():
     # 建立 Entry 物件 (Entry 物件 = Entry(windows 視窗物件))
     
     # 使用 get() 用來取得單行文字標籤內輸入的內容
-    # 設定或取得 Entru 元件內容也可以使用 StringVar() 物件來完成
+    # 設定或取得 Entry 元件內容也可以使用 StringVar() 物件來完成
     s = StringVar() # 一個 StringVar() 物件
     s.set("測試 Entry 元件")
     entry1 = Entry(win, textvariable = s) # Entry 元件顯示 s.set() 的內容
