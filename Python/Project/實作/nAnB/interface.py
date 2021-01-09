@@ -1,13 +1,8 @@
 import tkinter as tk
 import alg_nAnB as Alg
 
-# 包含處理例外錯誤的問題 ok
-# 包含再一局, 結束按鈕
-# 可以的話 新增開始按鈕 點擊按鈕後 進到遊戲開始的畫面
-
 com_num = Alg.gen_func()
 games = Alg.Handle(com_num)
-# print(com_num)
 
 
 def btw_guess():
@@ -57,10 +52,5 @@ his_text.grid(row=3, column=0)
 # 猜 按鈕
 button_guess = tk.Button(win, text="猜", font=ft, command=btw_guess)
 button_guess.grid(row=2, column=1, ipadx=10, ipady=5)
-
-# 顯示 互動文字
-inter_text = tk.StringVar()
-interactive_text = tk.Label(win, textvariable=inter_text, font=ft)
-interactive_text.grid(row=3, column=1)
 
 win.mainloop()
