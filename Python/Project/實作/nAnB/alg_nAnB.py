@@ -10,7 +10,7 @@ def gen_func():
 
 class Handle(object):
     def __init__(self, com_num):
-        """com_mon: 電腦數字, user_num: 使用者猜測數字, error_text: 異常處理內容,
+        """com_num: 電腦數字, user_num: 使用者猜測數字, error_text: 異常處理內容,
         result: 電腦要回傳的結果(nAnB), stop: 控制遊戲開始/結束"""
         self.com_num = com_num
         self.user_num = None
@@ -44,8 +44,6 @@ class Handle(object):
                     else:
                         a += 1
             self.result = '%sA%sB' % (a, b)
-        else:
-            print(self.error_text)
 
         if a == 4:
             self.stop = False

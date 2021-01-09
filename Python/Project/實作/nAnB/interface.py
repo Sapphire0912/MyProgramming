@@ -1,15 +1,31 @@
 import tkinter as tk
-import tkinter.font 
 import alg_nAnB as Alg
 
-# 包含處理例外錯誤的問題
+# 包含處理例外錯誤的問題 ok
 # 包含再一局, 結束按鈕
 # 可以的話 新增開始按鈕 點擊按鈕後 進到遊戲開始的畫面
 
+com_num = Alg.gen_func()
+games = Alg.Handle(com_num)
+# print(com_num)
+
 
 def btw_guess():
+    # 遊戲流程
     player_num = _input.get()
-    pass
+    games.guess(player_num)
+    _output.set(games.result)
+
+    # 新增猜過紀錄
+    his_text.config(state='normal')
+    his_text.insert("insert", player_num)
+    his_text.insert("insert", " -> " + games.result)
+    his_text.insert("insert", '\n')
+    his_text.config(state='disable')
+
+    # 遊戲未結束時，猜過一次後就把輸入欄清除
+    if games.stop:
+        _input.set("")
 
 
 # 視窗架構
@@ -44,7 +60,6 @@ button_guess.grid(row=2, column=1, ipadx=10, ipady=5)
 
 # 顯示 互動文字
 inter_text = tk.StringVar()
-# inter_text.set("test")
 interactive_text = tk.Label(win, textvariable=inter_text, font=ft)
 interactive_text.grid(row=3, column=1)
 
