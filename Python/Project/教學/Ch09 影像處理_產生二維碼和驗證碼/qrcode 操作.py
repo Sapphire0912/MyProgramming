@@ -27,4 +27,4 @@ holo = qrcode.QRCode(
 # QRCode 物件的 make_image() 函數可以透過改變 fill_color, back_color 參數來改變所產生圖片的背景顏色格子顏色
 
 # 產生其他類型的二維碼
-
+pass
