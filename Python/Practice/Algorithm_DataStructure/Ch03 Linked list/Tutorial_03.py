@@ -50,7 +50,20 @@ class LinkedList(object):
         last_ptr.next = new_node  # the last node indicator points to the new node
 
     def remove_node(self, rm_val):
-        pass
+        """rm_val: 刪除值"""
+        ptr2 = self.head
+        if ptr2:  # if the deleted data is the first node
+            if ptr2.data == rm_val:
+                self.head = ptr2.next
+                return
+        while ptr2:
+            if ptr2.data == rm_val:
+                break
+            prev = ptr2
+            ptr2 = ptr2.next
+        if ptr2 is None:
+            return
+        prev.next = ptr2.next
 
 
 link = LinkedList()
@@ -62,4 +75,7 @@ n4.next = n5
 link.print_list()
 print("New Linked List: ")
 link.insert_first(12)
+link.print_list()
+print("New Linked List: ")
+link.remove_node(12)
 link.print_list()
