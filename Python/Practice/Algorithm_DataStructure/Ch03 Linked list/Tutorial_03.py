@@ -52,6 +52,7 @@ class LinkedList(object):
     def remove_node(self, rm_val):
         """rm_val: 刪除值"""
         ptr2 = self.head
+        prev = 0
         if ptr2:  # if the deleted data is the first node
             if ptr2.data == rm_val:
                 self.head = ptr2.next
