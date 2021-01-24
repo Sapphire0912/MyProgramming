@@ -1,6 +1,6 @@
 # 使用 陣列 建立二元樹
 def create_btree(tree, data):
-    """使用 data 建立二元樹"""
+    """使用 array 建立二元樹"""
     for i in range(len(data)):
         level = 0
         if i == 0:
