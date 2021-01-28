@@ -28,6 +28,7 @@ class Node(object):
             self.right.preorder()
 
     def postorder(self):
+        # print("-----called-----")
         if self.left:
             self.left.postorder()
         if self.right:
@@ -55,6 +56,13 @@ class DelNode(object):
         if root is None:
             return None
 
+        # if val == root.data:
+        #     min_right = self.min_node(root.right)
+        #     tmp = Node(min_right.data)
+        #     tmp.left = root.left
+        #     tmp.right = self.right_node(root.right)
+        #     return tmp
+
         if val < root.data:
             root.left = self.target(root.left, val)
             return root
@@ -64,13 +72,16 @@ class DelNode(object):
             return root
 
         if root.left is None:
-            return root.right
+            new_root = root.right
+            return new_root
 
         if root.right is None:
-            return root.left
+            new_root = root.left
+            return new_root
 
-        min_right = self.min_node(root.right)
-        tmp = Node(min_right.data)
+        min_right = self.min_node(root.right)  # find the smallest node of the right subtree
+        tmp = Node(min_right.data)  # create new node
+        tmp.left = root.left
         tmp.right = self.right_node(root.right)
         return tmp
 
@@ -81,13 +92,11 @@ class DelNode(object):
         return root
 
     def right_node(self, root):
-        """找出剩下的右節點"""
-        pass
-        # print("-----")
-        # if root.right is None:
-        #     return root.left
-        # root.right = self.right_node(root.right)
-        # return root
+        if root.left is None:
+            new_root = root.right
+            return new_root
+        root.left = self.right_node(root.left)
+        return root
 
 
 tree = Node()
@@ -107,12 +116,12 @@ for d in datasets:
 # print()
 # print(tree.depth(tree))
 
-# Q3. wait
-# print("Postorder: ")
-# tree.postorder()
-# print()
-# del_node = DelNode()
-# del_node.target(tree, 10)
-# print("Postorder: ")
-# tree.postorder()
-# print()
+# Q3.
+print("Postorder: ")
+tree.postorder()
+print()
+del_node = DelNode()
+test = del_node.target(tree, 10)
+print("Postorder: ")
+test.postorder()
+print()
