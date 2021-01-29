@@ -23,7 +23,6 @@ import cv2
 # print(len(l2))
 
 
-
 def img_file():
     global path
 
@@ -32,18 +31,19 @@ def img_file():
     ]
     path = filedialog.askopenfilename()  # get file path
     target_name = path.split("/")  # get filename and type. ex. filename.jpg
-
+    
     try:
         if target_name[-1].split('.')[-1] not in file_type:
             messagebox.showerror("錯誤1", "檔案類型不是jpg, jpeg, png, bmp")
 
+        x, y = size_height_val.get(), size_width_val.get()  # get height, width
         img_type = img_type_val.get()  # get output type
-        img = cv2.imread(path)  # get image array
+        img = cv2.resize(cv2.imread(path), (x, y))  # get image array
         img = cv2.cvtColor(img, img_type)  # using img_type open image
-        x, y = img.shape[0], img.shape[1]  # get height, width
+
         # display image
         img_canvas = Canvas(win, width=y, height=x)
-        img_canvas.place(x=180, y=0)
+        img_canvas.place(x=120, y=230)
 
         img_trans = ImageTk.PhotoImage(Image.fromarray(img))  # array into image
         img_canvas.create_image(0, 0, anchor=NW, image=img_trans)
@@ -63,7 +63,7 @@ path = ""
 
 # interface
 win = Tk()
-win.geometry('960x600')
+win.geometry('600x480')
 win.title('coe 文件生成')
 
 # choose digits type
@@ -100,38 +100,59 @@ frame_img_type.place(x=0, y=150)
 desc = "" \
        "    width: 單筆資料長度\n" \
        "depth: 幾筆資料\n" \
-       "threshold: 區分顏色門檻"
+       "threshold: 區分顏色門檻\n" \
+       "(默認 灰階 128, RGB 200; 使用默認值可以不用填)\n" \
+       "       size: 輸出格式的大小(默認 128*128 )"
 
 frame_val = Frame(win)
 val_label = LabelFrame(frame_val, text='輸出目標資料', font=('標楷體', '14', 'bold'))
-description = Label(val_label, text=desc, font=ft)
-width_label = Label(val_label, text='width: ', font=ft)
+
+description = Label(frame_val, text=desc, font=('標楷體', 12))
+width_label = Label(val_label, text='width:', font=ft)
 width_val = IntVar()
 width_input = Entry(val_label, textvariable=width_val, width=10)
-depth_label = Label(val_label, text='depth: ', font=ft)
+depth_label = Label(val_label, text='depth:', font=ft)
 depth_val = IntVar()
 depth_input = Entry(val_label, textvariable=depth_val, width=10)
-thres_label = Label(val_label, text='threshold: ', font=ft)
+
+thres_label = Label(val_label, text='threshold:', font=ft)
 thres_val = IntVar()
+thres_val.set(-1)
 thres_input = Entry(val_label, textvariable=thres_val, width=10)
 
-description.grid(column=0, row=9, sticky='n')
+size_height_label = Label(val_label, text='size: height', font=ft)
+size_height_val = IntVar()
+size_height_val.set(128)
+size_height_input = Entry(val_label, textvariable=size_height_val, width=10)
+size_width_label = Label(val_label, text='width', font=ft)
+size_width_val = IntVar()
+size_width_val.set(128)
+size_width_input = Entry(val_label, textvariable=size_width_val, width=10)
+
+description.grid(column=0, row=9, sticky='w')
 width_label.grid(column=0, row=10, sticky='w')
 width_input.grid(column=1, row=10, sticky='w')
 depth_label.grid(column=0, row=11, sticky='w')
 depth_input.grid(column=1, row=11, sticky='w')
+
 thres_label.grid(column=0, row=12, sticky='w')
 thres_input.grid(column=1, row=12, sticky='w')
+
+size_height_label.grid(column=0, row=13, sticky='w')
+size_height_input.grid(column=1, row=13, sticky='w')
+size_width_label.grid(column=2, row=13, sticky='w')
+size_width_input.grid(column=3, row=13, sticky='w')
+
 val_label.grid(column=0, row=8, sticky='w')
-frame_val.place(x=0, y=240)
+frame_val.place(x=100, y=0)
 
 # select file, transform button
 frame_target = Frame(win)
 img_button = Button(frame_target, text='選擇圖片', font=ft, command=img_file)
 trans_button = Button(frame_target, text='轉換', font=ft, command=transform)
-img_button.grid(column=0, row=13, sticky='w')
-trans_button.grid(column=0, row=14, sticky='w')
-frame_target.place(x=0, y=400)
+img_button.grid(column=0, row=14, sticky='w')
+trans_button.grid(column=0, row=15, sticky='w')
+frame_target.place(x=0, y=240)
 
 
 # text
