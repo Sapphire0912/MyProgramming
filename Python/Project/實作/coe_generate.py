@@ -36,7 +36,7 @@ def img_file():
 
 
 def transform():
-    def gray(coe_width, coe_depth, thres, img_height, img_width):
+    def gray(coe_width, coe_depth, thres, img_height, img_width, base):
         if thres < -1:
             messagebox.showerror("錯誤3", "threshold 數值有錯: 範圍0~255")
         elif thres == -1:
@@ -61,16 +61,18 @@ def transform():
                     digitize.append(s)
 
             # coe format
-            coe_format = list()
-            for data_depth in range(0, coe_depth):
-                s = ""
-                for index in range(0, coe_width):
-                    s += digitize[index]
-                coe_format.append(s)
-            print(len(coe_format[0]))
-            print(len(coe_format))
+            if base == 2:
+                coe_format = list()
+                for data_depth in range(0, coe_depth):
+                    s = ""
+                    for index in range(0, coe_width):
+                        s += digitize[index]
+                    coe_format.append(s)
+                print(len(digitize))
+                print(len(coe_format[0]))
+                print(len(coe_format))
 
-    def rgb(coe_width, coe_depth, thres, img_height, img_width):
+    def rgb(coe_width, coe_depth, thres, img_height, img_width, base):
         if thres < -1:
             messagebox.showerror("錯誤3", "threshold 數值有錯: 範圍0~255")
         elif thres == -1:
@@ -96,15 +98,16 @@ def transform():
                     digitize.append(s)
 
             # coe format
-            coe_format = list()
-            for data_depth in range(0, coe_depth):
-                s = ""
-                for index in range(0, int(coe_width/3)):
-                    s += digitize[index]
-                coe_format.append(s)
-            print(len(digitize))
-            print(len(coe_format[0]))
-            print(len(coe_format))  # B, G, R
+            if base == 2:
+                coe_format = list()
+                for data_depth in range(0, coe_depth):
+                    s = ""
+                    for index in range(0, int(coe_width/3)):
+                        s += digitize[index]
+                    coe_format.append(s)
+                print(len(digitize))
+                print(len(coe_format[0]))
+                print(len(coe_format))  # B, G, R
 
     img_type = img_type_val.get()  # get output type
     width = width_val.get()  # coe width
@@ -112,11 +115,13 @@ def transform():
     threshold = thres_val.get()  # threshold
     img_h = size_height_val.get()  # image height
     img_w = size_width_val.get()  # image width
+    base_type = digits_val.get()  # get base type
 
     if img_type == cv2.COLOR_BGR2GRAY:
-        gray(width, depth, threshold, img_h, img_w)
+        gray(width, depth, threshold, img_h, img_w, base_type)
+
     elif img_type == cv2.COLOR_BGR2RGB:
-        rgb(width, depth, threshold, img_h, img_w)
+        rgb(width, depth, threshold, img_h, img_w, base_type)
 
 
 # global variable
@@ -128,7 +133,7 @@ win = Tk()
 win.geometry('600x480')
 win.title('coe 文件生成')
 
-# choose digits type
+# choose base type
 frame_digits = Frame(win)
 digits_label = LabelFrame(frame_digits, text='選擇進制', font=('標楷體', '14', 'bold'))
 digits_val = IntVar()
