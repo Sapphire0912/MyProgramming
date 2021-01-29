@@ -128,13 +128,14 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_IBUF]" % (clk_name, volta
                 xdc_list.append(switch_name_pin)
                 name_index += 1
     else:
-        # default: name: (active-1 downto 0)
-        switch_active = switch_list.count(1) - 1
+        name_index = 0
         switch_index_format = "%s[%s]"
-        for index in range(switch_active, -1, -1):
-            switch_index_name = switch_index_format % (set_sw_name[0], index)
-            switch_name_pin = xdc_format % (pin_sw_name[index], voltage, switch_index_name)
-            xdc_list.append(switch_name_pin)
+        for index in range(0, len(switch_list)):
+            switch_index_name = switch_index_format % (set_sw_name[0], name_index)
+            if switch_list[index]:
+                switch_name_pin = xdc_format % (pin_sw_name[index], voltage, switch_index_name)
+                name_index += 1
+                xdc_list.append(switch_name_pin)
 
     # handle button
     # 0: center, 1: left, 2: right, 3: up, 4: down
@@ -174,13 +175,14 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_IBUF]" % (clk_name, volta
                 xdc_list.append(led_name_pin)
                 name_index += 1
     else:
-        # default: name: (active-1 downto 0)
-        led_active = led_list.count(1) - 1
+        name_index = 0
         led_index_format = "%s[%s]"
-        for index in range(led_active, -1, -1):
-            led_index_name = led_index_format % (set_led_name[0], index)
-            led_name_pin = xdc_format % (pin_led_name[index], voltage, led_index_name)
-            xdc_list.append(led_name_pin)
+        for index in range(0, len(led_list)):
+            led_index_name = led_index_format % (set_led_name[0], name_index)
+            if led_list[index]:
+                led_name_pin = xdc_format % (pin_led_name[index], voltage, led_index_name)
+                name_index += 1
+                xdc_list.append(led_name_pin)
 
     # handle pi interface
     pi3 = pi_val3.get()
@@ -251,7 +253,7 @@ pin_pi_name = [
     'U6'
 ]
 xdc_list = list()
-xdc_format = "set_property -dict {PACKAGE_PIN %s IOSTANDARD LVCMOS%s} [get_ports{%s}]"
+xdc_format = "set_property -dict {PACKAGE_PIN %s IOSTANDARD LVCMOS%s} [get_ports {%s}]"
 
 # 設定電壓後才進入設定腳位視窗
 volt = Tk()
@@ -268,7 +270,7 @@ volt_check.pack()
 volt.mainloop()
 
 win = Tk()
-win.geometry('1480x480')
+win.geometry('1600x480')
 win.title(title)
 
 # create switch
