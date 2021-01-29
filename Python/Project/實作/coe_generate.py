@@ -5,24 +5,6 @@ from PIL import Image, ImageTk
 import cv2
 
 
-
-# print(pic[60][60])  # BGR
-
-# l = list()
-# l2 = list()
-# for i in range(128):
-#     for j in range(128):
-#         s = ""
-#         for k in pic[i][j]:
-#             if k > 200:
-#                 s += '1'
-#             else:
-#                 s += '0'
-#         l.append(s)
-# print(len(l))
-# print(len(l2))
-
-
 def img_file():
     global path
 
@@ -31,14 +13,14 @@ def img_file():
     ]
     path = filedialog.askopenfilename()  # get file path
     target_name = path.split("/")  # get filename and type. ex. filename.jpg
-    
+
     try:
         if target_name[-1].split('.')[-1] not in file_type:
             messagebox.showerror("錯誤1", "檔案類型不是jpg, jpeg, png, bmp")
 
         x, y = size_height_val.get(), size_width_val.get()  # get height, width
-        img_type = img_type_val.get()  # get output type
-        img = cv2.resize(cv2.imread(path), (x, y))  # get image array
+        img_type = img_type_val.get()  # get output types
+        img = cv2.resize(cv2.imread(path), (y, x))  # get image array
         img = cv2.cvtColor(img, img_type)  # using img_type open image
 
         # display image
@@ -54,7 +36,87 @@ def img_file():
 
 
 def transform():
-    pass
+    def gray(coe_width, coe_depth, thres, img_height, img_width):
+        if thres < -1:
+            messagebox.showerror("錯誤3", "threshold 數值有錯: 範圍0~255")
+        elif thres == -1:
+            thres = 128
+
+        if coe_width * coe_depth != img_height * img_width:
+            messagebox.showerror("錯誤2", "資料大小和圖片的大小不符合")
+        else:
+            img = cv2.resize(cv2.imread(path), (img_width, img_height))
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            print(img.shape)  # (wid, length)
+
+            # image digitization
+            digitize = list()
+            for i in range(0, img_width):
+                for j in range(0, img_height):
+                    s = ""
+                    if img[i][j] >= thres:
+                        s += "1"
+                    else:
+                        s += "0"
+                    digitize.append(s)
+
+            # coe format
+            coe_format = list()
+            for data_depth in range(0, coe_depth):
+                s = ""
+                for index in range(0, coe_width):
+                    s += digitize[index]
+                coe_format.append(s)
+            print(len(coe_format[0]))
+            print(len(coe_format))
+
+    def rgb(coe_width, coe_depth, thres, img_height, img_width):
+        if thres < -1:
+            messagebox.showerror("錯誤3", "threshold 數值有錯: 範圍0~255")
+        elif thres == -1:
+            thres = 200
+
+        if coe_width * coe_depth != img_height * img_width * 3:
+            messagebox.showerror("錯誤2", "資料大小和圖片的大小不符合")
+        else:
+            img = cv2.resize(cv2.imread(path), (img_width, img_height))
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            print(img.shape)  # (wid, length, 3)
+
+            # image digitization
+            digitize = list()
+            for i in range(0, img_width):
+                for j in range(0, img_height):
+                    s = ""
+                    for color in img[i][j]:
+                        if color >= thres:
+                            s += "1"
+                        else:
+                            s += "0"
+                    digitize.append(s)
+
+            # coe format
+            coe_format = list()
+            for data_depth in range(0, coe_depth):
+                s = ""
+                for index in range(0, int(coe_width/3)):
+                    s += digitize[index]
+                coe_format.append(s)
+            print(len(digitize))
+            print(len(coe_format[0]))
+            print(len(coe_format))  # B, G, R
+
+    img_type = img_type_val.get()  # get output type
+    width = width_val.get()  # coe width
+    depth = depth_val.get()  # coe depth
+    threshold = thres_val.get()  # threshold
+    img_h = size_height_val.get()  # image height
+    img_w = size_width_val.get()  # image width
+
+    if img_type == cv2.COLOR_BGR2GRAY:
+        gray(width, depth, threshold, img_h, img_w)
+    elif img_type == cv2.COLOR_BGR2RGB:
+        rgb(width, depth, threshold, img_h, img_w)
 
 
 # global variable
@@ -162,4 +224,3 @@ frame_target.place(x=0, y=240)
 # frame_text.pack()
 
 win.mainloop()
-
