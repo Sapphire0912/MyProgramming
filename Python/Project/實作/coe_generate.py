@@ -25,7 +25,7 @@ def img_file():
 
         # display image
         img_canvas = Canvas(win, width=y, height=x)
-        img_canvas.place(x=120, y=230)
+        img_canvas.place(x=150, y=230)
 
         img_trans = ImageTk.PhotoImage(Image.fromarray(img))  # array into image
         img_canvas.create_image(0, 0, anchor=NW, image=img_trans)
@@ -47,9 +47,9 @@ def transform():
         else:
             img = cv2.resize(cv2.imread(path), (img_width, img_height))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            print(img.shape)  # (wid, length)
+            # img.shape  # (wid, length)
 
-            # image digitization
+            # image digitization (base 2 need)
             digitize = list()
             for i in range(0, img_width):
                 for j in range(0, img_height):
@@ -68,9 +68,10 @@ def transform():
                     for index in range(0, coe_width):
                         s += digitize[index]
                     coe_format.append(s)
-                print(len(digitize))
-                print(len(coe_format[0]))
-                print(len(coe_format))
+                return coe_format
+            else:
+                messagebox.showinfo("資訊1", "功能尚未推出敬請期待")
+                return None
 
     def rgb(coe_width, coe_depth, thres, img_height, img_width, base):
         if thres < -1:
@@ -85,7 +86,7 @@ def transform():
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             print(img.shape)  # (wid, length, 3)
 
-            # image digitization
+            # image digitization (base 2 need)
             digitize = list()
             for i in range(0, img_width):
                 for j in range(0, img_height):
@@ -104,10 +105,11 @@ def transform():
                     s = ""
                     for index in range(0, int(coe_width/3)):
                         s += digitize[index]
-                    coe_format.append(s)
-                print(len(digitize))
-                print(len(coe_format[0]))
-                print(len(coe_format))  # B, G, R
+                    coe_format.append(s)  # B, G, R
+                return coe_format
+            else:
+                messagebox.showinfo("資訊1", "功能尚未推出敬請期待")
+                return None
 
     img_type = img_type_val.get()  # get output type
     width = width_val.get()  # coe width
@@ -118,11 +120,13 @@ def transform():
     base_type = digits_val.get()  # get base type
 
     if img_type == cv2.COLOR_BGR2GRAY:
-        gray(width, depth, threshold, img_h, img_w, base_type)
+        coe_content = gray(width, depth, threshold, img_h, img_w, base_type)
 
     elif img_type == cv2.COLOR_BGR2RGB:
-        rgb(width, depth, threshold, img_h, img_w, base_type)
+        coe_content = rgb(width, depth, threshold, img_h, img_w, base_type)
 
+    # display text
+    
 
 # global variable
 ft = ('標楷體', 14)
@@ -217,8 +221,10 @@ frame_val.place(x=100, y=0)
 frame_target = Frame(win)
 img_button = Button(frame_target, text='選擇圖片', font=ft, command=img_file)
 trans_button = Button(frame_target, text='轉換', font=ft, command=transform)
+using = Label(frame_target, text='目前只有2進制\nRGB(僅1bit)的功能', font=('標楷體', 10))
 img_button.grid(column=0, row=14, sticky='w')
 trans_button.grid(column=0, row=15, sticky='w')
+using.grid(column=0, row=16, sticky='w')
 frame_target.place(x=0, y=240)
 
 
