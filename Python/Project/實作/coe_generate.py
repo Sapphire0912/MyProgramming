@@ -125,8 +125,10 @@ def transform():
     elif img_type == cv2.COLOR_BGR2RGB:
         coe_content = rgb(width, depth, threshold, img_h, img_w, base_type)
 
-    # display text
-    
+    # display text 和複製按鈕
+    coe_text = Text(win, height=30, width=40)
+    coe_text.place(x=200, y=400)
+
 
 # global variable
 ft = ('標楷體', 14)
