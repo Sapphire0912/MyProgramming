@@ -202,7 +202,7 @@ def frame_example():
 # listbox_example()
 # choosebutton_example()
 # menu_example()
-# messagebox_example()
-frame_example()
+messagebox_example()
+# frame_example()
 
 win.mainloop()
