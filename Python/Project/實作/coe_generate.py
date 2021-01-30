@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import cv2
+import numpy as np
 
 
 def img_file():
@@ -131,15 +132,30 @@ def transform():
     elif img_type == cv2.COLOR_BGR2RGB:
         coe_content = rgb(width, depth, threshold, img_h, img_w, base_type)
 
-    # display text 和複製按鈕
-    coe_text = Text(win, height=30, width=40, state='disable')
-    coe_text.config(state='normal')
-    for text in coe_content:
-        coe_text.insert("insert", text)
-        coe_text.insert("insert", '\n')
-    coe_text.config(state='disable')
-    coe_text.place(x=200, y=400)
-    coe_content = None
+    try:
+        frame_text = Frame(win)
+        pos = np.sqrt(pow(img_w, 2) + pow(img_h, 2))
+
+        # display text
+        coe_text = Text(frame_text, height=25, width=40, state='disable')
+        scroll = Scrollbar(frame_text)
+
+        coe_text.config(state='normal')
+        for text in coe_content:
+            coe_text.insert("insert", text)
+            coe_text.insert("insert", '\n')
+        coe_text.config(state='disable')
+
+        coe_text.config(yscrollcommand=scroll.set)  # coe_text -> scrollbar
+        scroll.config(command=coe_text.yview)  # scrollbar -> coe_text
+
+        scroll.pack(side=RIGHT, fill=Y)
+        coe_text.pack()
+        frame_text.place(x=(150+pos), y=230)
+
+        coe_content = None
+    except TypeError:
+        pass
 
 
 # global variable
@@ -149,7 +165,7 @@ coe_content = None
 
 # interface
 win = Tk()
-win.geometry('600x480')
+win.geometry('700x600')
 win.title('coe 文件生成')
 
 # choose base type
@@ -241,12 +257,5 @@ img_button.grid(column=0, row=14, sticky='w')
 trans_button.grid(column=0, row=15, sticky='w')
 using.grid(column=0, row=16, sticky='w')
 frame_target.place(x=0, y=240)
-
-
-# text
-# frame_text = Frame(win)
-# coe_text = Text(frame_text, height=30, width=50, state='disable', font=('標楷體', 12))
-# coe_text.pack()
-# frame_text.pack()
 
 win.mainloop()
