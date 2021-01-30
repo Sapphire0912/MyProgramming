@@ -36,6 +36,8 @@ def img_file():
 
 
 def transform():
+    global coe_content
+
     def gray(coe_width, coe_depth, thres, img_height, img_width, base):
         if thres < -1:
             messagebox.showerror("錯誤3", "threshold 數值有錯: 範圍0~255")
@@ -60,13 +62,15 @@ def transform():
                         s += "0"
                     digitize.append(s)
 
+            index = 0
             # coe format
             if base == 2:
                 coe_format = list()
                 for data_depth in range(0, coe_depth):
                     s = ""
-                    for index in range(0, coe_width):
+                    while len(s) < coe_width:
                         s += digitize[index]
+                        index += 1
                     coe_format.append(s)
                 return coe_format
             else:
@@ -84,7 +88,7 @@ def transform():
         else:
             img = cv2.resize(cv2.imread(path), (img_width, img_height))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            print(img.shape)  # (wid, length, 3)
+            # print(img.shape)  # (wid, length, 3)
 
             # image digitization (base 2 need)
             digitize = list()
@@ -98,14 +102,16 @@ def transform():
                             s += "0"
                     digitize.append(s)
 
+            index = 0
             # coe format
             if base == 2:
                 coe_format = list()
                 for data_depth in range(0, coe_depth):
                     s = ""
-                    for index in range(0, int(coe_width/3)):
+                    while len(s) < coe_width:
                         s += digitize[index]
-                    coe_format.append(s)  # B, G, R
+                        index += 1
+                    coe_format.append(s)
                 return coe_format
             else:
                 messagebox.showinfo("資訊1", "功能尚未推出敬請期待")
@@ -126,13 +132,20 @@ def transform():
         coe_content = rgb(width, depth, threshold, img_h, img_w, base_type)
 
     # display text 和複製按鈕
-    coe_text = Text(win, height=30, width=40)
+    coe_text = Text(win, height=30, width=40, state='disable')
+    coe_text.config(state='normal')
+    for text in coe_content:
+        coe_text.insert("insert", text)
+        coe_text.insert("insert", '\n')
+    coe_text.config(state='disable')
     coe_text.place(x=200, y=400)
+    coe_content = None
 
 
 # global variable
 ft = ('標楷體', 14)
 path = ""
+coe_content = None
 
 # interface
 win = Tk()
