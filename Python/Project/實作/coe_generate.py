@@ -2,8 +2,9 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
 from PIL import Image, ImageTk
-import cv2
-import numpy as np
+from numpy import sqrt
+from cv2 import resize, cvtColor, error, imread
+from cv2 import COLOR_BGR2RGB, COLOR_BGR2GRAY
 
 
 def img_file():
@@ -21,8 +22,8 @@ def img_file():
 
         x, y = size_height_val.get(), size_width_val.get()  # get height, width
         img_type = img_type_val.get()  # get output types
-        img = cv2.resize(cv2.imread(path), (y, x))  # get image array
-        img = cv2.cvtColor(img, img_type)  # using img_type open image
+        img = resize(imread(path), (y, x))  # get image array
+        img = cvtColor(img, img_type)  # using img_type open image
 
         # display image
         img_canvas = Canvas(win, width=y, height=x)
@@ -32,7 +33,7 @@ def img_file():
         img_canvas.create_image(0, 0, anchor=NW, image=img_trans)
         img_canvas.img = img_trans
 
-    except cv2.error:
+    except error:
         pass
 
 
@@ -48,8 +49,8 @@ def transform():
         if coe_width * coe_depth != img_height * img_width:
             messagebox.showerror("錯誤2", "資料大小和圖片的大小不符合")
         else:
-            img = cv2.resize(cv2.imread(path), (img_width, img_height))
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            img = resize(imread(path), (img_width, img_height))
+            img = cvtColor(img, COLOR_BGR2GRAY)
             # img.shape  # (wid, length)
 
             # image digitization (base 2 need)
@@ -87,8 +88,8 @@ def transform():
         if coe_width * coe_depth != img_height * img_width * 3:
             messagebox.showerror("錯誤2", "資料大小和圖片的大小不符合")
         else:
-            img = cv2.resize(cv2.imread(path), (img_width, img_height))
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            img = resize(imread(path), (img_width, img_height))
+            img = cvtColor(img, COLOR_BGR2RGB)
             # print(img.shape)  # (wid, length, 3)
 
             # image digitization (base 2 need)
@@ -126,15 +127,15 @@ def transform():
     img_w = size_width_val.get()  # image width
     base_type = digits_val.get()  # get base type
 
-    if img_type == cv2.COLOR_BGR2GRAY:
+    if img_type == COLOR_BGR2GRAY:
         coe_content = gray(width, depth, threshold, img_h, img_w, base_type)
 
-    elif img_type == cv2.COLOR_BGR2RGB:
+    elif img_type == COLOR_BGR2RGB:
         coe_content = rgb(width, depth, threshold, img_h, img_w, base_type)
 
     try:
         frame_text = Frame(win)
-        pos = np.sqrt(pow(img_w, 2) + pow(img_h, 2))
+        pos = sqrt(pow(img_w, 2) + pow(img_h, 2))
 
         # display text
         coe_text = Text(frame_text, height=25, width=40, state='disable')
@@ -189,9 +190,9 @@ frame_digits.place(x=0, y=0)
 frame_img_type = Frame(win)
 img_label = LabelFrame(frame_img_type, text='輸出格式', font=('標楷體', '14', 'bold'))
 img_type_val = IntVar()
-img_type_val.set(cv2.COLOR_BGR2GRAY)
-img_gray = Radiobutton(img_label, text='灰階', variable=img_type_val, value=cv2.COLOR_BGR2GRAY, font=ft)
-image_full_color = Radiobutton(img_label, text='RGB', variable=img_type_val, value=cv2.COLOR_BGR2RGB, font=ft)
+img_type_val.set(COLOR_BGR2GRAY)
+img_gray = Radiobutton(img_label, text='灰階', variable=img_type_val, value=COLOR_BGR2GRAY, font=ft)
+image_full_color = Radiobutton(img_label, text='RGB', variable=img_type_val, value=COLOR_BGR2RGB, font=ft)
 
 img_gray.grid(column=0, row=6, sticky='w')
 image_full_color.grid(column=0, row=7, sticky='w')
