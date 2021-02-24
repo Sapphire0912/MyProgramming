@@ -369,7 +369,7 @@ led7 = Checkbutton(frame_led, text='led7', variable=led_val7, onvalue=1, offvalu
 led_all = Button(frame_led, text='全選', font=ft, command=led_all_check)
 led_clr = Button(frame_led, text='清除', font=ft, command=led_clear)
 # data type
-led_type = StringVar()
+led_type = IntVar()
 led_type.set(1)
 led_logic = Radiobutton(frame_led, variable=led_type, text='std_logic', value=0, font=ft)
 led_vector = Radiobutton(frame_led, variable=led_type, text='std_logic_vector', value=1, font=ft)
