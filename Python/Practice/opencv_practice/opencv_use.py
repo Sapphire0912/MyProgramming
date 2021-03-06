@@ -11,7 +11,9 @@ def output_img(img, text='My image'):
 
 
 # read image
-path = "E:\\MyProgramming\\Python\\Practice\\opencv_practice\\fbk01.jpg"
+# image source: https://www.huashi6.com/draw/599942
+# this picture is for learning only
+path = "E:\\MyProgramming\\Python\\Practice\\opencv_practice\\fbk\\fbk01.jpg"
 fbk = cv2.imread(path)
 B, G, R = cv2.split(fbk)
 # print(B)
@@ -66,10 +68,9 @@ output_img(fbk_reverse, text='fbk_gray_cross_absdiff_thres_60_255_pixel_reverse'
 # draw contour
 
 
-
 # test
-# fbk_iter1 = cv2.imread("E:\\MyProgramming\\Python\\Practice\\opencv_practice\\fbk_cross_absdiff_dilate-erode.jpg")
-# fbk_iter5 = cv2.imread("E:/MyProgramming/Python/Practice/opencv_practice/fbk_cross_iter5_absdiff_dilate-erode.jpg")
+# fbk_iter1 = cv2.imread("../fbk/fbk_cross_absdiff_dilate-erode.jpg")
+# fbk_iter5 = cv2.imread("../fbk/fbk_cross_iter5_absdiff_dilate-erode.jpg")
 
 # fbk_iter_absdiff = cv2.absdiff(fbk_iter5, fbk_iter1)
 # cv2.error size.width > 0; So these two graphs are the same
