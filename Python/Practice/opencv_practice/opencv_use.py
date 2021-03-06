@@ -44,26 +44,27 @@ morph_kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (5, 5))
 
 # ----------
 # morphology: dilate
-fbk_dilate = cv2.dilate(fbk, morph_kernel_cross, 5)
-# output_img(fbk_dilate, text='fbk_dilate_cross_iteration_5')
+fbk_dilate = cv2.dilate(fbk_gray, morph_kernel_cross)
+# output_img(fbk_dilate, text='fbk_gray_dilate_cross')
 
 # morphology: erode
-fbk_erode = cv2.erode(fbk, morph_kernel_cross, 5)
-# output_img(fbk_erode, text='fbk_erode_cross_iteration_5')
+fbk_erode = cv2.erode(fbk_gray, morph_kernel_cross)
+# output_img(fbk_erode, text='fbk_gray_erode_cross')
 
 # background difference
 fbk_absdiff = cv2.absdiff(fbk_dilate, fbk_erode)
-# output_img(fbk_absdiff, text='fbk_cross_iter5_absdiff_dilate-erode')
+# output_img(fbk_absdiff, text='fbk_gray_cross_absdiff_dilate-erode')
 
 # threshold(use absdiff)
 _, fbk_thres = cv2.threshold(fbk_absdiff, 60, 255, cv2.THRESH_BINARY)
-# output_img(fbk_thres, text='fbk_cross_absdiff_thres_60_255')
+# output_img(fbk_thres, text='fbk_gray_cross_absdiff_thres_60_255')
 
 # pixel reversal
 fbk_reverse = cv2.bitwise_not(fbk_thres)
-# output_img(fbk_reverse, text='fbk_cross_absdiff_thres_60_255_pixel_reverse')
+output_img(fbk_reverse, text='fbk_gray_cross_absdiff_thres_60_255_pixel_reverse')
 
 # draw contour
+
 
 
 # test
@@ -73,3 +74,5 @@ fbk_reverse = cv2.bitwise_not(fbk_thres)
 # fbk_iter_absdiff = cv2.absdiff(fbk_iter5, fbk_iter1)
 # cv2.error size.width > 0; So these two graphs are the same
 # output_img(fbk_iter_absdiff, text='fbk_iter_absdiff_with_5_1')
+
+# Q. Whether the background difference can only distinguish unconnected objects
