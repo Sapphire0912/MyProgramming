@@ -8,6 +8,7 @@ class MyImgAlg(object):
            使用 16 位精度計算 (2^16 = 65536)
            Gray = (R*19595 + G*38469 + B*7472) >> 16"""
         b, g, r = img[:, :, 0], img[:, :, 1], img[:, :, 2]
+        # 計算時要先把 dtype 整數型調高 否則會溢位
         b, g, r = b.astype(np.uint32), g.astype(np.uint32), r.astype(np.uint32)
         # print(b[0][0], g[0][0], r[0][0])  # 45 33 31
         gray = r*19595 + g*38469 + b*7472
