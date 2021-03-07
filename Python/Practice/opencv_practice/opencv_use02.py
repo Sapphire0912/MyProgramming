@@ -10,6 +10,7 @@ import numpy as np
 # mail: kotori228520@gmail.com
 
 
+# Q. Whether the background difference can only distinguish unconnected objects?
 def output_img(img, text):
     cv2.namedWindow(text, cv2.WINDOW_NORMAL)
     cv2.imshow(text, img)
@@ -19,14 +20,6 @@ def output_img(img, text):
 
 
 # read image
-path = "E:/MyProgramming/Python/Practice/opencv_practice/rushia/rushia_ori.jpg"
-rushia = cv2.imread(path)
-# print(rushia.shape)  # (1500, 1052, 3)
+path = "E:/MyProgramming/Python/Practice/opencv_practice/pet/pet_ori.jpg"
+pet = cv2.imread(path)
 
-# convert to grayscale
-rushia_gray = cv2.cvtColor(rushia, cv2.COLOR_BGR2GRAY)
-# output_img(rushia_gray, text="./rushia/rushia_gray")
-
-# filter: gaussian filter
-rushia_gaussian = cv2.GaussianBlur(rushia_gray, (3, 3), 0)
-output_img(rushia_gaussian, text='./rushia/rushia_gray_gaussian')
