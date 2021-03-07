@@ -1,8 +1,14 @@
 import cv2
 import numpy as np
 
+# image source: https://www.huashi6.com/draw/599942
+# this picture is for learning only
+# all photos will be removed if copyright infringement
+# mail: kotori228520@gmail.com
 
-# 目標去背景 取出 fbk
+# Target: remove background and take out fbk
+
+
 def output_img(img, text='My image'):
     cv2.namedWindow(text, cv2.WINDOW_NORMAL)
     cv2.imshow(text, img)
@@ -12,8 +18,6 @@ def output_img(img, text='My image'):
 
 
 # read image
-# image source: https://www.huashi6.com/draw/599942
-# this picture is for learning only
 path = "E:\\MyProgramming\\Python\\Practice\\opencv_practice\\fbk\\fbk01.jpg"
 fbk = cv2.imread(path)
 B, G, R = cv2.split(fbk)
