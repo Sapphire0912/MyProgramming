@@ -13,8 +13,7 @@ class MyImgAlg(object):
         # print(b[0][0], g[0][0], r[0][0])  # 45 33 31
         gray = r*19595 + g*38469 + b*7472
         # print(gray[0][0])  # 2213162
-        gray = np.right_shift(gray, 16)  # 向右移 16 位元
-        gray = gray.astype(np.uint8)
+        gray = np.right_shift(gray, 16).astype(np.uint8)  # 向右移 16 位元
         return gray
 
     def gaussian_filter(self, img):
