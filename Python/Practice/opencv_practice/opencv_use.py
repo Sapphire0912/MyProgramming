@@ -21,10 +21,11 @@ def output_img(img, text='My image'):
 path = "E:\\MyProgramming\\Python\\Practice\\opencv_practice\\fbk\\fbk01.jpg"
 fbk = cv2.imread(path)
 B, G, R = cv2.split(fbk)
-# print(B)
+# print(B[371][371])
+# print(fbk[371][371])
 # output_img(fbk)
 
-# turn into grayscale
+# convert to grayscale
 fbk_gray = cv2.cvtColor(fbk, cv2.COLOR_BGR2GRAY)
 # output_img(fbk_gray, text='fbk_gray')
 
