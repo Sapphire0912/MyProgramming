@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 # Target: remove background and take out character or parrot
 # image source: https://www.pixiv.net/en/artworks/81438832 <- rushia
