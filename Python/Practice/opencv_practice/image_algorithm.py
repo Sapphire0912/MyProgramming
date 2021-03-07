@@ -20,9 +20,9 @@ class MyImgAlg(object):
         b, g, r = img[:, :, 0], img[:, :, 1], img[:, :, 2]
         # 計算時要先把 dtype 整數型調高 否則會溢位
         b, g, r = b.astype(np.uint32), g.astype(np.uint32), r.astype(np.uint32)
-        print(b[0][0], g[0][0], r[0][0])  # 144 169 209
+        # print(b[0][0], g[0][0], r[0][0])  # 144 169 209
         gray = r*19595 + g*38469 + b*7472
-        print(gray[0][0])  # 11672584
+        # print(gray[0][0])  # 11672584
         gray = np.right_shift(gray, 16).astype(np.uint8)  # 向右移 16 位元
         return gray
 
@@ -33,13 +33,15 @@ class MyImgAlg(object):
 # read image
 path = "E:/MyProgramming/Python/Practice/opencv_practice/rushia/rushia_ori.jpg"
 rushia = cv2.imread(path)
+# print(rushia.shape) # (1500, 1052, 3)
 
 # use opencv
 rushia_gray = cv2.cvtColor(rushia, cv2.COLOR_BGR2GRAY)
 # output_img(rushia_gray, text="./rushia/rushia_gray")
 
-rushia_gaussian = cv2.GaussianBlur(rushia_gray, (5, 5), 0)
-output_img(rushia_gaussian, text='./rushia/rushia_gray_gaussian_5x5')
+rushia_gaussian = cv2.GaussianBlur(rushia_gray, (3, 3), 0)
+# print(cv2.getGaussianKernel(3, 0))
+# output_img(rushia_gaussian, text='./rushia/rushia_gray_gaussian_3x3')
 
 # use my image algorithm
 my_alg = MyImgAlg()
