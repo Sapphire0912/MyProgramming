@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 
 # 目標去背景 取出 fbk
@@ -63,9 +64,22 @@ _, fbk_thres = cv2.threshold(fbk_absdiff, 60, 255, cv2.THRESH_BINARY)
 
 # pixel reversal
 fbk_reverse = cv2.bitwise_not(fbk_thres)
-output_img(fbk_reverse, text='fbk_gray_cross_absdiff_thres_60_255_pixel_reverse')
+# output_img(fbk_reverse, text='fbk_gray_cross_absdiff_thres_60_255_pixel_reverse')
 
 # draw contour
+fbk_contour, fbk_contour_hierarchy = cv2.findContours(fbk_thres, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+# print(fbk_contour)
+# print(len(fbk_contour), fbk_contour_hierarchy.shape)
+fbk_draw_contour = cv2.drawContours(fbk.copy(), fbk_contour, -1, (0, 255, 255), 3)
+# output_img(fbk_draw_contour, text='./fbk/fbk_contour_external_chain_approx_simple')
+
+# cropped image
+fbk_cropped = np.zeros()
+# print(x.shape, y.shape, w.shape, h.shape)
+# fbk_cropped = fbk[y+2:y+h-2, x+2:x+w-2]
+
+# cv2.imwrite("./fbk/fbk_cropped.jpg", fbk_cropped)
+
 
 
 # test
