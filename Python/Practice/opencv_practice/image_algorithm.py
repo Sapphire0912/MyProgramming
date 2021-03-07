@@ -2,6 +2,11 @@ import cv2
 import numpy as np
 
 
+def output_img(img, text='My image'):
+    cv2.imshow(text, img)
+    cv2.imwrite('%s.png' % text, img)
+
+
 class MyImgAlg(object):
     def conv_to_gray(self, img):
         """原始公式: Gray = R*0.299 + G*0.587 + B*0.114
@@ -29,8 +34,7 @@ pet = cv2.imread(path)
 # use opencv
 pet_gray = cv2.cvtColor(pet, cv2.COLOR_BGR2GRAY)
 # print(pet_gray[0])
-cv2.imshow("cv2 gray", pet_gray)
-cv2.imwrite("./pet/pet_cv2_gray.jpg", pet_gray)
+output_img(pet_gray, "./pet/pet_cv2_gray")
 
 # use my image algorithm
 my_alg = MyImgAlg()
@@ -38,8 +42,7 @@ my_pet_gray = my_alg.conv_to_gray(pet)
 # print(my_pet_gray[0])
 # print(my_pet_gray.dtype)
 # condition1: the type of image data output using the cv2.imshow() is np.uint8
+output_img(my_pet_gray, "./pet/pet_my_alg_gray")
 
-cv2.imshow("My gray", my_pet_gray)
-cv2.imwrite("./pet/pet_my_alg_gray.jpg", my_pet_gray)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
