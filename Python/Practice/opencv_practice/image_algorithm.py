@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 
+# Q. Whether the background difference can only distinguish unconnected objects?
 def output_img(img, text='My image'):
     cv2.imshow(text, img)
     cv2.imwrite('%s.png' % text, img)
