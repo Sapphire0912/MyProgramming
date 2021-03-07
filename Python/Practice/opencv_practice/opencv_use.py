@@ -73,14 +73,15 @@ fbk_contour, fbk_contour_hierarchy = cv2.findContours(fbk_thres, cv2.RETR_EXTERN
 fbk_draw_contour = cv2.drawContours(fbk.copy(), fbk_contour, -1, (0, 255, 255), 3)
 # output_img(fbk_draw_contour, text='./fbk/fbk_contour_external_chain_approx_simple')
 
-# cropped image
-fbk_cropped = np.zeros()
-# print(x.shape, y.shape, w.shape, h.shape)
+# cropped image  <- wait
+fbk_cp = fbk.copy()
+h, w, _ = fbk.shape
+fbk_cropped = np.zeros(shape=(h+2, w+2))
+# print(len(fbk_contour))
+# for i in fbk_contour:
+#     print(i.shape)
 # fbk_cropped = fbk[y+2:y+h-2, x+2:x+w-2]
-
 # cv2.imwrite("./fbk/fbk_cropped.jpg", fbk_cropped)
-
-
 
 # test
 # fbk_iter1 = cv2.imread("../fbk/fbk_cross_absdiff_dilate-erode.jpg")
@@ -90,4 +91,5 @@ fbk_cropped = np.zeros()
 # cv2.error size.width > 0; So these two graphs are the same
 # output_img(fbk_iter_absdiff, text='fbk_iter_absdiff_with_5_1')
 
-# Q. Whether the background difference can only distinguish unconnected objects
+# Q. Whether the background difference can only distinguish unconnected objects?
+# Q. How to crop a image according to the contour points of cv2.findContours method?
