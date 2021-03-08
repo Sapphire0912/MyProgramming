@@ -31,6 +31,15 @@ pet_gray = cv2.cvtColor(pet, cv2.COLOR_BGR2GRAY)
 pet_gaussian = cv2.GaussianBlur(pet_gray, (3, 3), 0)
 # output_img(pet_gaussian, text="./pet/pet_gaussian")
 
+# sobel
+pet_sobel = cv2.Sobel(pet_gaussian, ddepth=-1, dx=2, dy=0, ksize=5)
+# output_img(pet_sobel, text='./pet/pet_sobel_ddx_ksize_5')
+
+# canny
+pet_canny = cv2.Canny(pet_gaussian, 70, 210, apertureSize=3, L2gradient=True)
+output_img(pet_canny, text='./pet/pet_canny_70_210_aperture_3_L2')
+
+
 # use background difference
 morph_kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (5, 5))
 # dilate
@@ -45,8 +54,8 @@ pet_absdiff = cv2.absdiff(pet_dilate, pet_erode)
 # print(pet_absdiff.shape)  # (1280, 960)
 
 # threshold
-_, pet_thres = cv2.threshold(pet_absdiff, 45, 255, cv2.THRESH_BINARY_INV)
-output_img(pet_thres, text='./pet/pet_thres_45_255_binary_inv')
+_, pet_thres = cv2.threshold(pet_absdiff, 75, 255, cv2.THRESH_BINARY)
+# output_img(pet_thres, text='./pet/pet_thres_75_255_binary')
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
