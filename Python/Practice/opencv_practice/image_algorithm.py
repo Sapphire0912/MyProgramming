@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-# image source: https://www.pixiv.net/en/artworks/81438832 <- rushia
+# image source: https://www.pixiv.net/en/artworks/81438832
 # the picture is for learning only
 # all photos will be removed if copyright infringement
 # mail: kotori228520@gmail.com
