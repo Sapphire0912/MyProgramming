@@ -48,15 +48,21 @@ class MyImgAlg(object):
         img_gy = np.zeros(img.shape, dtype=np.uint32)
 
         # 卷積(convolution)
-        # dx 1次
-        for y_axis in range(0, length-1):
-            for x_axis in range(0, width-1):
-                img_gx[y_axis][x_axis] = np.sum(con_img[y_axis:y_axis+3, x_axis:x_axis+3] * gx_kernel)
+        # dx 次數
+        while dx > 0:
+            for y_axis in range(0, length-1):
+                for x_axis in range(0, width-1):
+                    img_gx[y_axis][x_axis] = np.sum(con_img[y_axis:y_axis+3, x_axis:x_axis+3] * gx_kernel)
+            dx -= 1
+            con_img[1:length+1, 1:width+1] = img_gx
 
-        # dy 1次
-        for y_axis in range(0, length-1):
-            for x_axis in range(0, width-1):
-                img_gy[y_axis][x_axis] = np.sum(con_img[y_axis:y_axis+3, x_axis:x_axis+3] * gy_kernel)
+        # dy 次數
+        while dy > 0:
+            for y_axis in range(0, length-1):
+                for x_axis in range(0, width-1):
+                    img_gy[y_axis][x_axis] = np.sum(con_img[y_axis:y_axis+3, x_axis:x_axis+3] * gy_kernel)
+            dy -= 1
+            con_img[1:length+1, 1:width+1] = img_gy
 
         # 計算 sqrt(Gx^2 + Gy^2)
         result_img = np.sqrt(img_gx * img_gx + img_gy * img_gy).astype(np.uint8)
