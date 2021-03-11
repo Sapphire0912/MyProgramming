@@ -95,10 +95,10 @@ my_rushia_gray = my_alg.conv_to_gray(rushia)
 # output_img(my_rushia_gray, "./rushia/rushia_my_alg_gray")
 
 start_time = time.time()
-my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=1)
+my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=0)
 end_time = time.time()
-output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel')
-print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s
+output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel_dx')
+print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s <- dx dy
 # cv2.imshow("my_sobel", my_rushia_sobel)
 
 cv2.waitKey(0)
