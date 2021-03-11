@@ -46,7 +46,6 @@ class MyImgAlg(object):
         # 暫時建立空陣列存放計算後的結果
         img_gx = np.zeros(img.shape, dtype=np.uint32)
         img_gy = np.zeros(img.shape, dtype=np.uint32)
-        result_img = np.zeros(img.shape, dtype=np.uint8)
 
         # 卷積(convolution)
         # dx 1次
@@ -61,7 +60,6 @@ class MyImgAlg(object):
 
         # 計算 sqrt(Gx^2 + Gy^2)
         result_img = np.sqrt(img_gx * img_gx + img_gy * img_gy).astype(np.uint8)
-        # print(result_img[0][0])
         return result_img
 
 
@@ -94,7 +92,7 @@ start_time = time.time()
 my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=1)
 end_time = time.time()
 output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel')
-print("cost time: ", end_time - start_time)
+print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s
 # cv2.imshow("my_sobel", my_rushia_sobel)
 
 cv2.waitKey(0)
