@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 
-# image source: https://www.pixiv.net/en/artworks/81438832
+# image source: https://www.pixiv.net/en/artworks/81438832 <- rushia
 # the picture is for learning only
 # all photos will be removed if copyright infringement
 # mail: kotori228520@gmail.com
@@ -67,14 +67,12 @@ class MyImgAlg(object):
         # 計算 sqrt(Gx^2 + Gy^2)
         result_img = np.sqrt(img_gx * img_gx + img_gy * img_gy).astype(np.uint8)
 
-        # 設定 臨界值
-        greater = np.where(result_img > 150)
-        lower = np.where(result_img <= 150)
-        result_img[greater] = 255
-        result_img[lower] = 0
-        print(result_img)
+        # method 2
 
         return result_img
+
+    def thres(self, img, threshold=128, setting=255, conv_type=None):
+        pass
 
 
 # read image
@@ -102,11 +100,12 @@ my_rushia_gray = my_alg.conv_to_gray(rushia)
 # condition1: the type of image data output using the cv2.imshow() is np.uint8
 # output_img(my_rushia_gray, "./rushia/rushia_my_alg_gray")
 
-start_time = time.time()
+# start_time = time.time()
 my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=0)
-end_time = time.time()
-output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel_dx_150')
-print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s <- dx dy
+# end_time = time.time()
+# output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel_dx')
+# print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s <- dx dy
+
 # cv2.imshow("my_sobel", my_rushia_sobel)
 
 cv2.waitKey(0)
