@@ -38,7 +38,7 @@ class MyImgAlg(object):
         # method 1
         # 建立一個為0且大於原始圖片兩個pixel的陣列
         length, width = img.shape
-        con_img = np.zeros((length+2, width+2), dtype=np.uint8)
+        con_img = np.zeros((length+2, width+2), dtype=np.uint16)
 
         # 將圖像存入
         con_img[1:length+1, 1:width+1] = img
@@ -95,9 +95,9 @@ my_rushia_gray = my_alg.conv_to_gray(rushia)
 # output_img(my_rushia_gray, "./rushia/rushia_my_alg_gray")
 
 start_time = time.time()
-my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=0)
+my_rushia_sobel = my_alg.sobel(my_rushia_gray, dx=1, dy=1)
 end_time = time.time()
-output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel_dx')
+output_img(my_rushia_sobel, text='./rushia/rushia_my_alg_sobel_dxdy')
 print("cost time: ", end_time - start_time)  # cost time: 17.434980869293213 s <- dx dy
 # cv2.imshow("my_sobel", my_rushia_sobel)
 
