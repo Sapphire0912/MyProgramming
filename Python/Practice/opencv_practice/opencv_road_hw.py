@@ -63,7 +63,7 @@ sobel = cv2.Sobel(gray, ddepth=-1, dx=1, dy=0, ksize=3)
 _, thres = cv2.threshold(sobel, 30, 255, cv2.THRESH_BINARY)
 # output_img(thres, text='./road/my_gray_thres_30_255')
 
-# line detention: HoughLines, HoughLinesP
+# line detection: HoughLines, HoughLinesP
 # line_thres = 180
 # lines = cv2.HoughLines(thres, 1, np.pi/180, line_thres)
 # print(lines.shape)
