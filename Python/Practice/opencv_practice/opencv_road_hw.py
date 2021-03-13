@@ -129,7 +129,7 @@ for line in linesP:
 
 
 # last:
-# original -> gray -> sobel(ddpeth=-1, dx=1, dy=0, ksize=3) -> thres(30, 255, binary) ->
+# original -> gray -> sobel(ddpeth=-1, dx=1, dy=0, ksize=3) -> threshold(30, 255, THRESH_BINARY) ->
 # HoughLinesP(1, np.pi/180, threshold=375, minLineLength=489, maxLineGap=60)
 
 # cv2.imshow("Linear", road)
