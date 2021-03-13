@@ -39,9 +39,13 @@ blur = cv2.GaussianBlur(gray, (5, 5), 0)
 #     if cv2.waitKey(1) == ord('q'):
 #         break
 
+# test
+# edge_test = cv2.Canny(gray, 150, 255)
+# output_img(edge_test, text='./road/gray_canny_150_255')
+
 # sobel
 sobel = cv2.Sobel(gray, ddepth=-1, dx=1, dy=0, ksize=3)
-# output_img(sobel, text='./road/my_sobel_ddx')
+# output_img(sobel, text='./road/my_sobel_dx')
 
 # adjustment threshold
 # cv2.namedWindow("threshold")
@@ -57,11 +61,7 @@ sobel = cv2.Sobel(gray, ddepth=-1, dx=1, dy=0, ksize=3)
 
 # threshold
 _, thres = cv2.threshold(sobel, 30, 255, cv2.THRESH_BINARY)
-# output_img(thres, text='./road/my_gray_thres_40_255')
-
-# test
-# edge_test = cv2.Canny(gray, 150, 255)
-# output_img(edge_test, text='./road/gray_canny_150_255')
+# output_img(thres, text='./road/my_gray_thres_30_255')
 
 # line detention: HoughLines, HoughLinesP
 # line_thres = 180
@@ -80,19 +80,59 @@ _, thres = cv2.threshold(sobel, 30, 255, cv2.THRESH_BINARY)
 #         y2 = int(y0 - 250*a)
 #         cv2.line(road, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-# HoughLinesP
-line_thres = 326
-min_line = 485
-max_gap = 35
-linesP = cv2.HoughLinesP(thres, 1, np.pi/180, threshold=line_thres, minLineLength=min_line, maxLineGap=max_gap)
-# print(linesP.shape)
-# print(linesP)
+# adjustment HoughLinesP
+# cv2.namedWindow("HoughLinesP", cv2.WINDOW_NORMAL)
+# cv2.createTrackbar("line_thres", "HoughLinesP", 100, 500, nothing)
+# cv2.createTrackbar("min_line", "HoughLinesP", 100, 500, nothing)
+# cv2.createTrackbar("max_gap", "HoughLinesP", 1, 100, nothing)
+#
+# while True:
+#     line_thres = cv2.getTrackbarPos("line_thres", "HoughLinesP")
+#     min_line = cv2.getTrackbarPos("min_line", "HoughLinesP")
+#     max_gap = cv2.getTrackbarPos("max_gap", "HoughLinesP")
+#
+#     linesP = cv2.HoughLinesP(
+#         image=thres,
+#         rho=1,
+#         theta=np.pi/180,
+#         threshold=line_thres,
+#         minLineLength=min_line,
+#         maxLineGap=max_gap
+#     )
+#     try:
+#         road_cp = road.copy()
+#         for line in linesP:
+#             for x1, y1, x2, y2 in line:
+#                 cv2.line(road_cp, (x1, y1), (x2, y2), (255, 0, 0), 5)
+#
+#         cv2.imshow("HoughLinesP", road_cp)
+#         if cv2.waitKey(1) == ord('q'):
+#             break
+#
+#     except TypeError:
+#         cv2.setTrackbarPos("line_thres", "HoughLinesP", 100)
+#         cv2.setTrackbarPos("min_line", "HoughLinesP", 100)
+#         cv2.setTrackbarPos("max_gap", "HoughLinesP", 1)
+#         continue
 
-for line in [linesP[0], linesP[1]]:
+# test HoughLinesP
+line_thres = 375
+min_line = 489
+max_gap = 60
+linesP = cv2.HoughLinesP(thres, 1, np.pi/180, threshold=line_thres, minLineLength=min_line, maxLineGap=max_gap)
+print(linesP.shape)
+print(linesP)
+
+for line in linesP:
     for x1, y1, x2, y2 in line:
         cv2.line(road, (x1, y1), (x2, y2), (255, 0, 0), 5)
 
-cv2.imshow("Linear", road)
-cv2.imwrite("./road/road_result.png", road)
+
+# last:
+# original -> gray -> sobel(ddpeth=-1, dx=1, dy=0, ksize=3) -> thres(30, 255, binary) ->
+# HoughLinesP(1, np.pi/180, threshold=326, minLineLength=485, maxLineGap=35) -> get first and last data
+
+# cv2.imshow("Linear", road)
+# cv2.imwrite("./road/road_result.png", road)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
