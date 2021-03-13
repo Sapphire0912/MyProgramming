@@ -99,6 +99,7 @@ _, thres = cv2.threshold(sobel, 30, 255, cv2.THRESH_BINARY)
 #         minLineLength=min_line,
 #         maxLineGap=max_gap
 #     )
+
 #     try:
 #         road_cp = road.copy()
 #         for line in linesP:
