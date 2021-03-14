@@ -37,7 +37,7 @@ def my_lbp(img, r=1):
     # split image
     for j in range(0, y // size):
         for i in range(0, x // size):
-            target_bits = img[j * size:(j + 1) * size, i * size:(i + 1) * size]
+            target_bits = img[j*size:(j+1)*size, i*size:(i+1)*size]
             # partial comparison, cells center: r, r
             target_bits = np.where(target_bits > target_bits[r, r], 1, 0)
             bit_to_int(target_bits)
