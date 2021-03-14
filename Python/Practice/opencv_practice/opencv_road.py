@@ -45,7 +45,7 @@ blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
 # sobel
 sobel = cv2.Sobel(gray, ddepth=-1, dx=1, dy=0, ksize=3)
-# output_img(sobel, text='./road/my_sobel_dx')
+output_img(sobel, text='./road/sobel_dx')
 
 # adjustment threshold
 # cv2.namedWindow("threshold")
