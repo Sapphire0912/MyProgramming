@@ -1,7 +1,7 @@
 import cv2
 
 
-# HW2 LBP抓馬路
+# Target: Using LBP algorithm and take out the road
 def output_img(img, text):
     cv2.namedWindow(text, cv2.WINDOW_NORMAL)
     cv2.imshow(text, img)
