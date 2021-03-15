@@ -2,7 +2,6 @@ from skimage.feature import local_binary_pattern
 import matplotlib.pyplot as plt
 import cv2
 import numpy as np
-import threading
 import time
 
 
@@ -21,7 +20,6 @@ def output_img(img, text):
     cv2.imwrite('%s.png' % text, img)
 
 
-test_list = list()
 def bit_to_int(bits_matrix):
     # 先處理 3x3
     # counterclockwise 逆時針
@@ -59,11 +57,13 @@ road_gray = cv2.cvtColor(road, cv2.COLOR_BGR2GRAY)
 # output_img(road_gray, text='./road/road_gray')
 
 # step2 to 4:
+test_list = list()
 st = time.time()
 my_lbp(road_gray)
-# print(len(test_list))  # 1000000
+print("data: ", test_list[0:10])  # [0, 4, 196, 192, 192, 1, 7, 199, 0, 6]
+print(len(test_list))  # 1000000
 end = time.time()
-# print("spend time: ", end - st)  # spend time:  12.55710768699646 s
+print("spend time: ", end - st)  # spend time:  12.55710768699646 s
 
 # ----------
 # use scikit-image module lbp
@@ -83,8 +83,6 @@ lbp = local_binary_pattern(road_gray, n_points, radius, method='var')
 # print(np.max(lbp), np.min(lbp))
 # plt.imshow(lbp, cmap='gray')
 # plt.show()
-
-# output_img(lbp, text="./road/road_lbp_var")
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
