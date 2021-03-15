@@ -2,15 +2,16 @@ from skimage.feature import local_binary_pattern
 import matplotlib.pyplot as plt
 import cv2
 import numpy as np
+import threading
 import time
 
 
 # Target: Using LBP algorithm and take out the road
 # LBP algorithm
-# 1. 原始圖片轉灰階且設定 blocks 大小 (3x3)
-# 2. 取正中間點的值當成 threshold, 和周圍的區域進行比較(i if region > threshold else 0)
-# 3. 將周圍的區域按照順時針或逆時針旋轉並且以二進制(8bits)轉成 10 進制相加後, 計算後的值為該中心點的 LBP 值
-# 4. 做卷積運算, 得到這張圖片的所有的 LBP 值
+# 1. 原始圖片轉灰階且設定 blocks 大小 (3x3)  OK
+# 2. 取正中間點的值當成 threshold, 和周圍的區域進行比較(i if region > threshold else 0)  OK
+# 3. 將周圍的區域按照順時針或逆時針旋轉並且以二進制(8bits)轉成 10 進制相加後, 計算後的值為該中心點的 LBP 值  OK
+# 4. 做卷積運算, 得到這張圖片的所有的 LBP 值  OK
 # 5. 繪製直方圖, x軸為 0~255, y軸為出現次數
 # 6. 將統計後的直方圖換成一個特徵向量(LBP 紋路特徵向量), 接著可用 SVM 等 ML 進行分類
 
@@ -20,6 +21,7 @@ def output_img(img, text):
     cv2.imwrite('%s.png' % text, img)
 
 
+test_list = list()
 def bit_to_int(bits_matrix):
     # 先處理 3x3
     # counterclockwise 逆時針
@@ -27,18 +29,22 @@ def bit_to_int(bits_matrix):
     pos = np.array([[3, 4, 5], [2, 0, 6], [1, 0, 7]])
     weight = np.power(2, pos)
     lbp_value = np.sum(weight * bits_matrix)
-
-    print(lbp_value)
+    test_list.append(lbp_value)
+    # print(lbp_value)
 
 
 def my_lbp(img, r=1):
     size = 2 * r + 1
     y, x = img.shape
 
+    # 建立一個周圍填充0且大於圖片長寬 2pixel 的 array
+    con_img = np.zeros((y+2, x+2), dtype=np.uint16)
+    con_img[1:y+1, 1:x+1] = img
+
     # split image
-    for j in range(0, y // size):
-        for i in range(0, x // size):
-            target_bits = img[j*size:(j+1)*size, i*size:(i+1)*size]
+    for j in range(0, y):
+        for i in range(0, x):
+            target_bits = con_img[j:j+size, i:i+size]
             # partial comparison, cells center: r, r
             target_bits = np.where(target_bits > target_bits[r, r], 1, 0)
             bit_to_int(target_bits)
@@ -47,15 +53,17 @@ def my_lbp(img, r=1):
 path = "./road/road.jpg"
 road = cv2.imread(path)
 
+# use my lbp
+# step1:
 road_gray = cv2.cvtColor(road, cv2.COLOR_BGR2GRAY)
-# print(road_gray[0:6, 0:6])
 # output_img(road_gray, text='./road/road_gray')
 
-# use my lbp
-# st = time.time()
-# my_lbp(road_gray)
-# end = time.time()
-# print("cost time: ", end - st)  # cost time:  2.0037386417388916 s
+# step2 to 4:
+st = time.time()
+my_lbp(road_gray)
+# print(len(test_list))  # 1000000
+end = time.time()
+# print("spend time: ", end - st)  # spend time:  12.55710768699646 s
 
 # ----------
 # use scikit-image module lbp
