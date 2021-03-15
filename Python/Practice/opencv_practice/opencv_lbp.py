@@ -7,11 +7,12 @@ import time
 
 # Target: Using LBP algorithm and take out the road
 # LBP algorithm
-# 1. 原始圖片轉灰階且設定 cells 大小 OK
-# 2. 將灰階圖片依照 cells 大小切割後, 切割後的正中間為中心點當成 threshold OK
-# 3. 選擇鄰近區域要依順時針或逆時針旋轉, 若值大於 threshold 給 1 否則 0 (1 if region > threshold else 0) OK
-# 4. 接著按照旋轉方向取 2進制 轉成 10進制 後的值 OK
-# 5. 繪製直方圖 ???
+# 1. 原始圖片轉灰階且設定 blocks 大小 (3x3)
+# 2. 取正中間點的值當成 threshold, 和周圍的區域進行比較(i if region > threshold else 0)
+# 3. 將周圍的區域按照順時針或逆時針旋轉並且以二進制(8bits)轉成 10 進制相加後, 計算後的值為該中心點的 LBP 值
+# 4. 做卷積運算, 得到這張圖片的所有的 LBP 值
+# 5. 繪製直方圖, x軸為 0~255, y軸為出現次數
+# 6. 將統計後的直方圖換成一個特徵向量(LBP 紋路特徵向量), 接著可用 SVM 等 ML 進行分類
 
 def output_img(img, text):
     cv2.namedWindow(text, cv2.WINDOW_NORMAL)
@@ -76,10 +77,6 @@ lbp = local_binary_pattern(road_gray, n_points, radius, method='var')
 # plt.show()
 
 # output_img(lbp, text="./road/road_lbp_var")
-
-# image 無法儲存
-# edges = filters.sobel(road_gray)
-# output_img(edges, text="./road/road_skimage_sobel")
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
