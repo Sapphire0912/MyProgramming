@@ -20,6 +20,12 @@ def output_img(img, text):
     cv2.imwrite('%s.png' % text, img)
 
 
+def draw_histogram(lbp_val):
+    plt.hist(lbp_val[:, np.newaxis], bins=255)
+    plt.show()
+    pass
+
+
 def bit_to_int(bits_matrix):
     # 先處理 3x3
     # counterclockwise 逆時針
@@ -27,8 +33,7 @@ def bit_to_int(bits_matrix):
     pos = np.array([[3, 4, 5], [2, 0, 6], [1, 0, 7]])
     weight = np.power(2, pos)
     lbp_value = np.sum(weight * bits_matrix)
-    test_list.append(lbp_value)
-    # print(lbp_value)
+    return lbp_value
 
 
 def my_lbp(img, r=1):
@@ -39,13 +44,18 @@ def my_lbp(img, r=1):
     con_img = np.zeros((y+2, x+2), dtype=np.uint16)
     con_img[1:y+1, 1:x+1] = img
 
+    lbp_val = np.zeros(256, dtype=np.uint32)
+
     # split image
     for j in range(0, y):
         for i in range(0, x):
             target_bits = con_img[j:j+size, i:i+size]
             # partial comparison, cells center: r, r
             target_bits = np.where(target_bits > target_bits[r, r], 1, 0)
-            bit_to_int(target_bits)
+            pixel_lbp = bit_to_int(target_bits)
+            lbp_val[pixel_lbp] += 1
+
+    draw_histogram(lbp_val)
 
 
 path = "./road/road.jpg"
@@ -56,13 +66,11 @@ road = cv2.imread(path)
 road_gray = cv2.cvtColor(road, cv2.COLOR_BGR2GRAY)
 # output_img(road_gray, text='./road/road_gray')
 
-# step2 to 4:
-test_list = list()
+# step2 to 5:
 st = time.time()
 my_lbp(road_gray)
-print("data: ", test_list[0:10])  # [0, 4, 196, 192, 192, 1, 7, 199, 0, 6]
-print(len(test_list))  # 1000000
 end = time.time()
+# print(val, np.sum(val))
 print("spend time: ", end - st)  # spend time:  12.55710768699646 s
 
 # ----------
