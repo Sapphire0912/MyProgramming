@@ -11,7 +11,7 @@ import time
 # 2. 取正中間點的值當成 threshold, 和周圍的區域進行比較(i if region > threshold else 0)  OK
 # 3. 將周圍的區域按照順時針或逆時針旋轉並且以二進制(8bits)轉成 10 進制相加後, 計算後的值為該中心點的 LBP 值  OK
 # 4. 做卷積運算, 得到這張圖片的所有的 LBP 值  OK
-# 5. 繪製直方圖, x軸為 0~255, y軸為出現次數
+# 5. 繪製直方圖, x軸為 0~255, y軸為出現次數 half
 # 6. 將統計後的直方圖換成一個特徵向量(LBP 紋路特徵向量), 接著可用 SVM 等 ML 進行分類
 
 def output_img(img, text):
@@ -21,7 +21,12 @@ def output_img(img, text):
 
 
 def draw_histogram(lbp_val):
-    plt.hist(lbp_val[:, np.newaxis], bins=255)
+    x = np.arange(0, 256)
+    plt.bar(x, lbp_val)
+    plt.title("LBP Bar Chart")
+    plt.xlabel("Gray Scale")
+    plt.ylabel("Times")
+    plt.ylim(0, 100000)
     plt.show()
     pass
 
